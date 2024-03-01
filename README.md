@@ -26,7 +26,7 @@ This is a space to keep your daily blogs and maintain a `README.md` with links t
 
 [Here](https://github.com/waggle-sensor/summer2018/tree/master/morrison) is an example of a student space organization. Please follow it in organizing your space.
 
-## Wrap-up presentations
+## When you wrap-up your research
 
 For our summer students there are number of opportunities to present their research (necessary for SULI and CCI students):
 
