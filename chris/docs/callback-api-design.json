@@ -1,14 +1,14 @@
 {
+    "metadata": {
+        "time-sent": "time log was sent",
+        "sender": {
+            "ip": "sender ip address",
+            "name": "sender name" 
+        }
+    },
     "logs": [
         {
-            "metadata": {
-                "time-sent": "time log was sent",
-                "time-captured": "time log was captured",
-                "sender": {
-                    "ip": "sender ip address",
-                    "name": "sender name" 
-                }
-            },
+            "time-captured": "time log was captured",
             "log": {
                 "name": "name",
                 "value": "value",
