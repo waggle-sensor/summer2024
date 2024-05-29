@@ -1,0 +1,19 @@
+{
+    "logs": [
+        {
+            "metadata": {
+                "time-sent": "time log was sent",
+                "time-captured": "time log was captured",
+                "sender": {
+                    "ip": "sender ip address",
+                    "name": "sender name" 
+                }
+            },
+            "log": {
+                "name": "name",
+                "value": "value",
+                "prometheus": "prometheus log"
+            }
+        }
+    ]
+}
