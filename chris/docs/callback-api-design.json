@@ -11,8 +11,8 @@
             "time-captured": "time log was captured",
             "log": {
                 "name": "name",
-                "value": "value",
-                "prometheus": "prometheus log"
+                "source": "cadvisor, tegra",
+                "value": "log value"
             }
         }
     ]
