@@ -21,60 +21,32 @@ We can break down this problem into a few main parts:
 - Displaying this information
 - Analyzing this information
 
+By keeping the main steps of this agnostic from the Waggle stack, we are able to create a generic library that can be used for all sorts of performance monitoring.
+
 ## Collection
 Most of this information is fairly easy to collect. Through a combination of Kubernetes and NVIDIA Jetson utilities, we can obtain logs of an individual node's total resource consumption and the resource consumption per Kubernetes job.
 
-The only challenge here will be converting this data into the format that we determine.
+The only challenge here is to convert metrics into the form that we want.
+
+We also want to have the ability to collect more metrics in the future. To do this, we should set up some easy format to ingest metrics into Grafana.
 
 ## Transmission
-The transmission of this data is mostly a one-way process. An individual node should transmit data to a central server for storage, display, and analysis. For this direction, we can define an API that has the following JSON format:
-
-```json
-{
-    "metadata": {
-        "time-sent": "time log was sent",
-        "sender": {
-            "ip": "sender ip address",
-            "name": "sender name" 
-        }
-    },
-    "logs": [
-        {
-            "time-captured": "time log was captured",
-            "log": {
-                "name": "name",
-                "resource": "cpu, gpu, memory, battery, etc",
-                "source": "cadvisor, tegra",
-                "value": "log value"
-            }
-        }
-    ]
-}
-```
-
-However, we also want this to be a configurable process. For this, we need to transmit data from some controller to an individual node. We define this configuration API as follows:
-
-```json
-{
-    "config": {
-        "callback": {
-            "ip": "ip",
-            "port": "port"
-        },
-        "chron": "chron"
-    },
-    "filters": [
-        {
-            "type": "include, exclude, etc",
-            "tag": "name, ",
-            "value": "value"
-        }
-    ]
-} 
-```
+Transmission is also fairly easy. By using the Grafana agent, we are able to use whatever infrastructure is defined for our storage. This can either be local Granfana storage or the Waggle infrastructure. All that is required here is to set up the Grafana agent.
 
 ## Storage
+We want to create a fairly generic storage system. To make this project generic, we want to be able to plug and play with various types of storage.
+
+### Local Storage
+To approach using local storage, we want to be able to store Grafana metrics locally. One easy way to go about this is to us Mimir for local storage. This would allow us to view Grafana metrics locally. 
+
+### Remote Storage for Waggle
+The Waggle stack currently supports the use of Grafana metrics. This means that we only need to use the Grafana agent to push our metrics to the proper endpoint. There is currently Waggle code that handles this.
+
+### Remote Storage in General
+Going forward, we want to make it possible to use any Grafana endpoint for metrics storage and display. This should not be much more difficult than generalizing the remote storage for the Waggle stack.
 
 ## Display
+We can use the Grafana display! 
 
 ## Analysis
+Ultimately, we want to work towards building a system model from these metrics. More info to come.
