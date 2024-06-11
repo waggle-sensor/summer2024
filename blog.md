@@ -1,3 +1,8 @@
+# Intro 
+
+Hello! My name is Ryan. I am a rising junior studying computer science at the University of Dallas. This summer I am working on an image searchability feature inside of the SAGE/WAGGLE portal. This would be useful so that, when a user looks up a feature such as: "groundhog", they can see all of the images with that feature.
+
+
 # June 3rd, 2024
 
 Began learning PyTorch and AI fundamentals
