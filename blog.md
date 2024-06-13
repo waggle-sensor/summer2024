@@ -27,4 +27,19 @@ I didn't complete much today as towards the end I realized that I could not find
 the day updating my code so that it could train a model with a dataset that would be downloaded to my computer. 
 
 
+# June 10th, 2024
+
+I spent most of the day refreshing myself with Pytorch fundamentals and videos. I felt as if I did not have a strong foundation and there were some parts I was forgetting when I was writing code. I continued working on training my resnet50 model on the CIFAR10 dataset. 
+
+# June 11th, 2024
+
+I continued studying and researching machine learning topics. I relearned a lot about how the structure of training and testing a model should go. I also relearned how I shoould load in a pretrained model. I also worked on training the pretrained resnet50 model on the CIFAR10 dataset. It was going well, and I made a ton of progress. I picked a lot of my hyperparameters, based on what I learned, using the CrossEntropyLoss funtion and the Adam optimizer. I made my batch size 64, so that my model can train faster, but I believe this may have made it a bit less accurate. 
+
+# June 12th, 2024
+
+I ran my model, the resnet50 pretrained model on the CIFAR10 dataset. I am basically fine tuning it to images in that dataset. I recieved an 89% accuracy on the test data, meaning the model was pretty good. I noticed though that there was a bit of difference between the training loss and the validation loss by an average of about 0.3500, which could mean that there is slight overfitting. I believe I can fix by augmenting the data meaning adding like random crops, utilizing a learning rate sceduler, and or add some dropout layers. 
+
+# June 13th, 2024
+
+
 
