@@ -56,6 +56,39 @@ Regarding LLM, popular architectures such as transformers, RNNs, and Mamba have 
 - Implement Client LLM/RAG for analysis on images.
 - Provide highlights of historical data from alerts with a recommendation system.
 
+
+
+The primary objective of this project is to employ object recognition, a specific computer vision task, in conjunction with a Large Language Model (LLM), to aid users in their quest for pertinent images to download. Image captioning has the potential to convey the subtleties of events transpiring within a given image, and it becomes more viable with sufficient temporal data (from video).
+
+To clarify, Computer Vision (CV) tasks such as image classification (single label for a class of images), instance segmentation (outlining object instances), semantic segmentation (outlining classes), and object recognition (describing object location) are not applicable to the stated goal of this project.
+
+Regarding the LLM, architectures such as the popular transformer approach as well as RNN and Mamba have a number of drawbacks. Floating point operations in parallel programming patterns is a one factor for why LLMs are not deterministic. Other weaknesses include conflicting information and unreliable parametric memory. While a RAG could reduce hallucinations, it does not solve them. To overcome these problems, a Generalized Action Representation (GAR) can be possible research with the idea current architectures are inherently not the right approach for specialized tasks (no more or less) in an LLM, regardless of the amount of data available.
+
+As a result, I propose the following:
+
+    • Algorithm to compute on video (and/or image) captioning at the edge
+    • Use this to send alerts (via API) from the edge via classification
+        ◦ Warnings (tornado, flood, accidents)
+        ◦ Information (flock of birds migrating, deer eating)
+    • Text (and video/images converted to text) search query from sorted alerts
+    • Client LLM/RAG for analysis on image(s)
+        ◦ Luminous objects (sun, reflection on solar panel)
+        ◦ Colors, number of cars and deformations on car
+        ◦ Predict next flock of birds using historical data
+        ◦ Why did they migrate (seasonal changes)
+    • Highlights of historical data from alerts
+        ◦ Cater to specific user intent with alerts recommendation system
+
+
+
+
+
+
+
+
+
+
+
 ## June 10th
 
 - Meeting to discuss goals in video captioning and image analysis.
