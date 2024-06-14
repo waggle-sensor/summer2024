@@ -22,4 +22,4 @@ Today, I discovered YOLOV9. It is very fast and, with some finetuning, could be 
 
 Playing around with YOLO. Trying to make it detect smoke, animals, and emergencies better
 
-![Ryan's Board June 14th 2024](https://github.com/waggle-sensor/summer2024/blob/ryan/RyanBoard/IMG_3621.jpg)
+![Ryan's Board June 14th 2024](https://github.com/waggle-sensor/summer2024/blob/main/ryan/RyanBoard/IMG_3621.jpg)
