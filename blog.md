@@ -38,3 +38,10 @@ Tried to use DeepLabV3. It only segments by objects as a group rather than indiv
 # June 13th, 2024
 
 Today, I discovered YOLOV9. It is very fast and, with some finetuning, could be exactly what we need. 
+
+# June 14th, 2024
+
+Playing around with YOLO. Trying to make it detect smoke, animals, and emergencies better
+
+![alt text](https://github.com/[username]/[reponame]/blob/[branch]/image.jpg?raw=true)
+
