@@ -2,6 +2,21 @@
 
 Link to the code repository I'm working on: [PTZJEPA](https://github.com/Brookluo/PTZJEPA/tree/main)
 
+## Week 06/17 -- 06/23
+
+Main focus: start the world model and dreamer training on nodes
+
+### 06/17 Mon
+
+- Tested the world model training on the SAGE node but had several issues:
+  - PyTorch version causes compatibility issues with the code (needs 2.0 but has 1.9 instead)
+  - Trainings are all interrupted by the node restart
+  - The training is very slow
+- Moved to the Dell blade to train the models, but has to adapt the code to the new environment
+  - Communication between node and blade can be difficult
+  - Transferring control commands and images has to be implemented
+- The docker image has to be modified with the new environment
+
 ## Week 06/10 -- 06/16
 
 Main focus: training on a sage node with acquiring images on-the-fly with PTZ camera
