@@ -1,0 +1,20 @@
+{
+    "metadata": {
+        "time-sent": "time log was sent",
+        "sender": {
+            "ip": "sender ip address",
+            "name": "sender name" 
+        }
+    },
+    "logs": [
+        {
+            "time-captured": "time log was captured",
+            "log": {
+                "name": "name",
+                "resource": "cpu, gpu, memory, battery, etc",
+                "source": "cadvisor, tegra",
+                "value": "log value"
+            }
+        }
+    ]
+}

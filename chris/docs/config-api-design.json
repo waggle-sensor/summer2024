@@ -1,0 +1,16 @@
+{
+    "config": {
+        "callback": {
+            "ip": "ip",
+            "port": "port"
+        },
+        "chron": "chron"
+    },
+    "filters": [
+        {
+            "type": "include, exclude, etc",
+            "tag": "name, ",
+            "value": "value"
+        }
+    ]
+} 
