@@ -1,15 +1,15 @@
 from ultralytics import YOLO 
 
 
-model_fire = YOLO("Datasets/fire_l.pt")
+model_fire = YOLO("summer2024/ryan/code/Datasets/fire_m.pt")
 
-model_yolo = YOLO("Datasets/yolov8n.pt")
+model_yolo = YOLO("summer2024/ryan/code/Datasets/yolov8n.pt")
 
-
+inpt = input("Put a link or a downloaded image here: ")
 models = [model_fire, model_yolo]
 results = []
 for model in models:
-    result = model("https://blog.piercecountywa.gov/pcsdblotter/files/2023/06/Capture-1024x537.jpg")
+    result = model(f"{inpt}")
     results.extend(result)
 
 # Process results list
