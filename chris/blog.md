@@ -39,3 +39,14 @@ I spent most of today reading the research papers the Akhilesh pointed us toward
 
 ## 06/12/2024
 I spent today continuing to look into related research and papers that Yongho had sent me. There is a large body of research focused on energy efficiency and a large body of research focused on the problems that arise in edge computing. However, there is very little research at the intersection of these two ideas. Our work seems to be a start in this area, but performance modeling an entire edge system sounds significantly more difficult. I'm going to start thinking on this.
+
+## 06/13/2024
+Today I refactored and cleaned up the code for a generic stress test. I was also able to test it using the gpu-stress-test docker container. Since this already has torch installed, I was able to work around my previous issue of not having torch. This seems to work as intended, so the next step is working on how to pull this out into a tool. This will involve constructing a docker image and writing a kubernetes job for it!
+
+## 06/14/2024
+Today I wrote a dockerfile and began testing it. It was fairly simple to write, considering it is based mostly on the gpu stress test dockerfile. I also reused the github action of building and pushing a docker image to docker hub. However, it turns out that this image only works when the dockerfile is at the top level of a repository (mine was not). This means I will have to refactor the project slightly.
+
+## 06/17/2024
+Today I worked on a few different things. For starters, I migrated the stress code to a new repo called stressme. With this, the Dockerfile sits at the top level of the container, and we can use the waggle build and push github action for docker containers. This saved me a lot of work reinventing the wheel. Now, in this process, I discovered a few bugs, but ultimately, I was able to build and push my docker image. In this, I ran into another problem. This image doesn't allow me to import pytorch. I'm not sure why that is yet, but I will have to look into it more tomorrow.
+
+The other thing I began working on was the data pipeline from Grafana to what will eventually be a model. Grafana displays data nicely, but I can't manipulate it with something like a machine learning model. So, we can query the Grafana api for data to manipulate locally. I began playing with the api to get a feel for it.
