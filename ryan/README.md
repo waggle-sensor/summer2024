@@ -25,3 +25,12 @@ Playing around with YOLO. Trying to make it detect smoke, animals, and emergenci
 ![Ryan's Board June 14th 2024](https://github.com/waggle-sensor/summer2024/blob/main/ryan/RyanBoard/IMG_3621.jpg)
 
 update: I was able to use YOLO with OpenClip. Found a dataset with smoke and tested it. I need to find more datasets or just start training my own. Might do it this weekend. Probably not though. 
+
+# June 15th, 2024
+
+Goals for today: 
+
+Prepare for a metting with Sean and Dr. Park about what to do with deploying MM at the edge. I will try to use the Oregon SSH portal and see if that works. Hopefully it does. Then, I will look into Image Bind again and test it out on my laptop since it has a GPU. 
+
+Depending on what is said during the meeting will determine the rest of the day--and proably the week. I know I will still need to learn Docker and most likely find or make models for the edge. Both also seem like useful things to know. 
+![Ryan's Board June 15th 2024](https://github.com/waggle-sensor/summer2024/blob/main/ryan/RyanBoard/IMG_3626.jpg) 
