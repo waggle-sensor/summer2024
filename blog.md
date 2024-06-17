@@ -36,4 +36,6 @@ I spent more time researching how to get images and corresponding data from the 
 # June 14th, 2024
 I spent some reading up documentation and tutorials on how to merge these files. I ended up succeeding and I got a file with some images having their corresponding irridance values. I don't know why the other images don't have their respective values, but I will figure that out later. I am also trying to figure out how to get these urls into actual images that I can download to my computer. 
 
+# June 15th, 2024
+Today I had a meeting with Seongha discussing over the goals of this project and how soon I should finish them. I then worked on downloading the images using a script that I created, but it always said failed to download. I asked Seongha and she said to use wget and use the terminal. I hope by the end of the day, I will have my images downloaded. I want to then train a resnet50 model on these images. I will have to think about the hyperparameters and parameters I want in order for my model to be accurate. 
 
