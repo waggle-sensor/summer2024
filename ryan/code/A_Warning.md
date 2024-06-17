@@ -1,6 +1,3 @@
 Hello,
 
-  A lot of this code is for testing out a lot of different things. 
-
-  Currently, it is only set up as proof that I have been working a lot.
-  It should not be run.
+Do not run the .ipynb files here unless you really want to. It is just a lot of testing

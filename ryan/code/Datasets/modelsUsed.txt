@@ -1,0 +1,4 @@
+
+For smoke and fire datasets, this was used:
+https://github.com/AlimTleuliyev/wildfire-detection/blob/main/fire-models/fire_m.pt
+
