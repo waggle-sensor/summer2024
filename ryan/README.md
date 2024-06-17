@@ -34,3 +34,16 @@ Prepare for a metting with Sean and Dr. Park about what to do with deploying MM 
 
 Depending on what is said during the meeting will determine the rest of the day--and proably the week. I know I will still need to learn Docker and most likely find or make models for the edge. Both also seem like useful things to know. 
 ![Ryan's Board June 15th 2024](https://github.com/waggle-sensor/summer2024/blob/main/ryan/RyanBoard/IMG_3626.jpg) 
+
+
+AFTERNOON UPDATE:
+
+I had the meeting. It seems like the goal right now is to make a simple version of what will be created later after the proposal Sean is putting together. I tested out what OpenClip captions when I input a picture that might come from a Sage node with what we are looking for (fires, crashes, etc). The results are not always the best... I think I might need to train it? The good news is that the predictor works pretty well--at least with minor testing. So that may be the best option right now. 
+
+![Wrong Caption...](https://github.com/waggle-sensor/summer2024/blob/main/ryan/code/scripts/example%20_images/CAPTIONED1718653150.jpg) 
+
+I tried to put Image Bind on my laptop but something keeps going wrong. It works on my desktop though so I will maybe just transfer everything manually. Or make it work. 
+
+The Blade node still does not have internet. Hoping that that comes soon. I will play around with Docker when that works. 
+
+![Ryan's Board June 15th 2024 AFTERNOON](https://github.com/waggle-sensor/summer2024/blob/main/ryan/RyanBoard/IMG_3627.jpg) 
