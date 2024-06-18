@@ -8,7 +8,7 @@ import time
 
 #takes in the image and caption. Produces captioned image 
 def autoCaption(image, caption_text):
-  text_size = 20
+  text_size = 40
   font = ImageFont.truetype("/usr/share/fonts/truetype/ubuntu/Ubuntu-B.ttf", text_size)
 
   # Get image dimensions and text width
