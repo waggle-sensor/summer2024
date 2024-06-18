@@ -40,7 +40,7 @@ AFTERNOON UPDATE:
 
 I had the meeting. It seems like the goal right now is to make a simple version of what will be created later after the proposal Sean is putting together. I tested out what OpenClip captions when I input a picture that might come from a Sage node with what we are looking for (fires, crashes, etc). The results are not always the best... I think I might need to train it? The good news is that the predictor works pretty well--at least with minor testing. So that may be the best option right now. 
 
-![Wrong Caption...](https://github.com/waggle-sensor/summer2024/blob/main/ryan/code/scripts/example%20_images/CAPTIONED1718653118.jpg) 
+![Wrong Caption...](https://github.com/waggle-sensor/summer2024/blob/main/ryan/images/generated_captions/CAPTIONED1718653118.jpg) 
 
 I tried to put Image Bind on my laptop but something keeps going wrong. It works on my desktop though so I will maybe just transfer everything manually. Or make it work. 
 
@@ -53,3 +53,14 @@ The Blade node still does not have internet. Hoping that that comes soon. I will
 Today I am going to make two programs: One with automatic captioning done by OpenClip and one with automatic matching,  also done by OpenClip. Hopefully this will give a good showcase of the best options. I may put together a PPT slide but I can work out the logistics later. I also want to try out ImageBind to see if it is any better. It would help with MM. If I have time I may invesitgate audio to text/image generation. If the network is still down on the Blades, Docker may have to wait again. 
 
 ![Ryan's Board June 18th, 2024 MORNING](https://github.com/waggle-sensor/summer2024/blob/main/ryan/RyanBoard/IMG_3631.jpg)
+
+
+Afternoon update: I figured out my ImageBind problems are just a bunch of dependency issues. I made a PDF/PPT of what OpenClip says and does. It doesn't do things too well when it comes to complicated images. I did a lot of code cleaning and making things work more properly. I also checked out how to fine tune OpenClip--I don't understand it but I will learn if the time comes. 
+
+
+![Wrong Caption 2...](https://github.com/waggle-sensor/summer2024/blob/main/ryan/images/generated_captions/CAPTIONED1718744313.jpg) 
+
+
+I have a feeling that time will come.... 
+
+![Ryan's Board June 18th, 2024 AFTERNOON](https://github.com/waggle-sensor/summer2024/blob/main/ryan/RyanBoard/IMG_3634.jpg)
