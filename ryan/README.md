@@ -40,7 +40,7 @@ AFTERNOON UPDATE:
 
 I had the meeting. It seems like the goal right now is to make a simple version of what will be created later after the proposal Sean is putting together. I tested out what OpenClip captions when I input a picture that might come from a Sage node with what we are looking for (fires, crashes, etc). The results are not always the best... I think I might need to train it? The good news is that the predictor works pretty well--at least with minor testing. So that may be the best option right now. 
 
-![Wrong Caption...](https://github.com/waggle-sensor/summer2024/blob/main/ryan/images/generated_captions/example%20_images/CAPTIONED1718653150.jpg) 
+![Wrong Caption...](https://github.com/waggle-sensor/summer2024/blob/main/ryan/code/scripts/example%20_images/CAPTIONED1718653118.jpg) 
 
 I tried to put Image Bind on my laptop but something keeps going wrong. It works on my desktop though so I will maybe just transfer everything manually. Or make it work. 
 
