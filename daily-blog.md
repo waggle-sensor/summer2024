@@ -6,6 +6,17 @@ Link to the code repository I'm working on: [PTZJEPA](https://github.com/Brooklu
 
 Main focus: start the world model and dreamer training on nodes
 
+### 06/18 Tue
+
+- Fixed the compatibility issue with the PyTorch version
+  - CUDA==10.2 on sage node, CUDA==11.6 on most dell blades
+  - CUDA 11.6 supports up to pytorch 1.13, but the code requires 2.0
+  - Updated the dockerfile and rebuilt the docker image to use pytorch 1.13 with cuda 11.6 to run all training on Dell blades
+- Start to change the code to adapt to pytorch 1.13
+  - Found some potential issues with `encoder.zero_grad()`, which could remove all gradients accumulated and made the training pointless.
+- Helped others to fix the compatibility issue with the PyTorch version
+- Toured the Argonne campus.
+
 ### 06/17 Mon
 
 - Tested the world model training on the SAGE node but had several issues:
