@@ -4,11 +4,16 @@ import torch
 from PIL import Image, ImageFont, ImageDraw
 import requests
 import time
+from os import walk
 
+print(f"loading files...\n\n\n")
+filenames = next(walk('/home/ryanrearden/Documents/SAGE_fromLaptop/summer2024/ryan/code/scripts/SAGE/SageImgs/'), (None, None, []))[2]
+print("all files loaded")
 
+i = 0
 #takes in the image and caption. Produces captioned image 
-def autoCaption(image, caption_text):
-  text_size = 90
+def autoCaption(image, caption_text, i):
+  text_size = 40
   font = ImageFont.truetype("/usr/share/fonts/truetype/ubuntu/Ubuntu-B.ttf", text_size)
 
   # Get image dimensions and text width
@@ -33,7 +38,9 @@ def autoCaption(image, caption_text):
   draw.text((text_center_x, image_height + 5), caption_text, font=font, fill=(255, 255, 255))  # Adjust positioning and color
 
   # Save the new image with caption
-  new_image.save(f"CAPTIONED{str(int(time.time()))}.jpg")
+  new_image.save(f"/home/ryanrearden/Documents/SAGE_fromLaptop/summer2024/ryan/code/scripts/SAGE/captioned/{i}.jpg")
+
+  print(f"saved image {i}")
 
 #takes in a string and returns an preprocessed image
 def readImage(imgIpt):
@@ -59,9 +66,6 @@ def readImage(imgIpt):
   
 
 
-imgIpt = input("Please input the link or full path: ")
-
-image = readImage(imgIpt)
 
 # Preprocess image for OpenClip
 model, _, preprocess = open_clip.create_model_and_transforms(
@@ -69,15 +73,18 @@ model, _, preprocess = open_clip.create_model_and_transforms(
   pretrained="mscoco_finetuned_laion2b_s13b_b90k"
 )
 
-im = preprocess(image).unsqueeze(0)
+for file in filenames:
+  image = readImage((f'/home/ryanrearden/Documents/SAGE_fromLaptop/summer2024/ryan/code/scripts/SAGE/SageImgs/{file}'))
+  im = preprocess(image).unsqueeze(0)
 
-#Times the img -> text rate
-start_time = time.time()
-with torch.no_grad(), torch.cuda.amp.autocast():
-  generated = model.generate(im)
-end_time = time.time()
+  #Times the img -> text rate
+  start_time = time.time()
+  with torch.no_grad(), torch.cuda.amp.autocast():
+    generated = model.generate(im)
+  end_time = time.time()
 
-print(f"generated text in ", round(end_time - start_time, 2), "ish seconds")
-caption = open_clip.decode(generated[0]).split("<end_of_text>")[0].replace("<start_of_text>", "")
+  print(f"generated text in ", round(end_time - start_time, 2), "ish seconds")
+  caption = open_clip.decode(generated[0]).split("<end_of_text>")[0].replace("<start_of_text>", "")
 
-autoCaption(image, caption)
+  i += 1
+  autoCaption(image, caption, i)

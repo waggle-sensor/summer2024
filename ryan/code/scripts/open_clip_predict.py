@@ -54,7 +54,7 @@ image = preprocess(image).unsqueeze(0)
 user_description = input("Please provide a breif description of the image you are looking for:\n")
 print() 
 
-descriptions = [user_description, "an image", "", "photo"]
+descriptions = [user_description, "an image of the street", "", "four way intersection in a city", "day"]
 text = tokenizer(descriptions)
 
 with torch.no_grad(), torch.cuda.amp.autocast():
@@ -64,6 +64,7 @@ with torch.no_grad(), torch.cuda.amp.autocast():
     text_features /= text_features.norm(dim=-1, keepdim=True)
 
     text_probs = (100.0 * image_features @ text_features.T).softmax(dim=-1)
+    print(text_probs)
 
 #finds the most likely description 
 most_likely = descriptions[torch.argmax(text_probs)]

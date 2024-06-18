@@ -17,15 +17,16 @@ model, _, preprocess = open_clip.create_model_and_transforms('ViT-B-32', pretrai
 model.eval()  # model in train mode by default, impacts some models with BatchNorm or stochastic depth active
 tokenizer = open_clip.get_tokenizer('ViT-B-32')
 
-descriptions = [user_description, "an image of the street", "", "night", "day"]
+descriptions = [user_description, "an image of the street", "", "four way intersection in a city", "day"]
 text = tokenizer(descriptions)
 
 with torch.no_grad(), torch.cuda.amp.autocast():
     text_features = model.encode_text(text)
     text_features /= text_features.norm(dim=-1, keepdim=True)
-
+i = 0
 for file in filenames:
-    print("new image approaching")
+    i += 1
+    print(f"reading image {i}")
     image = (f'/home/ryanrearden/Documents/SAGE_fromLaptop/summer2024/ryan/code/scripts/SAGE/SageImgs/{file}')
     raw_image = Image.open(image)
     image = raw_image.convert("RGB")
@@ -40,13 +41,21 @@ for file in filenames:
     most_likely = descriptions[torch.argmax(text_probs)]
 
     if most_likely == user_description:
-        print()
-        print("Looks like: ", most_likely)
-        imgplot = plt.imshow(raw_image)
-        plt.axis('off')
-        plt.show()
-        plt.bar(descriptions, text_probs.squeeze().detach().cpu().numpy())
-        plt.xticks(rotation=45)
-        plt.ylabel('Probability (%)')
-        plt.show()
+        # Create a figure with two subplots
+        fig, (ax1, ax2) = plt.subplots(1, 2)  # 1 row, 2 columns
 
+        # Display image in the first subplot
+        ax1.imshow(raw_image)
+        ax1.axis('off')
+
+        # Display bar chart in the second subplot
+        tick_positions = range(len(descriptions))  # Equally spaced ticks
+        ax2.set_xticks(tick_positions)
+        ax2.set_xticklabels(descriptions, rotation=45)
+        ax2.bar(descriptions, text_probs.squeeze().detach().cpu().numpy())
+        ax2.set_ylabel('Probability (%)')
+
+        # Adjust layout to prevent overlapping elements (optional)
+        plt.tight_layout()
+        print("FOUND")
+        raw_image.save(f"/home/ryanrearden/Documents/SAGE_fromLaptop/summer2024/ryan/code/scripts/SAGE/schoolbus/result{i}.jpg")

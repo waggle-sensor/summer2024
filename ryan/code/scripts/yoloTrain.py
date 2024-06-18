@@ -1,9 +1,9 @@
 from ultralytics import YOLO 
 
 
-model_fire = YOLO("summer2024/ryan/code/Datasets/fire_m.pt")
+model_fire = YOLO("summer2024/ryan/Datasets/fire_m.pt")
 
-model_yolo = YOLO("summer2024/ryan/code/Datasets/yolov8n.pt")
+model_yolo = YOLO("summer2024/ryan/Datasets/yolov8n.pt")
 
 inpt = input("Put a link or a downloaded image here: ")
 models = [model_fire, model_yolo]
@@ -20,6 +20,6 @@ for result in results:
     probs = result.probs  # Probs object for classification outputs
     obb = result.obb  # Oriented boxes object for OBB outputs
     result.show()  # display to screen
-    result.save(filename="result.jpg")  # save to disk
+    result.save(filename="result1.jpg")  # save to disk
 
    
