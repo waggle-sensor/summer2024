@@ -64,3 +64,9 @@ Afternoon update: I figured out my ImageBind problems are just a bunch of depend
 I have a feeling that time will come.... 
 
 ![Ryan's Board June 18th, 2024 AFTERNOON](https://github.com/waggle-sensor/summer2024/blob/main/ryan/RyanBoard/IMG_3634.jpg)
+
+# June 19th, 2024 
+
+Today I will be working with new models to see if they can detect important things from the SAGE nodes. I am also hoping to finally get imageBind to run. By the end of the day (ideally) I want to have tested all 3 different models with SAGE data and determine which one is the best, or, which one is the best for individual cases. We will see how that goes. Hopefully only a few things break along the way. 
+
+![Ryan's Board June 19th, 2024 Morning](https://github.com/waggle-sensor/summer2024/blob/main/ryan/RyanBoard/IMG_3642.jpg)
