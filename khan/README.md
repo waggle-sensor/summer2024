@@ -6,7 +6,7 @@ Computer Vision (CV), a subset of Artificial Intelligence (AI), enables computer
 
 The objective of this project is to leverage the notion of object recognition, a particular CV task, in conjunction with an LLM to aid users in discovering, downloading, and asking about relevant images or videos. Dense captioning, especially when enriched with sufficient temporal data gleaned from videos, significantly enhances descriptive capabilities.
 
-## Ideal Proposed Development Approach
+## Ideal Proposed Development Plan
 
 - Develop or select an algorithm for image or video captioning at the edge.
 - Use it to send alerts (via API) based on classification
@@ -89,7 +89,7 @@ I primarily research using [Google Scholar](https://scholar.google.com) and [Pap
 ## June 17th (Week 3)
 
 - Reorganized scope, ideas, and planning.
-- Initiate very detailed research from a broad scope.
+- Initiated very detailed research from a broad scope.
 
 ## June 18th
 
@@ -104,6 +104,22 @@ I primarily research using [Google Scholar](https://scholar.google.com) and [Pap
 
 ## June 20th
 
-- Present on selection, implementation, evaluation, presentation, and demonstration of papers.
+- Presented on selection, implementation, evaluation, presentation, and demonstration of papers.
+- Fleshed out demonstration.
 
 ## June 21st
+
+- Continued to flesh out demonstration.
+- Initiate implementing framework to deploy the technologies.
+- Created a presentation on the selected model implementation.
+
+## June 24th (Week 4)
+
+- Continued implementing framework to deploy the technologies.
+- Continued to polish presentation on the selected model implementation.
+
+## June 25th
+
+- Met to present June 20th presentation in addition to new presentation.
+- Met to illustrate and discuss how to continue implementing framework.
+- Continued implementing framework to deploy the technologies.
