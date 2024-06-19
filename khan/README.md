@@ -18,6 +18,8 @@ I often research using [Google Scholar](https://scholar.google.com) and [Papers 
 
 - Week 1: Summarize and propose project improvements, scope, and milestones.
 - Week 2: Define the technologies that will be used to achieve the proposed milestones.
+- Week 3: Research and select papers to implement.
+- Week 4:
 
 ## June 3rd
 
@@ -77,4 +79,18 @@ As a result, I propose the following:
 - Guided tour of the Aurora supercomputer and Rapid Prototyping Laboratory.
 - Visited the library to better understand older references available for research.
 
+## June 12th
+
+## June 13th
+
+## June 14th
+
 ## June 17th
+
+## June 18th
+
+## June 19th
+
+## June 20th
+
+## June 21st
