@@ -73,7 +73,7 @@ I primarily research using [Google Scholar](https://scholar.google.com) and [Pap
 ## June 12th
 
 - Continued research on replacing Google's Scenic with PLLaVA.
-- Guided tour of the Aurora supercomputer and Rapid Prototyping Laboratory.
+- Attended guided tour of the Aurora supercomputer and Rapid Prototyping Laboratory.
 - Visited the library to better understand older references available for research.
 
 ## June 13th
@@ -93,6 +93,7 @@ I primarily research using [Google Scholar](https://scholar.google.com) and [Pap
 
 ## June 18th
 
+- Met to discuss new goals with dense captioning and image or video analysis.
 - Continued, commited, and pushed blog.
 - Continued very detailed research from a broad scope.
 
