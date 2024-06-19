@@ -35,7 +35,7 @@ Exploring improvements for LLMs, including [efficiency](https://arxiv.org/abs/24
 
 I primarily research using [Google Scholar](https://scholar.google.com) and [Papers With Code](https://paperswithcode.com).
 
-## June 3rd
+## June 3rd (Week 1)
 
 - Attended orientation, gaining insights into culture, policies, and procedures.
 - Located cubicles and office space for the MCS division.
@@ -57,38 +57,53 @@ I primarily research using [Google Scholar](https://scholar.google.com) and [Pap
 
 ## June 7th
 
-- Detailed research on Google's [Scenic](https://github.com/google-research/scenic/tree/main/scenic/projects) dense captioning implementations.
+- Fleshed out proposed development approach for long-term planning.
+- Initiated detailed research on Google's [Scenic](https://github.com/google-research/scenic/tree/main/scenic/projects) dense captioning implementations.
 
-## June 10th
+## June 10th (Week 2)
 
-- Met to discuss goals with dense captioning and image or video analysis.
-- Continued to experiment with other models.
+- Continued research on Google's Scenic.
+- Begun to experiment with other models.
 
 ## June 11th
 
+- Met to discuss goals with dense captioning and image or video analysis.
 - Extended research on replacing Google's Scenic with PLLaVA.
 
 ## June 12th
 
+- Continued research on replacing Google's Scenic with PLLaVA.
 - Guided tour of the Aurora supercomputer and Rapid Prototyping Laboratory.
 - Visited the library to better understand older references available for research.
 
 ## June 13th
 
-- Conducted tests with PLLaVA
-- Initiate very detailed and research from a broad scope
+- Conducted tests with PLLaVA.
+- Continued, commited, and pushed blog.
 
 ## June 14th
 
-## June 17th
+- Continued tests with PLLaVA.
+- Continued, commited, and pushed blog.
+
+## June 17th (Week 3)
+
+- Reorganized scope, ideas, and planning.
+- Initiate very detailed research from a broad scope.
 
 ## June 18th
 
+- Continued, commited, and pushed blog.
+- Continued very detailed research from a broad scope.
+
 ## June 19th
 
-- Used sage_data_client as well as dashboard to test on both image and video data
+- Used dashboard as well as sage_data_client to test on both image and video data.
+- Continued, commited, and pushed blog.
 - Wrapped up research to create a presentation on selection, implementation, evaluation, presentation, and demonstration of papers.
 
 ## June 20th
+
+- Present on selection, implementation, evaluation, presentation, and demonstration of papers.
 
 ## June 21st
