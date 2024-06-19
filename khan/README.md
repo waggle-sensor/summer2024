@@ -2,17 +2,15 @@
 
 ## Preface
 
-Computer Vision (CV), a subset of Artificial Intelligence (AI), enables computers to interpret visual data from images and videos by acquiring, processing, and analyzing digital images to extract meaningful information. Techniques such as image classification, instance segmentation, semantic segmentation, and object detection are widely used in CV. Deep learning algorithms such as convolutional neural networks (CNNs) are essential for tasks like tracking objects and recognizing actions. CV empowers AI models, like large language models (LLMs), to efficiently understand and identify objects and activities within visual data, thereby enhancing AI models' ability to comprehend and generate insights from multimedia content.
+Computer Vision (CV), a subset of Artificial Intelligence (AI), enables computers to interpret visual data from images and videos by acquiring, processing, and analyzing digital images to extract meaningful information. Techniques such as image classification, instance segmentation, semantic segmentation, and object detection are widely used in CV. Deep learning algorithms such as Convolutional Neural Networks (CNNs) are essential for tasks like tracking objects and recognizing actions. CV empowers AI models, like Large Language Models (LLMs), to efficiently understand and identify objects and activities within visual data, thereby enhancing AI models' ability to comprehend and generate insights from multimedia content.
 
-The primary objective of this project is to leverage the notion of object recognition, a particular CV task, in conjunction with an LLM to aid users in discovering, downloading, and asking about relevant images or videos. Dense captioning, especially when enriched with sufficient temporal data gleaned from videos, significantly enhances descriptive capabilities.
+The objective of this project is to leverage the notion of object recognition, a particular CV task, in conjunction with an LLM to aid users in discovering, downloading, and asking about relevant images or videos. Dense captioning, especially when enriched with sufficient temporal data gleaned from videos, significantly enhances descriptive capabilities.
 
 ## Further Research
 
-While there are many areas to improve upon for LLMs, such as [efficiency](https://arxiv.org/abs/2406.02528) and architectural considerations (transformers, RNNs, Mamba), a Generalized Action Representation (GAR) akin to [Husky](https://arxiv.org/abs/2406.06469) could significantly enhance the utility of LLMs for these applications.
+Exploring improvements for LLMs, including [efficiency](https://arxiv.org/abs/2406.02528) and architectural considerations like Transformers, Recurrent Neural Networks (RNNs), and Mamba, a Generalized Action Representation (GAR) broadly akin to [Husky](https://arxiv.org/abs/2406.06469) could notably enhance the utility of LLMs.
 
-For further exploration into LLMs, popular architectures like transformers, RNNs, and Mamba exhibit drawbacks such as non-determinism and unreliable memory management. Addressing these challenges, a Generalized Action Representation (GAR) represents a promising avenue for research.
-
-I often research using [Google Scholar](https://scholar.google.com) and [Papers With Code](https://paperswithcode.com).
+I primarily research using [Google Scholar](https://scholar.google.com) and [Papers With Code](https://paperswithcode.com).
 
 ## Weekly Goals
 
