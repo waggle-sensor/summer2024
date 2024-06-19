@@ -70,3 +70,9 @@ I have a feeling that time will come....
 Today I will be working with new models to see if they can detect important things from the SAGE nodes. I am also hoping to finally get imageBind to run. By the end of the day (ideally) I want to have tested all 3 different models with SAGE data and determine which one is the best, or, which one is the best for individual cases. We will see how that goes. Hopefully only a few things break along the way. 
 
 ![Ryan's Board June 19th, 2024 Morning](https://github.com/waggle-sensor/summer2024/blob/main/ryan/RyanBoard/IMG_3642.jpg)
+
+
+Afternoon update:
+I tested the models. LLaVA works great with a few minor modifications. It is actuallly so good right out of the box I wish I saw it sooner. I will present about it tomorrow. It took about 6 hours today to get to the point where it works on my machine. It was worth it. 
+
+![Ryan's Board June 19th, 2024 Morning](https://github.com/waggle-sensor/summer2024/blob/main/ryan/RyanBoard/IMG_3647.jpg)

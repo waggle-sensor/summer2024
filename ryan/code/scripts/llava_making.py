@@ -1,10 +1,9 @@
-import io
-import open_clip
-import torch
-from PIL import Image, ImageFont, ImageDraw
 import requests
-import time
-
+from PIL import Image, ImageFont, ImageDraw
+import torch
+import io
+from transformers import BitsAndBytesConfig, pipeline
+import time 
 
 #takes in the image and caption. Produces captioned image 
 def autoCaption(image, caption_text):
@@ -33,7 +32,7 @@ def autoCaption(image, caption_text):
   draw.text((text_center_x, image_height + 5), caption_text, font=font, fill=(255, 255, 255))  # Adjust positioning and color
 
   # Save the new image with caption
-  new_image.save(f"CAPTIONED{str(int(time.time()))}.jpg")
+  new_image.save(f"CAPTIONED-llava-{str(int(time.time()))}.jpg")
 
 #takes in a string and returns an preprocessed image
 def readImage(imgIpt):
@@ -57,27 +56,22 @@ def readImage(imgIpt):
   
   return image
   
-
-
 imgIpt = input("Please input the link or full path: ")
 
 image = readImage(imgIpt)
 
-# Preprocess image for OpenClip
-model, _, preprocess = open_clip.create_model_and_transforms(
-  model_name="coca_ViT-B-32",
-  pretrained="mscoco_finetuned_laion2b_s13b_b90k"
+quantization_config = BitsAndBytesConfig(
+    load_in_4bit=True,
+    bnb_4bit_compute_dtype=torch.float16
 )
 
-im = preprocess(image).unsqueeze(0)
+model_id = "llava-hf/vip-llava-7b-hf"
 
-#Times the img -> text rate
-start_time = time.time()
-with torch.no_grad(), torch.cuda.amp.autocast():
-  generated = model.generate(im)
-end_time = time.time()
+pipe = pipeline("image-to-text", model=model_id, model_kwargs={"quantization_config": quantization_config})
 
-print(f"generated text in ", round(end_time - start_time, 2), "ish seconds")
-caption = open_clip.decode(generated[0]).split("<end_of_text>")[0].replace("<start_of_text>", "")
+max_new_tokens = 500
+prompt = "USER: <image>\You are the writer of this board. Yo are making a blog, the blog reads: \nASSISTANT:"
 
-autoCaption(image, caption)
+outputs = pipe(image, prompt=prompt, generate_kwargs={"max_new_tokens": 500})
+
+print(outputs[0]["generated_text"])
