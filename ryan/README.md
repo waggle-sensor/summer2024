@@ -75,4 +75,11 @@ Today I will be working with new models to see if they can detect important thin
 Afternoon update:
 I tested the models. LLaVA works great with a few minor modifications. It is actuallly so good right out of the box I wish I saw it sooner. I will present about it tomorrow. It took about 6 hours today to get to the point where it works on my machine. It was worth it. 
 
-![Ryan's Board June 19th, 2024 Morning](https://github.com/waggle-sensor/summer2024/blob/main/ryan/RyanBoard/IMG_3647.jpg)
+![Ryan's Board June 19th, 2024 AFTERNOON](https://github.com/waggle-sensor/summer2024/blob/main/ryan/RyanBoard/IMG_3647.jpg)
+
+
+# June 20th, 2024
+
+Today I am going to make a small demo of LLaVA and see if I should put it in my presentation for the meeting. I may just showcase how well it works. It classifies an ambulance as a firetruck; I am hoping that is one of the very few problems it faces. Overall it should still be good enough.     The one thing that worries me about LLaVA is the size. It runs well but its about 12 gigs. We may have to do some random cutting or soemthing. Not really sure how that will work yet. 
+
+![Ryan's Board June 19th, 2024 AFTERNOON](https://github.com/waggle-sensor/summer2024/blob/main/ryan/RyanBoard/IMG_3649.jpg)
