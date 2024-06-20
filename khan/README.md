@@ -111,7 +111,8 @@ I primarily research using [Google Scholar](https://scholar.google.com) and [Pap
 
 ## June 21st
 
-- Continued to flesh out demonstration and TroL integration.
+- Continued to flesh out demonstration.
+- Continue to test TroL and integration with current dense captioning models.
 - Initiate implementing framework to deploy the technologies.
 - Created a presentation on the selected model implementation.
 
