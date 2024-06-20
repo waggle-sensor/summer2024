@@ -41,3 +41,9 @@ Today I had a meeting with Seongha discussing over the goals of this project and
 
 # June 18th, 2024
 I spent today training and testing my model on about 300 images that had their corresponding irradiance values. This small dataset was because I only gathered data for 30 days. Training and testing looked good, showing no signs of overfitting. MAE was also pretty good, but their was a slight divergence towards the end of the epochs. I discussed with Seongha, and I discovered I had been using the wrong data. I am supposed to be using the solarcharge-controller app instead of the solar-irridance one. Specifically I am using the env.solar.voltage.array data. Now I am downloading a year's worth of data which is taking a while, and then cleaning it. Once I complete this, I will train and test the resnet50 model immediately.
+
+#June 19th, 2024
+I spent today training and testing the model. I updated some of the metrics and included accuracy. Accuracy is not the best suited for regression analysis but with a good threshold it can help. I decided to make 5 this threshold because I felt that I could accept an error of about 5 between predicted and actual values. I think this is good for start but I will probably update it to a smaller number. I trained and tested the model 2 times today receiving similar results. These results showed that the model was learning and generalizing good, but they did not meet the standards we wanted. The only thing that would help or help the most would be way more data, but right now that data is unavailable. Now I'll be working on the clear sky classifier. 
+
+#June 20th, 2024
+I hope to learn more about how I can categorize images in their respective classes prior to training a model on that. I also hope to find some similar models that have already done this type of stuff so that I can possible fine tune them on the data that I have present. 
