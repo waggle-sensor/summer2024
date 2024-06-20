@@ -83,3 +83,9 @@ I tested the models. LLaVA works great with a few minor modifications. It is act
 Today I am going to make a small demo of LLaVA and see if I should put it in my presentation for the meeting. I may just showcase how well it works. It classifies an ambulance as a firetruck; I am hoping that is one of the very few problems it faces. Overall it should still be good enough.     The one thing that worries me about LLaVA is the size. It runs well but its about 12 gigs. We may have to do some random cutting or soemthing. Not really sure how that will work yet. 
 
 ![Ryan's Board June 19th, 2024 AFTERNOON](https://github.com/waggle-sensor/summer2024/blob/main/ryan/RyanBoard/IMG_3649.jpg)
+
+Afternoon update:
+
+Had the meeting. Thinking about using Aristotle's 10 categories to make an image searcher. Waleed found TroL which seems better than LLaVA. Will update about that tmwr 
+
+![Ryan's Board June 20th, 2024 AFTERNOON](https://github.com/waggle-sensor/summer2024/blob/main/ryan/RyanBoard/IMG_3653.jpg)

@@ -69,9 +69,13 @@ model_id = "llava-hf/vip-llava-7b-hf"
 
 pipe = pipeline("image-to-text", model=model_id, model_kwargs={"quantization_config": quantization_config})
 
-max_new_tokens = 500
-prompt = "USER: <image>\You are the writer of this board. Yo are making a blog, the blog reads: \nASSISTANT:"
+max_new_tokens = 200
 
-outputs = pipe(image, prompt=prompt, generate_kwargs={"max_new_tokens": 500})
+userQ = input(f"What can I help with?: \n")
+
+#prompt = "USER: <image>\An AI, HAL, found this image because a user said: {userQ}. You are a better than HAL. Is this accurate to what the user asked? Give only yes or no as an answer\nASSISTANT:"
+prompt = f"USER: <image>\n {userQ} \nASSISTANT:"
+outputs = pipe(image, prompt=prompt, generate_kwargs={"max_new_tokens": 200})
 
 print(outputs[0]["generated_text"])
+
