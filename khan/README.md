@@ -107,10 +107,11 @@ I primarily research using [Google Scholar](https://scholar.google.com) and [Pap
 
 - Presented on selection, implementation, evaluation, presentation, and demonstration of papers.
 - Fleshed out demonstration.
+- Tested TroL and integration with current dense captioning models.
 
 ## June 21st
 
-- Continued to flesh out demonstration.
+- Continued to flesh out demonstration and TroL integration.
 - Initiate implementing framework to deploy the technologies.
 - Created a presentation on the selected model implementation.
 
