@@ -23,11 +23,13 @@ The objective of this project is to leverage the notion of object recognition, a
 
 ## Weekly Goals
 
-- Week 1: Propose and summarize project scope, improvements, and milestones.
-- Week 2: Define the technologies that will be used to achieve the proposed milestones.
-- Week 3: Conduct thorough research, selection, implementation, evaluation, presentation, and demonstration of papers.
-- Week 4: Create framework to deploy the technologies and create a presentation on the selected model implementation.
-- Week 5: Deploy the technologies and create poster.
+- June 3rd (Week 1): Propose and summarize project scope, improvements, and milestones.
+- June 10th (Week 2): Define the technologies that will be used to achieve the proposed milestones.
+- June 17th (Week 3): Conduct thorough research, selection, implementation, evaluation, presentation, and demonstration of papers.
+- June 24th (Week 4): Create framework to deploy the technologies and create a presentation on the selected model implementation.
+- July 1st (Week 5): Deploy the technologies and create poster.
+- July 8th (Week 6): Receive feedback on the technologies deployed.
+- July 15th (Week 7): Finalize long-term implementation.
 
 ## Further Research
 
@@ -108,13 +110,16 @@ I primarily research using [Google Scholar](https://scholar.google.com) and [Pap
 - Presented on selection, implementation, evaluation, presentation, and demonstration of papers.
 - Fleshed out demonstration.
 - Tested TroL and integration with current dense captioning models.
+- Continued, commited, and pushed blog.
 
 ## June 21st
 
+- Stabilized and established blog workload and scheduling.
+- Continued to test TroL and integration with current dense captioning models.
 - Continued to flesh out demonstration.
-- Continue to test TroL and integration with current dense captioning models.
-- Initiate implementing framework to deploy the technologies.
 - Created a presentation on the selected model implementation.
+- Initiated implementing framework to deploy the technologies.
+- Organized GitHub and Google Drive to consistently contain identical materials.
 
 ## June 24th (Week 4)
 
