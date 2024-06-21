@@ -86,6 +86,12 @@ Today I am going to make a small demo of LLaVA and see if I should put it in my 
 
 Afternoon update:
 
-Had the meeting. Thinking about using Aristotle's 10 categories to make an image searcher. Waleed found TroL which seems better than LLaVA. Will update about that tmwr 
+Had the meeting. Thinking about using Aristotle's 10 categories to make an image searcher. Waleed found TroL which seems better than LLaVA. Will update about that tomorrow
 
 ![Ryan's Board June 20th, 2024 AFTERNOON](https://github.com/waggle-sensor/summer2024/blob/main/ryan/RyanBoard/IMG_3653.jpg)
+
+# June 21st, 2024
+
+Today I am going to work with the TroL model and see if it fits on the node. It was released 3 days ago and is incedible at captioning. My laptop can almost not handle it so I may try to use it on the blade. That will get me familiar with Docker as well which is probably something I need to work on anyway. I am still thinking about prompt engineering in a way to get TroL (or LLaVA) to output an explanation with Aristotle's 10 categories. I think this would help as a search capability. I'll try to have a decision by the end of the day for that. 
+
+![Ryan's Board June 20th, 2024 AFTERNOON](https://github.com/waggle-sensor/summer2024/blob/main/ryan/RyanBoard/IMG_3656.jpg)
