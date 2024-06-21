@@ -1,0 +1,31 @@
+# Use a minimal base image
+FROM python:3.11-slim
+
+# Install Git
+RUN apt-get update \
+    && apt-get install -y git 
+
+RUN 
+# Clone the Git repository at a specific commit
+RUN git clone --depth 1 https://github.com/ByungKwanLee/TroL.git TroL && \
+    cd TroL && \
+    git checkout 7a71dfb9acf1f5339ce29c30f9e2b07faa7757ca
+
+WORKDIR /TroL
+
+# Install PyTorch and torchvision using pip
+RUN pip install torch
+RUN pip install torchvision
+
+RUN pip install cuda-python
+
+# Install dependencies from requirements.txt
+RUN pip install -r requirements.txt
+
+# Install flash-attn with --no-build-isolation flag
+RUN pip install flash-attn --no-build-isolation
+
+# Clean conda and pip cache (optional)
+RUN pip cache purge
+
+CMD ["bash"]

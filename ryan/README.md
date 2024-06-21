@@ -94,4 +94,9 @@ Had the meeting. Thinking about using Aristotle's 10 categories to make an image
 
 Today I am going to work with the TroL model and see if it fits on the node. It was released 3 days ago and is incedible at captioning. My laptop can almost not handle it so I may try to use it on the blade. That will get me familiar with Docker as well which is probably something I need to work on anyway. I am still thinking about prompt engineering in a way to get TroL (or LLaVA) to output an explanation with Aristotle's 10 categories. I think this would help as a search capability. I'll try to have a decision by the end of the day for that. 
 
-![Ryan's Board June 20th, 2024 AFTERNOON](https://github.com/waggle-sensor/summer2024/blob/main/ryan/RyanBoard/IMG_3656.jpg)
+![Ryan's Board June 21th, 2024 Morning](https://github.com/waggle-sensor/summer2024/blob/main/ryan/RyanBoard/IMG_3656.jpg)
+
+I *almost* made a dockerfile work today. Technically it does work but it just doesn't run right. I'd say that is a win. Orin is blocking me from using docker right now and that is being resolved. I just tried to make the docker image on my computer so that, when the time comes, I can just load it up. It almost worked. But on Monday it will work! (I hope). After that is done I can move into the more fun logistics of making a basic search thing and a basic find thing. What "thing" is in this case I am still not sure. Hoping to present both demos on Thursday though. It depends on how much effort I drill into this. If things work right at a rate of 85% I think it will be okay.
+
+
+![Ryan's Board June 21th, 2024 AFTERNOON](https://github.com/waggle-sensor/summer2024/blob/main/ryan/RyanBoard/IMG_3657.jpg)

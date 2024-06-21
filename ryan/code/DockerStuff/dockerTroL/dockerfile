@@ -1,0 +1,57 @@
+# Use a minimal base image
+FROM python:3.11
+
+# Install necessary utilities
+RUN apt-get update \
+    && apt-get install -y git wget bzip2 ca-certificates build-essential
+
+# Install Miniconda
+RUN wget --quiet https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/miniconda.sh \
+    && /bin/bash ~/miniconda.sh -b -p /opt/conda \
+    && rm ~/miniconda.sh
+
+# Set up environment variables
+ENV PATH="/opt/conda/bin:$PATH"
+ENV CONDA_EXE="/opt/conda/bin/conda"
+
+# Verify conda installation
+RUN /opt/conda/bin/conda init bash
+
+# Create a new conda environment and activate it
+RUN /opt/conda/bin/conda create -n myenv python=3.11 -y
+SHELL ["/bin/bash", "--login", "-c"]
+
+# Activate the conda environment
+RUN echo "conda activate myenv" >> ~/.bashrc
+
+# Install cudatoolkit-dev from conda-forge channel
+RUN /opt/conda/bin/conda install -n myenv -c conda-forge cudatoolkit-dev -y
+
+# Clone the Git repository at a specific commit
+RUN git clone --depth 1 https://github.com/ByungKwanLee/TroL.git TroL && \
+    cd TroL && \
+    git checkout 7a71dfb9acf1f5339ce29c30f9e2b07faa7757ca
+
+
+WORKDIR /TroL
+
+
+# Install PyTorch and torchvision using pip
+RUN pip install torch torchvision 
+# Install additional dependencies (replace with actual dependencies)
+
+RUN pip install -r requirements.txt
+
+# Install cuda-python package (replace with actual package name)
+RUN pip install cuda-python
+
+# Install flash-attn with --no-build-isolation flag
+RUN pip install flash-attn --no-build-isolation
+
+# Clean conda and pip cache (optional)
+RUN pip cache purge
+
+COPY trolTester.py /TroL/
+COPY test.jpg /TroL/
+#CMD [ "python", "trolTester.py" ]
+CMD ["conda", "run", "-n", "myenv", "python", "trolTester.py"]
