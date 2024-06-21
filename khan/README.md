@@ -119,7 +119,7 @@ I primarily research using [Google Scholar](https://scholar.google.com) and [Pap
 - Continued to flesh out demonstration.
 - Created a presentation on the selected model implementation.
 - Initiated implementing framework to deploy the technologies.
-- Organized GitHub and Google Drive to consistently contain identical materials.
+- Organized GitHub and Google Drive materials.
 
 ## June 24th (Week 4)
 
