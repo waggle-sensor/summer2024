@@ -100,3 +100,12 @@ I *almost* made a dockerfile work today. Technically it does work but it just do
 
 
 ![Ryan's Board June 21th, 2024 AFTERNOON](https://github.com/waggle-sensor/summer2024/blob/main/ryan/RyanBoard/IMG_3657.jpg)
+
+
+
+# June 24th, 2024
+
+Today is the day docker finally works. It will work. After that I will try to load it on Orin if they allow me to use docker. If that still does not work I will just keep using and modifying the code locally until I think it will be suitable. Then, at some point before Wednesday, I will load it onto the node and just let it run. It would be nice to somehow add gradio to it so I can get some GUI to show it off. If not CLI works fine too.
+
+
+![Ryan's Board June 24th, 2024 Morning](https://github.com/waggle-sensor/summer2024/blob/main/ryan/RyanBoard/IMG_3660.jpg)
