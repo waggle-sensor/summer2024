@@ -35,7 +35,7 @@ The objective of this project is to leverage the notion of object recognition, a
 
 Exploring improvements for LLMs, including [efficiency](https://arxiv.org/abs/2406.02528) and architectural considerations like Transformers, Recurrent Neural Networks (RNNs), and [Mamba](https://arxiv.org/abs/2406.07522), a Generalized Action Representation (GAR) broadly akin to [Husky](https://arxiv.org/abs/2406.06469) could notably enhance the utility of LLMs.
 
-I primarily research using [Google Scholar](https://scholar.google.com) and [Papers With Code](https://paperswithcode.com).
+I primarily research with [Google Scholar](https://scholar.google.com) and [Papers With Code](https://paperswithcode.com).
 
 ## June 3rd (Week 1)
 
@@ -117,17 +117,30 @@ I primarily research using [Google Scholar](https://scholar.google.com) and [Pap
 - Stabilized and established blog workload and scheduling.
 - Continued to test TroL and integration with current dense captioning models.
 - Continued to flesh out demonstration.
-- Created a presentation on the selected model implementation.
-- Initiated implementing framework to deploy the technologies.
 - Organized GitHub and Google Drive materials.
 
 ## June 24th (Week 4)
 
-- Continued implementing framework to deploy the technologies.
-- Continued to polish presentation on the selected model implementation.
+- Continued to flesh out demonstration and model testing.
+- Extended presentation to include the selected model implementation.
+- Initiated implementing framework to deploy the technologies.
 
 ## June 25th
 
-- Met to present June 20th presentation in addition to new presentation.
-- Met to illustrate and discuss how to continue implementing framework.
+- Met to review accomplished milestones and strategize the next steps for advancing the framework implementation.
+- Continued to flesh out demonstration and model testing.
+- Continued to extend presentation to include the selected model implementation.
 - Continued implementing framework to deploy the technologies.
+
+## June 26th
+
+- Continued to flesh out demonstration and model testing.
+- Continued to extend presentation to include the selected model implementation.
+- Continued implementing framework to deploy the technologies.
+
+## June 27th
+
+- Presented on all current work concisely and comprehensively, discarding all older works.
+- Continued implementing framework to deploy the technologies.
+
+## July 1st (Week 5)
