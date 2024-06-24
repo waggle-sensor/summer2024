@@ -108,7 +108,7 @@ I primarily research with [Google Scholar](https://scholar.google.com) and [Pape
 ## June 20th
 
 - Presented on selection, implementation, evaluation, presentation, and demonstration of papers.
-- Fleshed out demonstration.
+- Fleshed out demonstration and model testing.
 - Tested TroL and integration with current dense captioning models.
 - Continued, commited, and pushed blog.
 
@@ -116,7 +116,7 @@ I primarily research with [Google Scholar](https://scholar.google.com) and [Pape
 
 - Stabilized and established blog workload and scheduling.
 - Continued to test TroL and integration with current dense captioning models.
-- Continued to flesh out demonstration.
+- Continued to flesh out demonstration and model testing.
 - Organized GitHub and Google Drive materials.
 
 ## June 24th (Week 4)
@@ -142,5 +142,10 @@ I primarily research with [Google Scholar](https://scholar.google.com) and [Pape
 
 - Presented on all current work concisely and comprehensively, discarding all older works.
 - Continued implementing framework to deploy the technologies.
+
+## June 28th
+
+- Continued implementing framework to deploy the technologies.
+- Uploaded all materials to GitHub and Google Drive.
 
 ## July 1st (Week 5)
