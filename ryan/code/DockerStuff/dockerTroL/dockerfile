@@ -5,6 +5,13 @@ FROM python:3.11
 RUN apt-get update \
     && apt-get install -y git wget bzip2 ca-certificates build-essential
 
+
+#There is a problem with TroL where CUDA_HOME cannot be found
+#The only solution I have found is to run:
+###   RUN /opt/conda/bin/conda install -n myenv -c conda-forge cudatoolkit-dev -y
+
+#Unfortunatly this means installing miniconda onto docker
+
 # Install Miniconda
 RUN wget --quiet https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/miniconda.sh \
     && /bin/bash ~/miniconda.sh -b -p /opt/conda \
@@ -27,7 +34,7 @@ RUN echo "conda activate myenv" >> ~/.bashrc
 # Install cudatoolkit-dev from conda-forge channel
 RUN /opt/conda/bin/conda install -n myenv -c conda-forge cudatoolkit-dev -y
 
-# Clone the Git repository at a specific commit
+# Clone the Git repository of TroL at a specific commit
 RUN git clone --depth 1 https://github.com/ByungKwanLee/TroL.git TroL && \
     cd TroL && \
     git checkout 7a71dfb9acf1f5339ce29c30f9e2b07faa7757ca
@@ -35,23 +42,26 @@ RUN git clone --depth 1 https://github.com/ByungKwanLee/TroL.git TroL && \
 
 WORKDIR /TroL
 
-
+# This is basically "bash install" but manually # 
 # Install PyTorch and torchvision using pip
 RUN pip install torch torchvision 
-# Install additional dependencies (replace with actual dependencies)
 
+#install other things 
 RUN pip install -r requirements.txt
 
-# Install cuda-python package (replace with actual package name)
+# Install cuda-python package
 RUN pip install cuda-python
 
 # Install flash-attn with --no-build-isolation flag
 RUN pip install flash-attn --no-build-isolation
 
-# Clean conda and pip cache (optional)
+# Clean conda and pip cache 
 RUN pip cache purge
 
 COPY trolTester.py /TroL/
 COPY test.jpg /TroL/
-#CMD [ "python", "trolTester.py" ]
+
+#It's actually so awful to have to do this
 CMD ["conda", "run", "-n", "myenv", "python", "trolTester.py"]
+
+#I'm sure there is a better and more effective way to do this

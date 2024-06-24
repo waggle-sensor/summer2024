@@ -11,7 +11,7 @@ link = "TroL-1.8B" # [Select One] 'TroL-1.8B' | 'TroL-3.8B' | 'TroL-7B'
 
 # User prompt
 prompt_type="with_image" # Select one option "text_only", "with_image"
-img_path='./bcf7ff3e-43a1-4460-82ea-245242816e08-large16x9_20240611_181259.jpg'
+img_path='./test.jpg'
 question="Please explain this image"
 
 # loading model

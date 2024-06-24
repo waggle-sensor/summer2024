@@ -109,3 +109,7 @@ Today is the day docker finally works. It will work. After that I will try to lo
 
 
 ![Ryan's Board June 24th, 2024 Morning](https://github.com/waggle-sensor/summer2024/blob/main/ryan/RyanBoard/IMG_3660.jpg)
+
+UPDATE: Docker works! It is now just a problem with the old CUDA version on the blade. However, I did make some major adjustments to the code so I will have to redo the dockerfile. That's ok because I know what I am doing now. I made a script that takes in SAGE images (with a user login) and makes a JSON file with it. My plan tomorrow is to take all that info and make a search function for it. Maybe with elastic search? I am not too sure yet. Will post the code tmwr--it is in another directory right now.
+
+![Ryan's Board June 24th, 2024 Morning](https://github.com/waggle-sensor/summer2024/blob/main/ryan/RyanBoard/IMG_3661.jpg)
