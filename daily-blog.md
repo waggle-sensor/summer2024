@@ -2,9 +2,41 @@
 
 Link to the code repository I'm working on: [PTZJEPA](https://github.com/Brookluo/PTZJEPA/tree/main)
 
+## Week 06/24 -- 06/30
+
+Main focus: evaluate the world model training performance and the dreamer training
+
+### 06/24 Mon
+
+- Updated the code to generate reward function from the predictor in world model
+  - Each image in a minibatch is used to compare with all other images to generate the embeddings (target, context), and the predictor. (Bijection-like)
+- Generated the embeddings for the images and the predictor
+- Performed clusterization and loss analysis for normal IJEPA and world model 
+
 ## Week 06/17 -- 06/23
 
 Main focus: start the world model and dreamer training on nodes
+
+### 06/21 Fri
+
+- Started inference on the world model on Dell blade
+- Fixed some bugs with the inference code
+- Haven't touched the dreamer training yet, will start it next week
+
+### 06/20 Thu
+
+- Discussed more framework details
+  - How to solve the communication issue between the nodes
+  - How to implement the federated learning
+  - Potential collapse due to low resolution and limited diversity of images
+- Fixed some bugs on reading bad images
+
+### 06/19 Wed
+
+- Discussed the gradient issue with Dario, and clarified the ML procedure
+  - The two losses are 1. embedding matching loss, and 2. prediction of the gradients
+  - Therefore, the `target_encoder.zero_grad()` is fine to use
+- Started the training of the world model on Dell blade. The training is using realtime images from the PTZ camera inside ANL.
 
 ### 06/18 Tue
 
