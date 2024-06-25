@@ -112,4 +112,10 @@ Today is the day docker finally works. It will work. After that I will try to lo
 
 UPDATE: Docker works! It is now just a problem with the old CUDA version on the blade. However, I did make some major adjustments to the code so I will have to redo the dockerfile. That's ok because I know what I am doing now. I made a script that takes in SAGE images (with a user login) and makes a JSON file with it. My plan tomorrow is to take all that info and make a search function for it. Maybe with elastic search? I am not too sure yet. Will post the code tmwr--it is in another directory right now.
 
-![Ryan's Board June 24th, 2024 Morning](https://github.com/waggle-sensor/summer2024/blob/main/ryan/RyanBoard/IMG_3661.jpg)
+![Ryan's Board June 24th, 2024 Afternoon](https://github.com/waggle-sensor/summer2024/blob/main/ryan/RyanBoard/IMG_3661.jpg)
+
+# Jun 25th, 2024
+
+Today I have Orin access. This means I can play around with docker again. I hope that they have a compatible CUDA version. I will make searchability work and maybe try out a real time search just to see. I think first I will start off with CLI but then switch to do a really simple GUI version of what I am working on if that is needed. I'll see how the day goes and the problems I run into. 
+
+![Ryan's Board June 25th, 2024 Morning](https://github.com/waggle-sensor/summer2024/blob/main/ryan/RyanBoard/IMG_3664.jpg)
