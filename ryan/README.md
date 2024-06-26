@@ -123,3 +123,9 @@ Today I have Orin access. This means I can play around with docker again. I hope
 Today I worked with ORIN but, due to the low CUDA version, was unable to build the docker image. I tried for a few hours in the morning to get it to run but to no avail. In the afternoon I finished building my search code (at least the early prototype) my code is now in the github. It can search based on "fuzzy search" (which isn't that good) or it can search with an LLM. That is better but not super prompt-engineered yet. Some good things to show for the meeting on Thursday. I will keep working on it. Also, I learned a little bit about gradio. I think it may be nice to have for the demo so I will keep plugging along with that in the morning. I do not know how I will build a dockerfile for all of this. It is going to be massive. Very massive. That is ok thought. I think image searching will turn out at leat 85% well in the end. It will not catch everything -- I already know that (and have false positives) but it is much better than nothing! 
 
 ![Ryan's Board June 25th, 2024 Afternoon](https://github.com/waggle-sensor/summer2024/blob/main/ryan/RyanBoard/IMG_3665.jpg)
+
+# Jun 26th, 2024
+
+I am making a GUI for my search prgoram today. This will give some nice abstraction to the code--making it easier to import to other places--and create a nice demo along the way. I need to do better prompt-engineering today as well in order to get the best results possible. Then, I will check out the Blade to see if it has an updated version of CUDA on it--or ask about it if it doesn't. Then, if I have time at the end of the day, I will start to remove the unecessary stuff from my dockerfile to make it smaller and faster to build. That may become a Friday thing though. 
+
+![Ryan's Board June 26th, 2024 Afternoon](https://github.com/waggle-sensor/summer2024/blob/main/ryan/RyanBoard/IMG_3668.jpg)
