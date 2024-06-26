@@ -128,4 +128,9 @@ Today I worked with ORIN but, due to the low CUDA version, was unable to build t
 
 I am making a GUI for my search prgoram today. This will give some nice abstraction to the code--making it easier to import to other places--and create a nice demo along the way. I need to do better prompt-engineering today as well in order to get the best results possible. Then, I will check out the Blade to see if it has an updated version of CUDA on it--or ask about it if it doesn't. Then, if I have time at the end of the day, I will start to remove the unecessary stuff from my dockerfile to make it smaller and faster to build. That may become a Friday thing though. 
 
-![Ryan's Board June 26th, 2024 Afternoon](https://github.com/waggle-sensor/summer2024/blob/main/ryan/RyanBoard/IMG_3668.jpg)
+![Ryan's Board June 26th, 2024 Morning](https://github.com/waggle-sensor/summer2024/blob/main/ryan/RyanBoard/IMG_3668.jpg)
+
+AFTERNOON:
+Got sidetracked with Florence-2. Not really side tracked but used all day because it is much better than TroL. And much much smaller. I made a search program for it. It is very much a prototype but it is good enough as a protoype. I think it may work on the node as well? I wish there was more time today to figure that out. Working on the GUI demo now that I have everything that I need. Should take only about an hour I hope. If there is still time before the meeting I may try a tiny version on the node? We will see. 
+
+![Ryan's Board June 26th, 2024 Afternoon](https://github.com/waggle-sensor/summer2024/blob/main/ryan/RyanBoard/IMG_3669.jpg)
