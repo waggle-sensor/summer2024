@@ -6,10 +6,26 @@ Link to the code repository I'm working on: [PTZJEPA](https://github.com/Brooklu
 
 Main focus: evaluate the world model training performance and the dreamer training
 
+### 06/26 Wed
+
+- Finished the evaluatin and found several issues:
+  - Rewards from the world model span in a very narrow range
+  - The self prediction reward is unexpectedly high
+  - The n step prediction does not have a clear path
+  - However, there are some patterns on the clusterization for each step case
+
+### 06/25 Tue
+
+- Started to evaluate the inference results
+- Tested the sorting and found some issues with the order
+- Presented some initial clusterization results
+
+
 ### 06/24 Mon
 
 - Updated the code to generate reward function from the predictor in world model
   - Each image in a minibatch is used to compare with all other images to generate the embeddings (target, context), and the predictor. (Bijection-like)
+  - Sort the input data in the order of image capturing time to ensure temporal coherence between images. We want the model to understand the movement of the images are continuous.
 - Generated the embeddings for the images and the predictor
 - Performed clusterization and loss analysis for normal IJEPA and world model 
 
