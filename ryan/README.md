@@ -134,3 +134,10 @@ AFTERNOON:
 Got sidetracked with Florence-2. Not really side tracked but used all day because it is much better than TroL. And much much smaller. I made a search program for it. It is very much a prototype but it is good enough as a protoype. I think it may work on the node as well? I wish there was more time today to figure that out. Working on the GUI demo now that I have everything that I need. Should take only about an hour I hope. If there is still time before the meeting I may try a tiny version on the node? We will see. 
 
 ![Ryan's Board June 26th, 2024 Afternoon](https://github.com/waggle-sensor/summer2024/blob/main/ryan/RyanBoard/IMG_3669.jpg)
+
+
+# Jun 27th, 2024
+
+The goal for the morning is to finish up the presentation. The goal for the afternoon is to deploy some kind of prototype onto the node. Should be good. I will have a much better description in the afternoon. 
+
+![Ryan's Board June 26th, 2024 Afternoon](https://github.com/waggle-sensor/summer2024/blob/main/ryan/RyanBoard/IMG_3672.jpg)
