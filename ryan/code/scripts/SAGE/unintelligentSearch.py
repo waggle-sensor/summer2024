@@ -39,6 +39,8 @@ with open("/home/ryanrearden/Documents/SAGE_fromLaptop/summer2024/ryan/code/scri
 search_term = input("Please input the search term you are looking for separated by a comma: ")
 search_terms = [term.strip().lower() for term in search_term.split(",")]
 
+
+#if search term is in the description or is one of the identified components, display the image
 for item in data:
     image = Image.open(item['image_path']).convert("RGB")
     for term in search_terms:

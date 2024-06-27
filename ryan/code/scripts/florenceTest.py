@@ -3,6 +3,7 @@ from PIL import Image
 import requests
 import matplotlib.pyplot as plt  
 import matplotlib.patches as patches  
+import time
 
 
 model_id = 'microsoft/Florence-2-base'
@@ -75,15 +76,28 @@ def plot_bbox(image, data):
 
 
 
-imgIpt = "/home/ryanrearden/Documents/SAGE_fromLaptop/summer2024/ryan/code/scripts/SAGE/Ambulance.jpg"
+#imgIpt = "/home/ryanrearden/Documents/SAGE_fromLaptop/summer2024/ryan/code/scripts/SAGE/Ambulance.jpg"
+imgIpt = "/home/ryanrearden/Documents/SAGE_fromLaptop/summer2024/ryan/code/scripts/SAGE/SageSearch/moreSagePics/1717524029976991969-sample.jpg"
 image = readImage(imgIpt)
 
-
+start_time = time.time()
 task_prompt = '<MORE_DETAILED_CAPTION>'
 results = run_example(task_prompt)
 print(results)
+text_input = results[task_prompt]
+task_prompt = '<CAPTION_TO_PHRASE_GROUNDING>'
+results = run_example(task_prompt, text_input)
 
-results = run_example('<DENSE_REGION_CAPTION>')
 print(results)
-plot_bbox(image, results['<DENSE_REGION_CAPTION>'])
+
+task_prompt = '<DENSE_REGION_CAPTION>'
+results_drc = run_example(task_prompt)
+
+
+end_time = time.time()
+
+plot_bbox(image, results['<CAPTION_TO_PHRASE_GROUNDING>'])
+plot_bbox(image, results_drc[task_prompt])
+print("Execution time:", end_time - start_time)
+
 

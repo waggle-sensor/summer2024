@@ -20,6 +20,7 @@ json_file_path = "/home/ryanrearden/Documents/SAGE_fromLaptop/summer2024/ryan/co
 #where to store downloaded images
 img_download_path = Path("/home/ryanrearden/Documents/SAGE_fromLaptop/summer2024/ryan/code/scripts/SAGE/SageSearch/moreSagePics")
 
+#grabs other node info
 def download_and_store_SAGEinfo():
     url = "https://auth.sagecontinuum.org/api/v-beta/nodes/?format=json"
     response = requests.get(url)
@@ -189,7 +190,7 @@ def remove_useless_phrases(label):
 username = input(f"\nPlease input your username: \n")
 userToken = input(f"\nPlease input your user token: \n")
 #shhh this is my usertoken 
-
+print("Don't foget to add your usertoken ")
 all_sage_info = download_and_store_SAGEinfo() 
 
 #make session for later
