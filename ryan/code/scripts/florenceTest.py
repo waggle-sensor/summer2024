@@ -77,7 +77,7 @@ def plot_bbox(image, data):
 
 
 #imgIpt = "/home/ryanrearden/Documents/SAGE_fromLaptop/summer2024/ryan/code/scripts/SAGE/Ambulance.jpg"
-imgIpt = "/home/ryanrearden/Documents/SAGE_fromLaptop/summer2024/ryan/code/scripts/SAGE/SageSearch/moreSagePics/1717524029976991969-sample.jpg"
+imgIpt = "/home/ryanrearden/Documents/SAGE_fromLaptop/summer2024/ryan/code/scripts/SAGE/SageSearch/moreSagePics/1714824014220338824-sample.jpg"
 image = readImage(imgIpt)
 
 start_time = time.time()
@@ -92,12 +92,13 @@ print(results)
 
 task_prompt = '<DENSE_REGION_CAPTION>'
 results_drc = run_example(task_prompt)
+print(results_drc)
 
 
 end_time = time.time()
 
-plot_bbox(image, results['<CAPTION_TO_PHRASE_GROUNDING>'])
-plot_bbox(image, results_drc[task_prompt])
+#plot_bbox(image, results['<CAPTION_TO_PHRASE_GROUNDING>'])
+#plot_bbox(image, results_drc[task_prompt])
 print("Execution time:", end_time - start_time)
 
 

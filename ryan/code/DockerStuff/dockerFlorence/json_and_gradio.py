@@ -15,10 +15,10 @@ processor = AutoProcessor.from_pretrained(model_id, trust_remote_code=True)
 
 
 #Where to store data after processing it
-json_file_path = "/home/ryanrearden/Documents/SAGE_fromLaptop/summer2024/ryan/code/scripts/SAGE/SageSearch/data.json"
+json_file_path = "data.json"
 
 #where to store downloaded images
-img_download_path = Path("/home/ryanrearden/Documents/SAGE_fromLaptop/summer2024/ryan/code/scripts/SAGE/SageSearch/moreSagePics")
+img_download_path = Path("sagePhotos")
 
 #grabs other node info
 def download_and_store_SAGEinfo():
@@ -54,12 +54,12 @@ def download_file(url, session, output_dir):
         return file_path 
     except requests.exceptions.RequestException as e:
         print(f'Failed to download {url}: {e}')
-
+        
 #Takes in nodes. Returns df
 def getData(nodes):
   return pd.concat([sage_data_client.query(
-      start="2024-06-04T18:00:00.000Z",
-      end="2024-06-05T09:00:00.000Z",
+      start="2024-05-05T06:00:00.000Z",
+      end="2024-05-05T09:00:00.000Z",
       filter={
           "plugin": "registry.sagecontinuum.org/theone/imagesampler:0.3.0.*",
           "vsn": node
@@ -67,7 +67,7 @@ def getData(nodes):
   ) for node in nodes], ignore_index=True)
 
 #takes in a lot of node img info plus where the json file is. Adds to the json file
-def jsonIT(node, focus, gps_lat, gps_lon, address, timestamp, img_path, description_text, identified_components, identified_component_boxes, json_file_path):
+def jsonIT(node, focus, gps_lat, gps_lon, address, timestamp, img_path, description_text, grouped_components, json_file_path):
     # Keeps data JSON-friendly 
     img_path = img_path.as_posix()
     timestamp = timestamp.isoformat()
@@ -81,9 +81,8 @@ def jsonIT(node, focus, gps_lat, gps_lon, address, timestamp, img_path, descript
         "gps_lat": gps_lat,
         "gps_lon": gps_lon,
         "address": address,
-        "identified_components": identified_components, 
-        "identified_component_boxes": identified_component_boxes,
-        "description": description_text
+        "description": description_text,
+        "components": grouped_components
     }
 
     # Read and update the existing data from the JSON file
@@ -185,12 +184,28 @@ def remove_useless_phrases(label):
          label = label[1:]
   return label
 
+#takes in componets and boxes from both labelers, returns dictionary 
+def group_components(components_from_description, boxes_from_description, identified_components, identified_component_boxes):
+    # Group components from description
+    grouped_components = {}
+    for component, box in zip(components_from_description, boxes_from_description):
+        if component not in grouped_components:
+            grouped_components[component] = []
+        grouped_components[component].append(box)
+
+    # Group identified components
+    for component, box in zip(identified_components, identified_component_boxes):
+        if component not in grouped_components:
+            grouped_components[component] = []
+        grouped_components[component].append(box)
+    
+    return grouped_components
 
 #Gets user parameters
-username = input(f"\nPlease input your username: \n")
-userToken = input(f"\nPlease input your user token: \n")
-#shhh this is my usertoken 
-print("Don't foget to add your usertoken ")
+#username = input(f"\nPlease input your username: \n")
+username = "rrearden"
+#userToken = input(f"\nPlease input your user token: \n")
+#print("Don't foget to add your usertoken ")
 all_sage_info = download_and_store_SAGEinfo() 
 
 #make session for later
@@ -222,15 +237,102 @@ for i in range(len(time_and_imgs['value'])):
         pastnode = node 
     img_path= img
 
+    #describes the image in a detailed manner 
     image = Image.open(img_path).convert("RGB")
     task_prompt = '<MORE_DETAILED_CAPTION>'
     description_text = run_example(task_prompt, image)
     description_text = description_text[task_prompt]
 
+    #takes those details and finds labels and boxes in the image
+    task_prompt = '<CAPTION_TO_PHRASE_GROUNDING>'
+    boxed_descriptions = run_example(task_prompt, image, description_text)
+    components_from_description = [remove_useless_phrases(label) for label in boxed_descriptions[task_prompt]['labels']]
+    boxes_from_description = boxed_descriptions[task_prompt]['bboxes']
+
+    #finds other things in the image that the description did not explicitly say
     labels = run_example('<DENSE_REGION_CAPTION>', image)
-
-
     identified_components = [remove_useless_phrases(label) for label in labels['<DENSE_REGION_CAPTION>']['labels']]
     identified_component_boxes = labels['<DENSE_REGION_CAPTION>']['bboxes']
 
-    jsonIT(node, focus, gps_lat, gps_lon, address, timestamp, img_path, description_text, identified_components, identified_component_boxes, json_file_path)
+    #puts all of the labels/boxes in a dictionary
+    grouped_components = group_components(components_from_description, boxes_from_description, identified_components, identified_component_boxes)
+
+    jsonIT(node, focus, gps_lat, gps_lon, address, timestamp, img_path, description_text, grouped_components, json_file_path)
+
+
+import json
+import os
+from PIL import Image, ImageDraw, ImageFont
+import gradio as gr
+
+def plot_bbox(image, boxes, label, font_size=50, box_width=10):
+    draw = ImageDraw.Draw(image)
+    font = ImageFont.truetype("UbuntuMono-Bold.ttf", font_size)  # Use a larger font
+    for bbox in boxes:
+        x1, y1, x2, y2 = bbox
+        draw.rectangle([x1, y1, x2, y2], outline="red", width=box_width)
+        text_bbox = draw.textbbox((x1, y1), label, font=font)
+        text_size = (text_bbox[2] - text_bbox[0], text_bbox[3] - text_bbox[1])
+        text_location = [x1, y1 - text_size[1]]
+        if text_location[1] < 0:
+            text_location[1] = y1 + text_size[1]
+        draw.rectangle([tuple(text_location), (text_location[0] + text_size[0], text_location[1] + text_size[1])], fill="red")
+        draw.text((x1, y1 - text_size[1]), label, fill="white", font=font)
+    return image
+
+# Load descriptions from JSON file
+data_file_path = "data.json"
+
+if not os.path.exists(data_file_path):
+    raise FileNotFoundError(f"JSON file not found: {data_file_path}")
+
+if os.path.getsize(data_file_path) == 0:
+    raise ValueError(f"JSON file is empty: {data_file_path}")
+
+try:
+    with open(data_file_path, "r") as f:
+        data = json.load(f)
+except json.JSONDecodeError as e:
+    raise ValueError(f"Error decoding JSON file: {e}")
+
+def search_images(search_term):
+    search_terms = [term.strip().lower() for term in search_term.split(",")]
+    results = []
+    
+    for item in data:
+        image_path = item['image_path']
+        matched_boxes = {}
+        for term in search_terms:
+            for component, boxes in item["components"].items():
+                if term in component.lower():
+                    if component not in matched_boxes:
+                        matched_boxes[component] = []
+                    matched_boxes[component].extend(boxes)
+                    
+        if matched_boxes:
+            results.append((image_path, matched_boxes))
+    
+    images = []
+    for img_path, matched_boxes in results:
+        image = Image.open(img_path).convert("RGB")
+        for label, boxes in matched_boxes.items():
+            image = plot_bbox(image, boxes, label)
+        images.append(image)
+    return images
+
+# Gradio interface
+def gradio_search_images(search_term):
+    images = search_images(search_term)
+    if not images:
+        return None
+    return images
+
+gr.Interface(
+    fn=gradio_search_images,
+    inputs="text",
+    outputs=gr.Gallery(label="Results"),
+    title="Image Search",
+    description="Enter search terms separated by commas to find images.",
+    #share=True  # Enable sharing to create a public link
+).launch()
+

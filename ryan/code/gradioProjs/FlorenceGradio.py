@@ -3,28 +3,19 @@ import os
 from PIL import Image, ImageDraw, ImageFont
 import gradio as gr
 
-
-
-def plot_bbox(image, item, i):
+def plot_bbox(image, boxes, label, font_size=50, box_width=10):
     draw = ImageDraw.Draw(image)
-    bbox = item['identified_component_boxes'][i]
-    label = item['identified_components'][i]
-    x1, y1, x2, y2 = bbox
-
-    # Increase box width
-    box_width = 10  # Adjust this value for desired box thickness
-
-    # Use a larger font
-    font = ImageFont.truetype("/usr/share/fonts/truetype/ubuntu/UbuntuMono-B.ttf", 50)  # Change font name and size as needed
-
-    draw.rectangle([x1, y1, x2, y2], outline="red", width=box_width)
-    text_bbox = draw.textbbox((x1, y1), label, font=font)
-    text_size = (text_bbox[2] - text_bbox[0], text_bbox[3] - text_bbox[1])
-    text_location = [x1, y1 - text_size[1]]
-    if text_location[1] < 0:
-        text_location[1] = y1 + text_size[1]
-    draw.rectangle([tuple(text_location), (text_location[0] + text_size[0], text_location[1] + text_size[1])], fill="red")
-    draw.text((x1, y1 - text_size[1]), label, fill="white", font=font)
+    font = ImageFont.truetype("/usr/share/fonts/truetype/ubuntu/UbuntuMono-B.ttf", font_size)  # Use a larger font
+    for bbox in boxes:
+        x1, y1, x2, y2 = bbox
+        draw.rectangle([x1, y1, x2, y2], outline="red", width=box_width)
+        text_bbox = draw.textbbox((x1, y1), label, font=font)
+        text_size = (text_bbox[2] - text_bbox[0], text_bbox[3] - text_bbox[1])
+        text_location = [x1, y1 - text_size[1]]
+        if text_location[1] < 0:
+            text_location[1] = y1 + text_size[1]
+        draw.rectangle([tuple(text_location), (text_location[0] + text_size[0], text_location[1] + text_size[1])], fill="red")
+        draw.text((x1, y1 - text_size[1]), label, fill="white", font=font)
     return image
 
 # Load descriptions from JSON file
@@ -48,18 +39,22 @@ def search_images(search_term):
     
     for item in data:
         image_path = item['image_path']
+        matched_boxes = {}
         for term in search_terms:
-            for i, component in enumerate(item["identified_components"]):
+            for component, boxes in item["components"].items():
                 if term in component.lower():
-                    results.append((image_path, item, i))
-            if term in item['description'].lower():
-                results.append((image_path, item, None))
+                    if component not in matched_boxes:
+                        matched_boxes[component] = []
+                    matched_boxes[component].extend(boxes)
+                    
+        if matched_boxes:
+            results.append((image_path, matched_boxes))
     
     images = []
-    for img_path, item, bbox_index in results:
+    for img_path, matched_boxes in results:
         image = Image.open(img_path).convert("RGB")
-        if bbox_index is not None:
-            image = plot_bbox(image, item, bbox_index)
+        for label, boxes in matched_boxes.items():
+            image = plot_bbox(image, boxes, label)
         images.append(image)
     return images
 
@@ -76,4 +71,5 @@ gr.Interface(
     outputs=gr.Gallery(label="Results"),
     title="Image Search",
     description="Enter search terms separated by commas to find images.",
+   # share=True  # Enable sharing to create a public link
 ).launch()

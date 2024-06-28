@@ -153,3 +153,5 @@ I spent most of the mornning working with gradio and making a demo and presentat
 Today I am going to make a dockerfile and run some tests with Florence on the node and/or Orin. Before that I will make some slight changes to the JSON file and try to also find a way to redirect the localhost gradio so that I can see it on my computer. I don't know how that works but I heard it is possible. 
 
 ![Ryan's Board June 28th, 2024 Morning](https://github.com/waggle-sensor/summer2024/blob/main/ryan/RyanBoard/IMG_3678.jpg)
+
+Good day -- will update blog about it Monday

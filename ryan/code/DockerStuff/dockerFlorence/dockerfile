@@ -1,0 +1,26 @@
+# Use a lightweight Python base image
+FROM nvcr.io/nvidia/pytorch:24.01-py3
+
+# Install required dependencies
+WORKDIR /app
+RUN pip install gradio==4.37.1 pandas==2.2.2 Pillow==10.3.0 Requests==2.32.3 sage_data_client==0.8.0 transformers==4.41.2 timm
+#torch==1.4.0 torchvision==0.5.0
+
+
+# Copy your Python scripts
+COPY json_and_gradio.py UbuntuMono-Bold.ttf ./
+
+
+# Set working directory for the container
+WORKDIR /app
+
+
+RUN mkdir -p sagePhotos
+RUN touch data.json
+
+RUN pip install --no-cache-dir gradio
+EXPOSE 7860
+ENV GRADIO_SERVER_NAME="0.0.0.0"
+
+# Command to run your Python scripts sequentially
+CMD ["python", "-u", "json_and_gradio.py"]
