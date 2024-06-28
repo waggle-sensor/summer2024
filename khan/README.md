@@ -145,7 +145,27 @@ I primarily research with [Google Scholar](https://scholar.google.com) and [Pape
 
 ## June 28th
 
+- Brainstormed viability to obtain temporal information on the edge.
 - Continued implementing framework to deploy the technologies.
-- Uploaded all materials to GitHub and Google Drive.
 
 ## July 1st (Week 5)
+
+- Uploaded all materials to GitHub and Google Drive.
+
+## July 2nd
+
+
+
+## July 3rd
+
+
+
+## July 4th
+
+
+
+## July 5th
+
+
+
+## July 8th (Week 6)
