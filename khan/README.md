@@ -65,7 +65,7 @@ I primarily research with [Google Scholar](https://scholar.google.com) and [Pape
 ## June 10th (Week 2)
 
 - Continued research on Google's Scenic.
-- Begun to experiment with other models.
+- Began to experiment with other models.
 
 ## June 11th
 
@@ -146,10 +146,12 @@ I primarily research with [Google Scholar](https://scholar.google.com) and [Pape
 ## June 28th
 
 - Brainstormed viability to obtain temporal information on the edge.
-- Continued implementing framework to deploy the technologies.
+- Completed implementing framework to deploy the technologies.
+- Initiated development of edge application (Waggle plugin).
 
 ## July 1st (Week 5)
 
+- Continued development of edge application (Waggle plugin).
 - Uploaded all materials to GitHub and Google Drive.
 
 ## July 2nd
