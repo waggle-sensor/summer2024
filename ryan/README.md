@@ -140,9 +140,16 @@ Got sidetracked with Florence-2. Not really side tracked but used all day becaus
 
 The goal for the morning is to finish up the presentation. The goal for the afternoon is to deploy some kind of prototype onto the node. Should be good. I will have a much better description in the afternoon. 
 
-![Ryan's Board June 26th, 2024 Morning](https://github.com/waggle-sensor/summer2024/blob/main/ryan/RyanBoard/IMG_3672.jpg)
+![Ryan's Board June 27th, 2024 Morning](https://github.com/waggle-sensor/summer2024/blob/main/ryan/RyanBoard/IMG_3672.jpg)
 
 I spent most of the mornning working with gradio and making a demo and presentation for the meeting. All of it was good. I spent some of the afternoon writing my abstract and will review it tomorrow. I am still trying to think of the best way to make all of the info searchable. Chris reccomended that I try out making the user select things I want them to select rather than letting them roam free with a blank "type anything" box. I think that will be the fastest way to do things. There may be a way to do a little bit of both but it is probably the best start I have. Tomorrow I am going to make a dockerfile and try it out on ORIN or a node -- just to see. I will also reformat my JSON file to fit what I want it to do just a little more (with caption to phrase grounding). I would like to get as much of this done before July as possible. 
 
-![Ryan's Board June 26th, 2024 Afternoon](https://github.com/waggle-sensor/summer2024/blob/main/ryan/RyanBoard/IMG_3677.jpg)
+![Ryan's Board June 27th, 2024 Afternoon](https://github.com/waggle-sensor/summer2024/blob/main/ryan/RyanBoard/IMG_3677.jpg)
 
+
+# Jun 28th, 2024
+
+
+Today I am going to make a dockerfile and run some tests with Florence on the node and/or Orin. Before that I will make some slight changes to the JSON file and try to also find a way to redirect the localhost gradio so that I can see it on my computer. I don't know how that works but I heard it is possible. 
+
+![Ryan's Board June 28th, 2024 Morning](https://github.com/waggle-sensor/summer2024/blob/main/ryan/RyanBoard/IMG_3678.jpg)
