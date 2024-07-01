@@ -165,3 +165,7 @@ Friday went well. I was able to put Florence-2 onto the blade and get it running
 Since docker and Florence-2 seem to be working together, I am going to write a script in order to deploy it on a node--just to see what happens. Hopefully nothing gets destroyed in the process. To make this script I will put together a gui interface. This should help Neal as well so that he can test the model out. Once that is done I will keep imporving the search and make it easier. If we have a meeting on Wednesday I may have a demo. Sean mentioned that there is a way to link VS code with Docker and SSH all in one. That would be awesome. I am going to try that out.
 
 ![Ryan's Board July 1st, 2024 Morining](https://github.com/waggle-sensor/summer2024/blob/main/ryan/RyanBoard/IMG_3692.jpg)
+
+Docker on the node is brutal. I think it itself is an AI machine who has the goal of destroying all moral and like for Docker. Every move I make it knows exactly how to break it. But it will be defeated. If not I'll just find another way to do what I need to do. More on that tomorrow I hope. 
+
+![Ryan's Board July 1st, 2024 Morining](https://github.com/waggle-sensor/summer2024/blob/main/ryan/RyanBoard/IMG_3693.jpg)

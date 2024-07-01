@@ -1,0 +1,1378 @@
+[
+    {
+        "node": "W07B",
+        "timestamp": "2024-05-05T06:00:14.402385140+00:00",
+        "image_path": "summer2024/ryan/code/scripts/SAGE/SageTests/sagePhotos/1714888814402385140-sample.jpg",
+        "focus": "Urban",
+        "gps_lat": 41.88462057460574,
+        "gps_lon": -87.62464411996037,
+        "address": "N. Michigan & E. Randolph, Chicago, IL",
+        "description": "The image is an aerial view of a busy street at night. The street is lined with buildings on both sides and there are several cars parked on the left side of the road. The buildings appear to be old and dilapidated, with broken windows and crumbling walls. The sky is dark and the street is lit up with streetlights. In the center of the image, there is a zebra crossing with white lines marking the lanes. There are several manhole covers on the sidewalk, and a few people can be seen walking on the sidewalks. The image appears to be taken from a high angle, looking down on the street.",
+        "components": {
+            "several cars": [
+                [
+                    1.2799999713897705,
+                    1047.3599853515625,
+                    497.91998291015625,
+                    1917.1199951171875
+                ],
+                [
+                    1.2799999713897705,
+                    1053.1199951171875,
+                    474.8799743652344,
+                    1631.0399169921875
+                ],
+                [
+                    1.2799999713897705,
+                    1533.1199951171875,
+                    495.3599853515625,
+                    1917.1199951171875
+                ]
+            ],
+            "The buildings": [
+                [
+                    2312.9599609375,
+                    0.9599999785423279,
+                    2556.159912109375,
+                    715.2000122070312
+                ]
+            ],
+            "The sky": [
+                [
+                    1.2799999713897705,
+                    0.9599999785423279,
+                    2351.35986328125,
+                    275.5199890136719
+                ]
+            ],
+            "a zebra crossing": [
+                [
+                    1.2799999713897705,
+                    699.8399658203125,
+                    992.0,
+                    1444.7999267578125
+                ]
+            ],
+            "several manhole covers": [
+                [
+                    1360.6400146484375,
+                    1325.760009765625,
+                    1675.52001953125,
+                    1596.47998046875
+                ]
+            ],
+            "police car with flashing lights on city street ": [
+                [
+                    1.2799999713897705,
+                    1060.7999267578125,
+                    474.8799743652344,
+                    1631.0399169921875
+                ]
+            ],
+            "black car with blue lights on street at dusk": [
+                [
+                    1.2799999713897705,
+                    1540.7999267578125,
+                    495.3599853515625,
+                    1917.1199951171875
+                ]
+            ],
+            "police cars  on street": [
+                [
+                    1365.760009765625,
+                    152.63999938964844,
+                    1836.7999267578125,
+                    271.67999267578125
+                ]
+            ],
+            "street light": [
+                [
+                    129.27999877929688,
+                    20.15999984741211,
+                    226.55999755859375,
+                    540.47998046875
+                ],
+                [
+                    382.7200012207031,
+                    73.91999816894531,
+                    433.91998291015625,
+                    206.39999389648438
+                ],
+                [
+                    1355.52001953125,
+                    68.15999603271484,
+                    1409.280029296875,
+                    187.1999969482422
+                ],
+                [
+                    1585.919921875,
+                    73.91999816894531,
+                    1634.5599365234375,
+                    173.75999450683594
+                ],
+                [
+                    1731.8399658203125,
+                    87.36000061035156,
+                    1775.3599853515625,
+                    144.95999145507812
+                ]
+            ],
+            "wheel": [
+                [
+                    323.8399963378906,
+                    1320.0,
+                    439.03997802734375,
+                    1423.679931640625
+                ],
+                [
+                    37.119998931884766,
+                    1548.47998046875,
+                    147.1999969482422,
+                    1629.1199951171875
+                ],
+                [
+                    326.3999938964844,
+                    1844.159912109375,
+                    444.1600036621094,
+                    1917.1199951171875
+                ],
+                [
+                    1585.919921875,
+                    246.72000122070312,
+                    1624.3199462890625,
+                    271.67999267578125
+                ],
+                [
+                    1114.8800048828125,
+                    225.59999084472656,
+                    1148.1600341796875,
+                    246.72000122070312
+                ]
+            ],
+            "car": [
+                [
+                    997.1199951171875,
+                    194.87998962402344,
+                    1163.52001953125,
+                    252.47999572753906
+                ],
+                [
+                    1368.3199462890625,
+                    206.39999389648438,
+                    1496.3199462890625,
+                    265.91998291015625
+                ],
+                [
+                    1693.43994140625,
+                    242.87998962402344,
+                    1775.3599853515625,
+                    292.79998779296875
+                ],
+                [
+                    1711.3599853515625,
+                    160.3199920654297,
+                    1772.7999267578125,
+                    191.0399932861328
+                ]
+            ]
+        }
+    },
+    {
+        "node": "W07B",
+        "timestamp": "2024-05-05T07:00:17.325883182+00:00",
+        "image_path": "summer2024/ryan/code/scripts/SAGE/SageTests/sagePhotos/1714892417325883182-sample.jpg",
+        "focus": "Urban",
+        "gps_lat": 41.88462057460574,
+        "gps_lon": -87.62464411996037,
+        "address": "N. Michigan & E. Randolph, Chicago, IL",
+        "description": "The image is an aerial view of a busy street at night. The street is empty, with no cars or people visible. The pavement is made of concrete and has a zebra crossing in the center. There are several manhole covers on the pavement, and a pedestrian crossing on the right side of the image. On the left side, there are buildings and streetlights, and on the top right corner, there is a tall building with a clock tower. The sky is dark, indicating that it is nighttime.",
+        "components": {
+            "several manhole covers": [
+                [
+                    1365.760009765625,
+                    1323.8399658203125,
+                    1675.52001953125,
+                    1598.4000244140625
+                ]
+            ],
+            "buildings": [
+                [
+                    2323.199951171875,
+                    0.9599999785423279,
+                    2556.159912109375,
+                    709.4400024414062
+                ]
+            ],
+            "a tall building": [
+                [
+                    2323.199951171875,
+                    0.9599999785423279,
+                    2553.599853515625,
+                    709.4400024414062
+                ]
+            ],
+            "The sky": [
+                [
+                    1.2799999713897705,
+                    0.9599999785423279,
+                    2556.159912109375,
+                    277.44000244140625
+                ],
+                [
+                    1.2799999713897705,
+                    0.9599999785423279,
+                    833.2799682617188,
+                    277.44000244140625
+                ]
+            ],
+            "nighttime street scene with street lamps and traffic lights": [
+                [
+                    119.04000091552734,
+                    18.239999771118164,
+                    231.67999267578125,
+                    546.239990234375
+                ]
+            ],
+            "street light": [
+                [
+                    121.5999984741211,
+                    18.239999771118164,
+                    226.55999755859375,
+                    342.7200012207031
+                ],
+                [
+                    380.1600036621094,
+                    73.91999816894531,
+                    436.47998046875,
+                    208.3199920654297
+                ],
+                [
+                    1355.52001953125,
+                    68.15999603271484,
+                    1409.280029296875,
+                    150.72000122070312
+                ]
+            ],
+            "nighttime scene with traffic lights and street lamps": [
+                [
+                    1.2799999713897705,
+                    212.1599884033203,
+                    103.68000030517578,
+                    331.1999816894531
+                ]
+            ],
+            "nighttime traffic light with green light and blue light": [
+                [
+                    1585.919921875,
+                    73.91999816894531,
+                    1637.1199951171875,
+                    171.83999633789062
+                ]
+            ]
+        }
+    },
+    {
+        "node": "W07B",
+        "timestamp": "2024-05-05T08:00:12.562275275+00:00",
+        "image_path": "summer2024/ryan/code/scripts/SAGE/SageTests/sagePhotos/1714896012562275275-sample.jpg",
+        "focus": "Urban",
+        "gps_lat": 41.88462057460574,
+        "gps_lon": -87.62464411996037,
+        "address": "N. Michigan & E. Randolph, Chicago, IL",
+        "description": "The image is an aerial view of a busy street at night. The street is empty, with no cars or people visible. The pavement is made of concrete and has a zebra crossing in the center. There are several manhole covers on the pavement, and a few people can be seen walking on the sidewalk. On the right side of the image, there is a tall building with a red awning. The buildings are lit up with streetlights, and there are trees and other buildings in the background. The sky is dark, indicating that it is nighttime.",
+        "components": {
+            "several manhole covers": [
+                [
+                    1360.6400146484375,
+                    1325.760009765625,
+                    1675.52001953125,
+                    1598.4000244140625
+                ]
+            ],
+            "a tall building": [
+                [
+                    2318.079833984375,
+                    0.9599999785423279,
+                    2556.159912109375,
+                    705.5999755859375
+                ]
+            ],
+            "The buildings": [
+                [
+                    1.2799999713897705,
+                    0.9599999785423279,
+                    2348.800048828125,
+                    302.3999938964844
+                ]
+            ],
+            "The sky": [
+                [
+                    1.2799999713897705,
+                    0.9599999785423279,
+                    2343.679931640625,
+                    233.27999877929688
+                ]
+            ],
+            "nighttime street scene with street lamps and traffic lights": [
+                [
+                    119.04000091552734,
+                    20.15999984741211,
+                    229.1199951171875,
+                    530.8800048828125
+                ]
+            ],
+            "nighttime scene with police cars and emergency lights": [
+                [
+                    1.2799999713897705,
+                    210.239990234375,
+                    108.79999542236328,
+                    325.44000244140625
+                ]
+            ],
+            "nighttime traffic lights on street ": [
+                [
+                    380.1600036621094,
+                    73.91999816894531,
+                    433.91998291015625,
+                    214.0800018310547
+                ]
+            ],
+            "nighttime police car with flashing lights": [
+                [
+                    308.47998046875,
+                    352.32000732421875,
+                    395.5199890136719,
+                    415.67999267578125
+                ]
+            ],
+            "nighttime photo of street lamp with red light and blue lights": [
+                [
+                    1352.9599609375,
+                    68.15999603271484,
+                    1404.159912109375,
+                    187.1999969482422
+                ]
+            ],
+            "street light": [
+                [
+                    1583.3599853515625,
+                    73.91999816894531,
+                    1632.0,
+                    171.83999633789062
+                ]
+            ]
+        }
+    },
+    {
+        "node": "W07B",
+        "timestamp": "2024-05-05T06:00:13.905083392+00:00",
+        "image_path": "summer2024/ryan/code/scripts/SAGE/SageTests/sagePhotos/1714888813905083392-sample.jpg",
+        "focus": "Urban",
+        "gps_lat": 41.88462057460574,
+        "gps_lon": -87.62464411996037,
+        "address": "N. Michigan & E. Randolph, Chicago, IL",
+        "description": "The image shows a view of a city street at night. The sky is dark and cloudy, and the street is lined with tall buildings. On the right side of the image, there is a tall building with a curved glass facade. The building appears to be a government building, as there are several other buildings visible in the background. The street is illuminated by streetlights, and there are a few people walking on the sidewalk. The image is taken from a low angle, looking up at the buildings.",
+        "components": {
+            "a tall building": [
+                [
+                    1744.6400146484375,
+                    0.9599999785423279,
+                    2556.159912109375,
+                    1047.3599853515625
+                ]
+            ],
+            "The building": [
+                [
+                    1580.7999267578125,
+                    0.9599999785423279,
+                    2556.159912109375,
+                    1917.1199951171875
+                ],
+                [
+                    1670.39990234375,
+                    893.760009765625,
+                    2556.159912109375,
+                    1917.1199951171875
+                ]
+            ],
+            "several other buildings": [
+                [
+                    1575.679931640625,
+                    1448.6400146484375,
+                    1749.760009765625,
+                    1917.1199951171875
+                ],
+                [
+                    1957.1199951171875,
+                    893.760009765625,
+                    2169.599853515625,
+                    1095.3599853515625
+                ]
+            ],
+            "A tall building with a curved glass facade .": [
+                [
+                    1747.199951171875,
+                    0.9599999785423279,
+                    2556.159912109375,
+                    1043.52001953125
+                ]
+            ],
+            "A tall white building with arched windows and a street lamp.": [
+                [
+                    2062.079833984375,
+                    1504.3199462890625,
+                    2315.52001953125,
+                    1917.1199951171875
+                ]
+            ],
+            "A tall, white building": [
+                [
+                    1580.7999267578125,
+                    1462.0799560546875,
+                    1749.760009765625,
+                    1917.1199951171875
+                ]
+            ],
+            "A close-up of a window with a light shining through it.": [
+                [
+                    2333.43994140625,
+                    1535.0399169921875,
+                    2556.159912109375,
+                    1872.9599609375
+                ]
+            ],
+            "A close up of a building with large windows and arched doors.": [
+                [
+                    2082.56005859375,
+                    1652.159912109375,
+                    2328.320068359375,
+                    1917.1199951171875
+                ]
+            ],
+            "A high-rise building  with a clock tower in the background.": [
+                [
+                    1962.239990234375,
+                    907.199951171875,
+                    2174.719970703125,
+                    1095.3599853515625
+                ]
+            ]
+        }
+    },
+    {
+        "node": "W07B",
+        "timestamp": "2024-05-05T07:00:16.527323947+00:00",
+        "image_path": "summer2024/ryan/code/scripts/SAGE/SageTests/sagePhotos/1714892416527323947-sample.jpg",
+        "focus": "Urban",
+        "gps_lat": 41.88462057460574,
+        "gps_lon": -87.62464411996037,
+        "address": "N. Michigan & E. Randolph, Chicago, IL",
+        "description": "The image shows a view of a city street at night. The sky is dark and cloudy, and the street is lined with tall buildings. On the right side of the image, there is a tall building with a curved glass facade. The building appears to be a neoclassical style, with ornate details and ornate carvings. In the background, there are other buildings and skyscrapers. The street is illuminated by streetlights, and there are a few people walking on the sidewalk. The image is taken from a low angle, looking up at the sky.",
+        "components": {
+            "a tall building": [
+                [
+                    1747.199951171875,
+                    0.9599999785423279,
+                    2556.159912109375,
+                    1043.52001953125
+                ]
+            ],
+            "The building": [
+                [
+                    1580.7999267578125,
+                    0.9599999785423279,
+                    2556.159912109375,
+                    1917.1199951171875
+                ],
+                [
+                    1665.2799072265625,
+                    893.760009765625,
+                    2556.159912109375,
+                    1917.1199951171875
+                ]
+            ],
+            "other buildings": [
+                [
+                    1573.1199951171875,
+                    1446.719970703125,
+                    1749.760009765625,
+                    1917.1199951171875
+                ]
+            ],
+            "A tall building with a curved glass facade .": [
+                [
+                    1749.760009765625,
+                    0.9599999785423279,
+                    2556.159912109375,
+                    1043.52001953125
+                ]
+            ],
+            "A tall white building with arched windows and a street lamp.": [
+                [
+                    1578.239990234375,
+                    1460.159912109375,
+                    1752.3199462890625,
+                    1917.1199951171875
+                ]
+            ],
+            "A close up of a building with large windows and arched doors.": [
+                [
+                    2333.43994140625,
+                    1533.1199951171875,
+                    2556.159912109375,
+                    1874.8800048828125
+                ]
+            ],
+            "A close-up of a window with a view of a city ": [
+                [
+                    2080.0,
+                    1650.239990234375,
+                    2333.43994140625,
+                    1917.1199951171875
+                ]
+            ],
+            "A tall tower with a clock tower in the background.": [
+                [
+                    1962.239990234375,
+                    907.199951171875,
+                    2172.159912109375,
+                    1095.3599853515625
+                ]
+            ]
+        }
+    },
+    {
+        "node": "W07B",
+        "timestamp": "2024-05-05T08:00:12.869141224+00:00",
+        "image_path": "summer2024/ryan/code/scripts/SAGE/SageTests/sagePhotos/1714896012869141224-sample.jpg",
+        "focus": "Urban",
+        "gps_lat": 41.88462057460574,
+        "gps_lon": -87.62464411996037,
+        "address": "N. Michigan & E. Randolph, Chicago, IL",
+        "description": "The image shows a night sky with a full moon visible on the left side. The sky is dark and cloudy, and the moon is partially obscured by a thick layer of fog. On the right side of the image, there is a tall building with a curved glass facade. The building appears to be a government building, as there are several other buildings visible in the background. The image is taken from a low angle, looking up at the building.",
+        "components": {
+            "the moon": [
+                [
+                    1.2799999713897705,
+                    154.55999755859375,
+                    183.0399932861328,
+                    567.3599853515625
+                ]
+            ],
+            "a tall building": [
+                [
+                    1744.6400146484375,
+                    0.9599999785423279,
+                    2556.159912109375,
+                    1047.3599853515625
+                ]
+            ],
+            "The building": [
+                [
+                    1583.3599853515625,
+                    0.9599999785423279,
+                    2556.159912109375,
+                    1917.1199951171875
+                ],
+                [
+                    1665.2799072265625,
+                    893.760009765625,
+                    2556.159912109375,
+                    1917.1199951171875
+                ]
+            ],
+            "several other buildings": [
+                [
+                    1575.679931640625,
+                    1452.47998046875,
+                    1747.199951171875,
+                    1917.1199951171875
+                ]
+            ],
+            "A tall building with a curved glass facade .": [
+                [
+                    1744.6400146484375,
+                    0.9599999785423279,
+                    2556.159912109375,
+                    1043.52001953125
+                ]
+            ],
+            "A large building with arched windows and a clock tower in the background.": [
+                [
+                    1578.239990234375,
+                    1464.0,
+                    1752.3199462890625,
+                    1917.1199951171875
+                ]
+            ],
+            "A close up of a large window with a clock on it.": [
+                [
+                    2330.8798828125,
+                    1533.1199951171875,
+                    2556.159912109375,
+                    1876.7999267578125
+                ]
+            ],
+            "A close-up of a building with large windows and arched doors.": [
+                [
+                    2080.0,
+                    1650.239990234375,
+                    2328.320068359375,
+                    1917.1199951171875
+                ]
+            ],
+            "A tall tower with a dome on top of it.": [
+                [
+                    1959.679931640625,
+                    907.199951171875,
+                    2169.599853515625,
+                    1095.3599853515625
+                ]
+            ]
+        }
+    },
+    {
+        "node": "W07A",
+        "timestamp": "2024-05-05T06:00:13.150901088+00:00",
+        "image_path": "summer2024/ryan/code/scripts/SAGE/SageTests/sagePhotos/1714888813150901088-sample.jpg",
+        "focus": "Urban",
+        "gps_lat": 41.884519582456015,
+        "gps_lon": -87.63675645813265,
+        "address": "N. Upper Wacker & W. Randolph, Chicago, IL",
+        "description": "The image is a view of a busy street at night from a high vantage point. The street is lined with tall buildings on both sides, and there are street lamps on the left and right sides of the road. The buildings are lit up with colorful lights, creating a vibrant and lively atmosphere. In the center of the image, there is a zebra crossing with white lines marking the lanes. The sky is dark, indicating that it is nighttime. The image is taken from a low angle, looking down on the street and the buildings.",
+        "components": {
+            "The street": [
+                [
+                    1.2799999713897705,
+                    0.9599999785423279,
+                    1401.5999755859375,
+                    807.3599853515625
+                ]
+            ],
+            "street lamps": [
+                [
+                    1.2799999713897705,
+                    0.9599999785423279,
+                    1396.47998046875,
+                    807.3599853515625
+                ]
+            ],
+            "The buildings": [
+                [
+                    1.2799999713897705,
+                    0.9599999785423279,
+                    1399.0399169921875,
+                    417.5999755859375
+                ]
+            ],
+            "a zebra crossing": [
+                [
+                    119.04000091552734,
+                    907.199951171875,
+                    1350.4000244140625,
+                    1917.1199951171875
+                ]
+            ],
+            "The sky": [
+                [
+                    1.2799999713897705,
+                    0.9599999785423279,
+                    2556.159912109375,
+                    361.91998291015625
+                ]
+            ],
+            "A view of a city street  from the top of a building.": [
+                [
+                    1.2799999713897705,
+                    0.9599999785423279,
+                    1391.3599853515625,
+                    415.67999267578125
+                ]
+            ],
+            "street light": [
+                [
+                    88.31999969482422,
+                    246.72000122070312,
+                    252.1599884033203,
+                    807.3599853515625
+                ],
+                [
+                    1.2799999713897705,
+                    450.239990234375,
+                    39.68000030517578,
+                    632.6400146484375
+                ],
+                [
+                    536.3200073242188,
+                    187.1999969482422,
+                    590.0800170898438,
+                    298.55999755859375
+                ]
+            ],
+            "A street at dusk with a street lamp and a traffic light.": [
+                [
+                    2120.9599609375,
+                    62.39999771118164,
+                    2284.800048828125,
+                    448.3199768066406
+                ]
+            ],
+            "A street lamp on a city sidewalk .": [
+                [
+                    2348.800048828125,
+                    141.1199951171875,
+                    2448.639892578125,
+                    544.3200073242188
+                ]
+            ],
+            "A street light on a busy street at a night.": [
+                [
+                    236.79998779296875,
+                    66.23999786376953,
+                    346.8800048828125,
+                    396.47998046875
+                ]
+            ],
+            "A street sign on a pole in front of a tall building.": [
+                [
+                    231.67999267578125,
+                    181.44000244140625,
+                    313.6000061035156,
+                    350.3999938964844
+                ]
+            ]
+        }
+    },
+    {
+        "node": "W07A",
+        "timestamp": "2024-05-05T07:00:15.070056260+00:00",
+        "image_path": "summer2024/ryan/code/scripts/SAGE/SageTests/sagePhotos/1714892415070056260-sample.jpg",
+        "focus": "Urban",
+        "gps_lat": 41.884519582456015,
+        "gps_lon": -87.63675645813265,
+        "address": "N. Upper Wacker & W. Randolph, Chicago, IL",
+        "description": "The image is a view of a busy street at night from a high vantage point. The street is lined with tall buildings on both sides, and there are several cars driving on the road. The buildings are lit up with colorful lights, and the street is empty except for a few people walking on the sidewalk. In the foreground, there is a pedestrian crossing with white zebra crossings. The image is taken from a low angle, looking down on the street. The sky is dark, indicating that it is nighttime.",
+        "components": {
+            "several cars": [
+                [
+                    2123.52001953125,
+                    452.1600036621094,
+                    2448.639892578125,
+                    676.7999877929688
+                ],
+                [
+                    2210.56005859375,
+                    515.5199584960938,
+                    2446.079833984375,
+                    672.9599609375
+                ],
+                [
+                    418.55999755859375,
+                    494.3999938964844,
+                    620.7999877929688,
+                    626.8800048828125
+                ],
+                [
+                    2126.079833984375,
+                    461.7599792480469,
+                    2336.0,
+                    557.760009765625
+                ]
+            ],
+            "The buildings": [
+                [
+                    1.2799999713897705,
+                    0.9599999785423279,
+                    1391.3599853515625,
+                    413.7599792480469
+                ]
+            ],
+            "a pedestrian crossing": [
+                [
+                    113.91999816894531,
+                    907.199951171875,
+                    1401.5999755859375,
+                    1917.1199951171875
+                ]
+            ],
+            "The sky": [
+                [
+                    1.2799999713897705,
+                    0.9599999785423279,
+                    2556.159912109375,
+                    361.91998291015625
+                ]
+            ],
+            "A view of a city street  from the top of a building.": [
+                [
+                    1.2799999713897705,
+                    0.9599999785423279,
+                    1391.3599853515625,
+                    413.7599792480469
+                ]
+            ],
+            "street light": [
+                [
+                    88.31999969482422,
+                    246.72000122070312,
+                    252.1599884033203,
+                    807.3599853515625
+                ],
+                [
+                    2351.35986328125,
+                    139.1999969482422,
+                    2448.639892578125,
+                    540.47998046875
+                ],
+                [
+                    236.79998779296875,
+                    64.31999969482422,
+                    346.8800048828125,
+                    396.47998046875
+                ],
+                [
+                    838.3999633789062,
+                    143.0399932861328,
+                    889.5999755859375,
+                    281.2799987792969
+                ]
+            ],
+            "night street scene with street lamps and traffic lights": [
+                [
+                    2123.52001953125,
+                    62.39999771118164,
+                    2284.800048828125,
+                    448.3199768066406
+                ]
+            ],
+            "black car with blue lights on city street": [
+                [
+                    2213.119873046875,
+                    525.1199951171875,
+                    2443.52001953125,
+                    661.4400024414062
+                ]
+            ],
+            "blue car with white lights on street": [
+                [
+                    421.1199951171875,
+                    504.0,
+                    618.239990234375,
+                    619.2000122070312
+                ]
+            ],
+            "car": [
+                [
+                    2133.760009765625,
+                    473.2799987792969,
+                    2336.0,
+                    542.3999633789062
+                ]
+            ],
+            "traffic light": [
+                [
+                    2351.35986328125,
+                    400.3199768066406,
+                    2384.639892578125,
+                    432.9599914550781
+                ]
+            ]
+        }
+    },
+    {
+        "node": "W07A",
+        "timestamp": "2024-05-05T08:00:14.855649912+00:00",
+        "image_path": "summer2024/ryan/code/scripts/SAGE/SageTests/sagePhotos/1714896014855649912-sample.jpg",
+        "focus": "Urban",
+        "gps_lat": 41.884519582456015,
+        "gps_lon": -87.63675645813265,
+        "address": "N. Upper Wacker & W. Randolph, Chicago, IL",
+        "description": "The image is a view of a busy street at night from a high vantage point. The street is lined with tall buildings on both sides, and there are street lamps on the left and right sides of the road. In the center of the image, there is a white car driving on the crosswalk. The sky is dark, indicating that it is nighttime. The image appears to be taken from a bird's eye view, looking down on the street.",
+        "components": {
+            "The street": [
+                [
+                    1.2799999713897705,
+                    0.9599999785423279,
+                    1399.0399169921875,
+                    807.3599853515625
+                ],
+                [
+                    1.2799999713897705,
+                    0.9599999785423279,
+                    1393.919921875,
+                    413.7599792480469
+                ]
+            ],
+            "street lamps": [
+                [
+                    1.2799999713897705,
+                    0.9599999785423279,
+                    1388.7999267578125,
+                    413.7599792480469
+                ]
+            ],
+            "a white car": [
+                [
+                    26.8799991607666,
+                    1202.8800048828125,
+                    615.6799926757812,
+                    1723.199951171875
+                ]
+            ],
+            "The sky": [
+                [
+                    1.2799999713897705,
+                    0.9599999785423279,
+                    2556.159912109375,
+                    365.7599792480469
+                ]
+            ],
+            "white car with blue lights on city street ": [
+                [
+                    29.439998626708984,
+                    1218.239990234375,
+                    615.6799926757812,
+                    1719.3599853515625
+                ]
+            ],
+            "street light": [
+                [
+                    239.36000061035156,
+                    66.23999786376953,
+                    346.8800048828125,
+                    396.47998046875
+                ]
+            ],
+            "wheel": [
+                [
+                    487.67999267578125,
+                    1377.5999755859375,
+                    584.9599609375,
+                    1467.8399658203125
+                ],
+                [
+                    200.95999145507812,
+                    1613.760009765625,
+                    300.79998779296875,
+                    1698.239990234375
+                ]
+            ]
+        }
+    },
+    {
+        "node": "W07A",
+        "timestamp": "2024-05-05T06:00:13.134021126+00:00",
+        "image_path": "summer2024/ryan/code/scripts/SAGE/SageTests/sagePhotos/1714888813134021126-sample.jpg",
+        "focus": "Urban",
+        "gps_lat": 41.884519582456015,
+        "gps_lon": -87.63675645813265,
+        "address": "N. Upper Wacker & W. Randolph, Chicago, IL",
+        "description": "The image shows a group of tall skyscrapers in a city at night. The buildings are made of glass and steel, and they are illuminated by streetlights. The sky is dark and foggy, and the buildings are shrouded in a thick layer of fog. The image is taken from a low angle, looking up at the buildings from below. The overall mood of the image is mysterious and urban.",
+        "components": {
+            "The buildings": [
+                [
+                    1324.7999267578125,
+                    563.5199584960938,
+                    2556.159912109375,
+                    1917.1199951171875
+                ],
+                [
+                    1.2799999713897705,
+                    375.3599853515625,
+                    869.1199951171875,
+                    1917.1199951171875
+                ],
+                [
+                    712.9599609375,
+                    1149.1199951171875,
+                    1248.0,
+                    1917.1199951171875
+                ]
+            ],
+            "A tall skyscraper in the fog with a street lamp in front of it.": [
+                [
+                    1314.5599365234375,
+                    569.2799682617188,
+                    2556.159912109375,
+                    1917.1199951171875
+                ]
+            ],
+            "A tall building with a lot of windows in the middle of it in the snow.": [
+                [
+                    1.2799999713897705,
+                    386.8800048828125,
+                    871.6799926757812,
+                    1917.1199951171875
+                ]
+            ],
+            "A view of a city street  with a building in the background.": [
+                [
+                    1.2799999713897705,
+                    0.9599999785423279,
+                    2556.159912109375,
+                    400.3199768066406
+                ]
+            ],
+            "A tall, modern building with multiple levels and a blue light on top.": [
+                [
+                    692.47998046875,
+                    1164.47998046875,
+                    1260.7999267578125,
+                    1917.1199951171875
+                ]
+            ]
+        }
+    },
+    {
+        "node": "W07A",
+        "timestamp": "2024-05-05T07:00:14.479768094+00:00",
+        "image_path": "summer2024/ryan/code/scripts/SAGE/SageTests/sagePhotos/1714892414479768094-sample.jpg",
+        "focus": "Urban",
+        "gps_lat": 41.884519582456015,
+        "gps_lon": -87.63675645813265,
+        "address": "N. Upper Wacker & W. Randolph, Chicago, IL",
+        "description": "The image shows a group of tall buildings in a city at night. The buildings appear to be skyscrapers, with many windows and balconies. The sky is dark and foggy, and the buildings are lit up with bright lights. The image is taken from a low angle, looking up at the buildings from below. The overall mood of the image is gloomy and gloomy.",
+        "components": {
+            "The buildings": [
+                [
+                    1324.7999267578125,
+                    563.5199584960938,
+                    2556.159912109375,
+                    1917.1199951171875
+                ],
+                [
+                    1.2799999713897705,
+                    373.44000244140625,
+                    869.1199951171875,
+                    1917.1199951171875
+                ],
+                [
+                    712.9599609375,
+                    1179.8399658203125,
+                    1245.43994140625,
+                    1917.1199951171875
+                ]
+            ],
+            "A tall building in the middle of a foggy city .": [
+                [
+                    1.2799999713897705,
+                    0.9599999785423279,
+                    2556.159912109375,
+                    1917.1199951171875
+                ]
+            ],
+            "A tall skyscraper in the fog with a street lamp in front of it.": [
+                [
+                    1317.1199951171875,
+                    571.2000122070312,
+                    2556.159912109375,
+                    1917.1199951171875
+                ]
+            ],
+            "skyscraper": [
+                [
+                    1.2799999713897705,
+                    386.8800048828125,
+                    869.1199951171875,
+                    1917.1199951171875
+                ]
+            ],
+            "A foggy view of the exterior of a tall building.": [
+                [
+                    682.239990234375,
+                    1191.3599853515625,
+                    1263.3599853515625,
+                    1917.1199951171875
+                ]
+            ]
+        }
+    },
+    {
+        "node": "W07A",
+        "timestamp": "2024-05-05T08:00:14.067716881+00:00",
+        "image_path": "summer2024/ryan/code/scripts/SAGE/SageTests/sagePhotos/1714896014067716881-sample.jpg",
+        "focus": "Urban",
+        "gps_lat": 41.884519582456015,
+        "gps_lon": -87.63675645813265,
+        "address": "N. Upper Wacker & W. Randolph, Chicago, IL",
+        "description": "The image shows a foggy cityscape with tall buildings in the background. The buildings appear to be skyscrapers, with many windows and balconies. The sky is dark and cloudy, and there is a thick layer of fog covering the entire scene. The fog creates a mysterious and ethereal atmosphere. The image is taken from a low angle, looking up at the buildings from below. The overall mood of the image is eerie and mysterious.",
+        "components": {
+            "The buildings": [
+                [
+                    1324.7999267578125,
+                    565.4400024414062,
+                    2556.159912109375,
+                    1917.1199951171875
+                ],
+                [
+                    1.2799999713897705,
+                    373.44000244140625,
+                    869.1199951171875,
+                    1917.1199951171875
+                ],
+                [
+                    712.9599609375,
+                    1149.1199951171875,
+                    1248.0,
+                    1917.1199951171875
+                ]
+            ],
+            "The fog": [
+                [
+                    1.2799999713897705,
+                    0.9599999785423279,
+                    380.1600036621094,
+                    1064.6400146484375
+                ]
+            ],
+            "A tall building in the middle of a foggy city .": [
+                [
+                    1.2799999713897705,
+                    0.9599999785423279,
+                    2556.159912109375,
+                    1917.1199951171875
+                ]
+            ],
+            "A tall skyscraper in the fog with a street lamp in front of it.": [
+                [
+                    1314.5599365234375,
+                    571.2000122070312,
+                    2556.159912109375,
+                    1917.1199951171875
+                ]
+            ],
+            "skyscraper": [
+                [
+                    1.2799999713897705,
+                    386.8800048828125,
+                    869.1199951171875,
+                    1917.1199951171875
+                ]
+            ],
+            "A high-rise building with a blue light shining on it.": [
+                [
+                    682.239990234375,
+                    1164.47998046875,
+                    1268.47998046875,
+                    1917.1199951171875
+                ]
+            ]
+        }
+    },
+    {
+        "node": "W01B",
+        "timestamp": "2024-05-05T06:00:47.044921194+00:00",
+        "image_path": "summer2024/ryan/code/scripts/SAGE/SageTests/sagePhotos/1714888847044921194-sample.jpg",
+        "focus": "Rural",
+        "gps_lat": 40.35067872123443,
+        "gps_lon": -90.08610984360944,
+        "address": "Emiquon Nature Preserve, 10563-11491 N State Rte 97, Lewistown, IL 61542",
+        "description": "The image is a black and white photograph of a landscape at night. The sky is dark and the horizon is visible in the distance. The photograph appears to be taken from a low angle, looking up at the horizon. In the center of the image, there is a long, thin strip of light that is partially obscured by the light. The light is shining brightly, creating a contrast between the dark sky and the bright light. On the left side of the photograph, there are a few trees and shrubs, and on the right side, there appears to have a few buildings or structures. The overall mood of the photo is peaceful and serene.",
+        "components": {
+            "The sky": [
+                [
+                    1.2799999713897705,
+                    0.9599999785423279,
+                    2556.159912109375,
+                    623.0399780273438
+                ]
+            ],
+            "thin strip": [
+                [
+                    625.9199829101562,
+                    507.8399963378906,
+                    2556.159912109375,
+                    680.6400146484375
+                ]
+            ],
+            "a few trees": [
+                [
+                    477.44000244140625,
+                    500.1600036621094,
+                    858.8800048828125,
+                    671.0399780273438
+                ]
+            ],
+            "few buildings": [
+                [
+                    477.44000244140625,
+                    500.1600036621094,
+                    646.3999633789062,
+                    634.5599975585938
+                ]
+            ],
+            "structures": [
+                [
+                    480.0,
+                    502.0799865722656,
+                    858.8800048828125,
+                    667.2000122070312
+                ]
+            ]
+        }
+    },
+    {
+        "node": "W01B",
+        "timestamp": "2024-05-05T07:00:27.885908025+00:00",
+        "image_path": "summer2024/ryan/code/scripts/SAGE/SageTests/sagePhotos/1714892427885908025-sample.jpg",
+        "focus": "Rural",
+        "gps_lat": 40.35067872123443,
+        "gps_lon": -90.08610984360944,
+        "address": "Emiquon Nature Preserve, 10563-11491 N State Rte 97, Lewistown, IL 61542",
+        "description": "The image is a black and white photograph of a night sky. The sky is dark and the horizon is visible in the background. In the center of the image, there is a hill with a few trees on the left side. The hill appears to be covered in fog or mist, and there are a few small lights scattered across it. The image is taken from a low angle, looking up at the hill. The overall mood of the photograph is peaceful and serene.",
+        "components": {
+            "The sky": [
+                [
+                    1.2799999713897705,
+                    0.9599999785423279,
+                    2556.159912109375,
+                    626.8800048828125
+                ]
+            ],
+            "a hill": [
+                [
+                    1.2799999713897705,
+                    494.3999938964844,
+                    871.6799926757812,
+                    795.8399658203125
+                ]
+            ],
+            "The hill": [
+                [
+                    1.2799999713897705,
+                    515.5199584960938,
+                    2556.159912109375,
+                    841.9199829101562
+                ]
+            ],
+            "few small lights": [
+                [
+                    1404.159912109375,
+                    546.239990234375,
+                    1537.2799072265625,
+                    767.0399780273438
+                ]
+            ]
+        }
+    },
+    {
+        "node": "W01B",
+        "timestamp": "2024-05-05T06:00:43.976907784+00:00",
+        "image_path": "summer2024/ryan/code/scripts/SAGE/SageTests/sagePhotos/1714888843976907784-sample.jpg",
+        "focus": "Rural",
+        "gps_lat": 40.35067872123443,
+        "gps_lon": -90.08610984360944,
+        "address": "Emiquon Nature Preserve, 10563-11491 N State Rte 97, Lewistown, IL 61542",
+        "description": "The image is a black and white photograph of a spherical object. The object appears to be made of glass or a similar material and has a smooth, shiny surface. It has a round shape with a slightly curved top and a flat bottom. The surface of the object is covered in small, irregularly shaped particles, creating a textured pattern. The particles are arranged in a way that creates a sense of depth and dimension. The background of the image is completely black, making the object stand out.",
+        "components": {
+            "The object": [
+                [
+                    1.0240000486373901,
+                    1.0240000486373901,
+                    2044.9281005859375,
+                    2044.9281005859375
+                ]
+            ],
+            "crystal sphere with white lines": [
+                [
+                    1.0240000486373901,
+                    1.0240000486373901,
+                    2044.9281005859375,
+                    2044.9281005859375
+                ]
+            ]
+        }
+    },
+    {
+        "node": "W01B",
+        "timestamp": "2024-05-05T07:00:27.885908062+00:00",
+        "image_path": "summer2024/ryan/code/scripts/SAGE/SageTests/sagePhotos/1714892427885908062-sample.jpg",
+        "focus": "Rural",
+        "gps_lat": 40.35067872123443,
+        "gps_lon": -90.08610984360944,
+        "address": "Emiquon Nature Preserve, 10563-11491 N State Rte 97, Lewistown, IL 61542",
+        "description": "The image is a black and white photograph of a spherical object. The object appears to be made of glass or a similar material and has a smooth, shiny surface. It has a round shape with a slightly curved top and a flat bottom. The surface of the object is covered in small, irregularly shaped dots, creating a textured pattern. The dots are evenly spaced and appear to be evenly spaced. The background of the image is completely black, making the object stand out.",
+        "components": {
+            "The object": [
+                [
+                    1.0240000486373901,
+                    1.0240000486373901,
+                    2044.9281005859375,
+                    2044.9281005859375
+                ]
+            ],
+            "crystal sphere with white lines": [
+                [
+                    1.0240000486373901,
+                    1.0240000486373901,
+                    2044.9281005859375,
+                    2044.9281005859375
+                ]
+            ]
+        }
+    },
+    {
+        "node": "W01B",
+        "timestamp": "2024-05-05T08:02:14.988770400+00:00",
+        "image_path": "summer2024/ryan/code/scripts/SAGE/SageTests/sagePhotos/1714896134988770400-sample.jpg",
+        "focus": "Rural",
+        "gps_lat": 40.35067872123443,
+        "gps_lon": -90.08610984360944,
+        "address": "Emiquon Nature Preserve, 10563-11491 N State Rte 97, Lewistown, IL 61542",
+        "description": "The image is a black and white photograph of a night sky. The sky is dark and the horizon is visible in the distance. The photograph appears to be taken from a low angle, looking up at the horizon. In the center of the image, there is a long, curved line of light that is partially obscured by the light. The light is shining brightly, creating a contrast between the dark sky and the bright light. On the left side of the photograph, there are a few trees silhouetted against the dark background. The image is taken from above, giving a sense of depth and perspective.",
+        "components": {
+            "The sky": [
+                [
+                    1.2799999713897705,
+                    0.9599999785423279,
+                    2556.159912109375,
+                    617.2799682617188
+                ]
+            ],
+            "curved line": [
+                [
+                    1422.0799560546875,
+                    540.47998046875,
+                    2264.320068359375,
+                    632.6400146484375
+                ]
+            ],
+            "a few trees": [
+                [
+                    1.2799999713897705,
+                    500.1600036621094,
+                    871.6799926757812,
+                    761.2799682617188
+                ]
+            ]
+        }
+    },
+    {
+        "node": "W01B",
+        "timestamp": "2024-05-05T08:02:14.908313235+00:00",
+        "image_path": "summer2024/ryan/code/scripts/SAGE/SageTests/sagePhotos/1714896134908313235-sample.jpg",
+        "focus": "Rural",
+        "gps_lat": 40.35067872123443,
+        "gps_lon": -90.08610984360944,
+        "address": "Emiquon Nature Preserve, 10563-11491 N State Rte 97, Lewistown, IL 61542",
+        "description": "The image is a black and white photograph of a spherical object. The object appears to be made of glass or a similar material and has a smooth, shiny surface. It has a round shape with a slightly curved top and a flat bottom. The surface of the object is covered in small, irregularly shaped dots, giving it a textured appearance. The dots are evenly spaced and appear to be evenly spaced. The background of the image is completely black, making the object stand out.",
+        "components": {
+            "The object": [
+                [
+                    1.0240000486373901,
+                    1.0240000486373901,
+                    2044.9281005859375,
+                    2044.9281005859375
+                ]
+            ],
+            "crystal sphere with white lines": [
+                [
+                    1.0240000486373901,
+                    1.0240000486373901,
+                    2044.9281005859375,
+                    2044.9281005859375
+                ]
+            ]
+        }
+    }
+]
