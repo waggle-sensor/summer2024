@@ -151,8 +151,7 @@ I primarily research with [Google Scholar](https://scholar.google.com) and [Pape
 
 ## July 1st (Week 5)
 
-- Writing dense captioning application for edge.
-- Writing querying application for cloud.
+- Wrote dense captioning application for edge and querying application for cloud.
 - Began designing and gathering details for poster and presentation.
 
 ## July 2nd
