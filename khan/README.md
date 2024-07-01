@@ -151,12 +151,12 @@ I primarily research with [Google Scholar](https://scholar.google.com) and [Pape
 
 ## July 1st (Week 5)
 
-- Continued development of edge application (Waggle plugin).
-- Uploaded all materials to GitHub and Google Drive.
+- Wrote dense captioning application for edge and querying application for cloud.
+- Began designing and gathering details for poster and presentation.
 
 ## July 2nd
 
-
+- Uploaded all materials to GitHub and Google Drive.
 
 ## July 3rd
 
