@@ -53,3 +53,12 @@ I used a simple linear regression model to try and figure out the relationship b
 
 # June 24, 2024
 Today, I explained to Seongha the problems and information I found from my work on Friday and on the weekend. The conclusion was that there was no correlation or relationship between the two variables. No conversion rate means there is no way I can expand my dataset. I can't convert irradiance to wattage from the tower data. 
+
+# June 25, 2024 
+Even with the no correlation, I continued to work on a model with solar wattage to at least say I did that. This would be much more useful than the solar voltage model I created previously. Wattage is a much better representation of solar irradiance than voltage. I also added some better metrics such as MAE, RMSE, and R2 score to explain the performance of my regression model. Previously I had used accuracy, and a threshold for that, which was very subjective and didn't really make sense.
+
+# June 28, 2024
+I started working on the clearsky classification model. I worked on sorting through all of the daylight sky images into their respective folders. I also designated all of the images that contained blockers into their respective folder. After sorting I was left with around 500 clear sky images and 2000 other images. I duplicated the clear sky images until I reached a folder size of 2000 images. This made the dataset more balanced and prevents overfitting. 
+
+# July 1, 2024
+I worked on the clear sky classification model and tested it. It came out to an impressive accuracy of 98% and recall and precision both above 97%. This showed that my model was predicting and generalizing well. I then started working on trying to plot the mpl data that was downloaded through lcrc. 
