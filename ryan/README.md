@@ -169,3 +169,9 @@ Since docker and Florence-2 seem to be working together, I am going to write a s
 Docker on the node is brutal. I think it itself is an AI machine who has the goal of destroying all moral and like for Docker. Every move I make it knows exactly how to break it. But it will be defeated. If not I'll just find another way to do what I need to do. More on that tomorrow I hope. 
 
 ![Ryan's Board July 1st, 2024 Morining](https://github.com/waggle-sensor/summer2024/blob/main/ryan/RyanBoard/IMG_3693.jpg)
+
+# July 2, 2024
+
+Today is a continuation of yesterday. I will hopefully have Florence up and running on the node. I am thinking, if it doesn't work the way I have it right now, to instead deploy a little tiny CLI version. That would be a lightweight and effieicnt for a prototype. I will try to get everything working though. I think I am sure I can get Ollama working pretty easlily so that shouldn't take too long
+
+![Ryan's Board July 2nd, 2024 Morining](https://github.com/waggle-sensor/summer2024/blob/main/ryan/RyanBoard/IMG_3695.jpg)
