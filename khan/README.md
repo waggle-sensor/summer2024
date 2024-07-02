@@ -156,11 +156,12 @@ I primarily research with [Google Scholar](https://scholar.google.com) and [Pape
 
 ## July 2nd
 
-- Uploaded all materials to GitHub and Google Drive.
+- Continue dense captioning application for edge and querying application for cloud.
+- Continue designing and gathering details for poster and presentation.
 
 ## July 3rd
 
-
+- Uploaded all materials to GitHub and Google Drive.
 
 ## July 4th
 
