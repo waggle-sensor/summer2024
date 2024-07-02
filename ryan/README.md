@@ -175,3 +175,7 @@ Docker on the node is brutal. I think it itself is an AI machine who has the goa
 Today is a continuation of yesterday. I will hopefully have Florence up and running on the node. I am thinking, if it doesn't work the way I have it right now, to instead deploy a little tiny CLI version. That would be a lightweight and effieicnt for a prototype. I will try to get everything working though. I think I am sure I can get Ollama working pretty easlily so that shouldn't take too long
 
 ![Ryan's Board July 2nd, 2024 Morining](https://github.com/waggle-sensor/summer2024/blob/main/ryan/RyanBoard/IMG_3695.jpg)
+
+Endded up getting the node to run Florence-2 on the CPU. That was good. It seems that the CUDA version is too old for the pytorch version that I need. If I have time, I will try to deploy the NVIDIA GPU version on V001 tomorrow if I have time. I was also able to get Ollama up and running. It was very slow. It took about 13 minutes for it to determine what was going on in an image. I think Florence is going to win the race for what we need to do. I will check out all of the CPU and memory usages. In terms of CPU time on Florence it runs under a minute. Stil very slow but faster. Will try to run Dario's LLava version on it too. If I had more time today I would have done all of these things but I kept running into strange container issues with everything. Should be still on track
+
+![Ryan's Board July 2nd, 2024 Morining](https://github.com/waggle-sensor/summer2024/blob/main/ryan/RyanBoard/IMG_3696.jpg)

@@ -15,9 +15,10 @@ import numpy as np
 import subprocess
 subprocess.run('pip install flash-attn --no-build-isolation', env={'FLASH_ATTENTION_SKIP_CUDA_BUILD': "TRUE"}, shell=True)
 
+device = "cpu"
 models = {
-    'microsoft/Florence-2-large': AutoModelForCausalLM.from_pretrained('microsoft/Florence-2-large', trust_remote_code=True).to("cuda").eval(),
-    'microsoft/Florence-2-base': AutoModelForCausalLM.from_pretrained('microsoft/Florence-2-base', trust_remote_code=True).to("cuda").eval(),
+    'microsoft/Florence-2-large': AutoModelForCausalLM.from_pretrained('microsoft/Florence-2-large', trust_remote_code=True).to(device).eval(),
+    'microsoft/Florence-2-base': AutoModelForCausalLM.from_pretrained('microsoft/Florence-2-base', trust_remote_code=True).to(device).eval(),
 }
 
 processors = {
@@ -45,7 +46,7 @@ def run_example(task_prompt, image, text_input=None, model_id='microsoft/Florenc
         prompt = task_prompt
     else:
         prompt = task_prompt + text_input
-    inputs = processor(text=prompt, images=image, return_tensors="pt").to("cuda")
+    inputs = processor(text=prompt, images=image, return_tensors="pt").to(device)
     generated_ids = model.generate(
         input_ids=inputs["input_ids"],
         pixel_values=inputs["pixel_values"],

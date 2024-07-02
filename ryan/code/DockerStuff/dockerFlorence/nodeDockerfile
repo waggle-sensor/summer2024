@@ -1,6 +1,6 @@
 # Use a lightweight Python base image
 FROM nvcr.io/nvidia/l4t-pytorch:r32.4.2-pth1.5-py3
-
+ARG PYTHON_VERSION=3.6.2 
 # Install required dependencies
 WORKDIR /app
 RUN pip3 install gradio pandas Pillow Requests sage_data_client transformers timm
@@ -22,5 +22,5 @@ RUN pip install --no-cache-dir gradio
 EXPOSE 7860
 ENV GRADIO_SERVER_NAME="0.0.0.0"
 
-# Command to run your Python scripts sequentially
+# Command to run your Python scripts 
 CMD ["python", "-u", "FHugGradio.py"]

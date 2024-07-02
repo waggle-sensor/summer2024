@@ -104,12 +104,7 @@ def jsonIT(node, focus, gps_lat, gps_lon, address, timestamp, img_path, descript
             json.dump(existing_data, file, indent=4)
     else:
         # If the file doesn't exist, create it and write the new data
-        with open(json_file_path, "w") as file:
-            json.dump([new_data], file, indent=4)
-
-    print("JSON data appended and written")
-
-def run_example(task_prompt, image, text_input=None):
+        with open(json_file_path, "w") as file:cuda
     if text_input is None:
         prompt = task_prompt
     else:
