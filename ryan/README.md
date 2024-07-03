@@ -178,4 +178,12 @@ Today is a continuation of yesterday. I will hopefully have Florence up and runn
 
 Endded up getting the node to run Florence-2 on the CPU. That was good. It seems that the CUDA version is too old for the pytorch version that I need. If I have time, I will try to deploy the NVIDIA GPU version on V001 tomorrow if I have time. I was also able to get Ollama up and running. It was very slow. It took about 13 minutes for it to determine what was going on in an image. I think Florence is going to win the race for what we need to do. I will check out all of the CPU and memory usages. In terms of CPU time on Florence it runs under a minute. Stil very slow but faster. Will try to run Dario's LLava version on it too. If I had more time today I would have done all of these things but I kept running into strange container issues with everything. Should be still on track
 
-![Ryan's Board July 2nd, 2024 Morining](https://github.com/waggle-sensor/summer2024/blob/main/ryan/RyanBoard/IMG_3696.jpg)
+![Ryan's Board July 2nd, 2024 Afternoon](https://github.com/waggle-sensor/summer2024/blob/main/ryan/RyanBoard/IMG_3696.jpg)
+
+# July 3rd, 2024
+
+Benchmarking on the nodes is the number one priority today. Especially before the presentation. If something goes wrong, even having a rough estimate of what to expect would help. I will try Ollama's LLaVa and Florence. If there is time I will try LLaVA by itself. 
+
+![Ryan's Board July 2nd, 2024 Morining](https://github.com/waggle-sensor/summer2024/blob/main/ryan/RyanBoard/IMG_3702.jpg)
+
+

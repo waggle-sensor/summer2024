@@ -77,7 +77,7 @@ def plot_bbox(image, data):
 
 
 #imgIpt = "/home/ryanrearden/Documents/SAGE_fromLaptop/summer2024/ryan/code/scripts/SAGE/Ambulance.jpg"
-imgIpt = "/home/ryanrearden/Documents/SAGE_fromLaptop/summer2024/ryan/code/scripts/SAGE/SageSearch/moreSagePics/1714824014220338824-sample.jpg"
+imgIpt = "/home/ryanrearden/Downloads/IMG_3678.jpg"
 image = readImage(imgIpt)
 
 start_time = time.time()
