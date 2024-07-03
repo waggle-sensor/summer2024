@@ -1,30 +1,28 @@
 import requests
 from PIL import Image
 from transformers import AutoProcessor, AutoModelForCausalLM
+import time 
 
 
+startprogram = time.time()
 def readImage(imgIpt):
   #a horrible hackish way to determine if its an URL or a downloaded img
   if "http" in imgIpt:
     return Image.open(requests.get(imgIpt, stream=True).raw)
     
-
   else:
     #opens image if its already on the computer
     image = Image.open(f'{imgIpt}')
     image = image.convert("RGB")
   
-  #Printed to know how long it takes
-  print("finished downloading image :)")
-  
   return image
 
 image = input(f"Enter the image you would like to describe\n")
+start = time.time()
 image = readImage(image)
-model = AutoModelForCausalLM.from_pretrained("microsoft/Florence-2-base", trust_remote_code=True, revision="main").eval().cuda()
+end = time.time()
+model = AutoModelForCausalLM.from_pretrained("microsoft/Florence-2-base", trust_remote_code=True, revision="main")
 processor = AutoProcessor.from_pretrained("microsoft/Florence-2-base", trust_remote_code=True, revision="main")
-
-
 
 def run_example(task_prompt, image, text_input=None):
     if text_input is None:
@@ -33,8 +31,8 @@ def run_example(task_prompt, image, text_input=None):
         prompt = task_prompt + text_input
     inputs = processor(text=prompt, images=image, return_tensors="pt")
     generated_ids = model.generate(
-      input_ids=inputs["input_ids"].cuda(),
-      pixel_values=inputs["pixel_values"].cuda(),
+      input_ids=inputs["input_ids"],
+      pixel_values=inputs["pixel_values"],
       max_new_tokens=1024,
       early_stopping=False,
       do_sample=False,
@@ -56,20 +54,21 @@ description_text = description_text[task_prompt]
 #takes those details and finds labels and boxes in the image
 task_prompt = '<CAPTION_TO_PHRASE_GROUNDING>'
 boxed_descriptions = run_example(task_prompt, image, description_text)
+
 #only prints out labels not bboxes
 descriptions = boxed_descriptions[task_prompt]['labels']
-#components_from_description = [remove_useless_phrases(label) for label in boxed_descriptions[task_prompt]['labels']]
-#boxes_from_description = boxed_descriptions[task_prompt]['bboxes']
+
 
 #finds other things in the image that the description did not explicitly say
 task_prompt = '<DENSE_REGION_CAPTION>'
 labels = run_example(task_prompt, image)
+
 #only prints out labels not bboxes
 printed_labels = labels[task_prompt]['labels']
-#identified_components = [remove_useless_phrases(label) for label in labels['<DENSE_REGION_CAPTION>']['labels']]
-#identified_component_boxes = labels['<DENSE_REGION_CAPTION>']['bboxes']
 
-#puts all of the labels/boxes in a dictionary
-#grouped_components = group_components(components_from_description, boxes_from_description, identified_components, identified_component_boxes)
-
+endprogram = time.time()
+print(f"Time took running the program: ", (endprogram-startprogram), " seconds\n\n")
 print(description_text, descriptions, printed_labels)
+
+
+
