@@ -187,3 +187,7 @@ Benchmarking on the nodes is the number one priority today. Especially before th
 ![Ryan's Board July 2nd, 2024 Morining](https://github.com/waggle-sensor/summer2024/blob/main/ryan/RyanBoard/IMG_3702.jpg)
 
 
+I was able to deploy everything and it seemed to work well. I ended the day by reformatting my files in my github to make it easier for useability. I hope to add documentation to everything as well so it's not a complete mess. 
+
+![Ryan's Board July 2nd, 2024 Morining](https://github.com/waggle-sensor/summer2024/blob/main/ryan/RyanBoard/IMG_3703.jpg)
+

@@ -104,28 +104,11 @@ def jsonIT(node, focus, gps_lat, gps_lon, address, timestamp, img_path, descript
             json.dump(existing_data, file, indent=4)
     else:
         # If the file doesn't exist, create it and write the new data
-        with open(json_file_path, "w") as file:cuda
-    if text_input is None:
-        prompt = task_prompt
-    else:
-        prompt = task_prompt + text_input
-    inputs = processor(text=prompt, images=image, return_tensors="pt")
-    generated_ids = model.generate(
-      input_ids=inputs["input_ids"].cuda(),
-      pixel_values=inputs["pixel_values"].cuda(),
-      max_new_tokens=1024,
-      early_stopping=False,
-      do_sample=False,
-      num_beams=3,
-    )
-    generated_text = processor.batch_decode(generated_ids, skip_special_tokens=False)[0]
-    parsed_answer = processor.post_process_generation(
-        generated_text, 
-        task=task_prompt, 
-        image_size=(image.width, image.height)
-    )
+        with open(json_file_path, "w") as file:
+            json.dump([new_data], file, indent=4)
 
-    return parsed_answer
+    print("JSON data appended and written")
+
 
 def readImage(imgIpt):
   #a horrible hackish way to determine if its an URL or a downloaded img
@@ -179,6 +162,29 @@ def remove_useless_phrases(label):
          label = label[1:]
   return label
 
+def run_example(task_prompt, image, text_input=None):
+    if text_input is None:
+        prompt = task_prompt
+    else:
+        prompt = task_prompt + text_input
+    inputs = processor(text=prompt, images=image, return_tensors="pt")
+    generated_ids = model.generate(
+      input_ids=inputs["input_ids"],
+      pixel_values=inputs["pixel_values"],
+      max_new_tokens=1024,
+      early_stopping=False,
+      do_sample=False,
+      num_beams=3,
+    )
+    generated_text = processor.batch_decode(generated_ids, skip_special_tokens=False)[0]
+    parsed_answer = processor.post_process_generation(
+        generated_text, 
+        task=task_prompt, 
+        image_size=(image.width, image.height)
+    )
+
+    return parsed_answer
+
 #takes in componets and boxes from both labelers, returns dictionary 
 def group_components(components_from_description, boxes_from_description, identified_components, identified_component_boxes):
     # Group components from description
@@ -197,15 +203,16 @@ def group_components(components_from_description, boxes_from_description, identi
     return grouped_components
 
 #Gets user parameters
-#username = input(f"\nPlease input your username: \n")
-username = "rrearden"
-#userToken = input(f"\nPlease input your user token: \n")
-#print("Don't foget to add your usertoken ")
+
+username = ""
+usertoken = ""
+
+print("Don't foget to add your username and usertoken on lines 207 and 208!\n Comment me out on line 210 when you do it\n if you read the README you would have known this was comming")
 all_sage_info = download_and_store_SAGEinfo() 
 
 #make session for later
 with requests.Session() as session:
-    session.auth = (username, userToken)
+    session.auth = (username, usertoken)
 
 #gets all the data from the node
 nodes = ["W026", "W07B", "W07A", "W01B"]

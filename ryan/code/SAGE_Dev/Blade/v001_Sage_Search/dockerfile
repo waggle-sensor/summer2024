@@ -1,0 +1,27 @@
+# Gives correct torch and CUDA
+FROM nvcr.io/nvidia/pytorch:24.01-py3
+
+#Go to app directory
+WORKDIR /app
+
+#Install needed packages
+RUN pip install gradio==4.37.1 pandas==2.2.2 Pillow==10.3.0 Requests==2.32.3 sage_data_client==0.8.0 transformers==4.41.2 timm
+
+
+
+# Copy your Python scripts
+COPY make_and_search_JSON.py UbuntuMono-Bold.ttf ./
+
+
+# Set working directory for the container (I don't think you need this)
+WORKDIR /app
+
+RUN mkdir -p sagePhotos
+RUN touch data.jsonS
+
+RUN pip install --no-cache-dir gradio
+EXPOSE 7860
+ENV GRADIO_SERVER_NAME="0.0.0.0"
+
+# Command to run your Python scripts sequentially
+CMD ["python", "-u", "make_and_search_JSON.py"]                                 
