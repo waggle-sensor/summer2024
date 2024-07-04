@@ -156,22 +156,22 @@ I primarily research with [Google Scholar](https://scholar.google.com) and [Pape
 
 ## July 2nd
 
-- Continue dense captioning application for edge and querying application for cloud.
-- Continue designing and gathering details for poster and presentation.
+- Continued dense captioning application for edge and querying application for cloud.
+- Continued designing and gathering details for poster and presentation.
 
 ## July 3rd
 
-- Continue dense captioning application for edge and querying application for cloud.
-- Continue designing and gathering details for poster and presentation.
+- Continued dense captioning application for edge and querying application for cloud.
+- Continued designing and gathering details for poster and presentation.
 
 ## July 5th
 
-- Continue designing and gathering details for poster and presentation.
+- Continued designing and gathering details for poster and presentation.
 - Uploaded all materials to GitHub and Google Drive.
 
 ## July 8th (Week 6)
 
-- Continue dense captioning application for edge and querying application for cloud.
+- Continued dense captioning application for edge and querying application for cloud.
 
 ## July 9th
 
