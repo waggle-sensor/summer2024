@@ -191,3 +191,10 @@ I was able to deploy everything and it seemed to work well. I ended the day by r
 
 ![Ryan's Board July 2nd, 2024 Morining](https://github.com/waggle-sensor/summer2024/blob/main/ryan/RyanBoard/IMG_3703.jpg)
 
+# July 5th, 2024
+
+I will continue to improve my codebase so that it can be read and understood by people. The goal within the next few days is to have READMEs and comments on my code so they can be forked and modified with ease. 
+
+Next week I will get back to imporving the code/dockerfile, making a better search feature, and adding important features for blade and node search functionality. 
+
+
