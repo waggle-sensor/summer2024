@@ -16,6 +16,9 @@ COPY florence_add_any_photo_demo.py UbuntuMono-Bold.ttf ./
 # Set working directory for the container (I don't think you need this)
 WORKDIR /app
 
+# Create cache directories
+ENV TRANSFORMERS_CACHE="/hf_cache"
+
 RUN mkdir -p sagePhotos
 RUN touch data.json
 

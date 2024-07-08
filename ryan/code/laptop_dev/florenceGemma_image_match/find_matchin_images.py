@@ -3,8 +3,9 @@ from PIL import Image
 from transformers import AutoProcessor, AutoModelForCausalLM
 import time 
 import os 
+import json
 
-
+device = "cpu"
 #takes in an image url/dir returns an readable image 
 def readImage(imgIpt):
     #a horrible hackish way to determine if its an URL or a downloaded img
@@ -43,13 +44,38 @@ def run_example(task_prompt, image, text_input=None):
 
       return parsed_answer
 
+def runOllama(user_description, image_description):
+    # Define the URL of your local server
+    url = 'http://localhost:11434/api/generate'
+
+    # Define the data payload as a dictionary
+    payload = {
+        "model": "gemma2:latest",
+        "prompt": f"The user asks {user_description} An image came back with the description: {image_description} Do you think the user would like to see the image attached to the description based on what the user wants and what the description is? Say ONLY YES or NO based on what you think"
+    }
+
+    # Send the POST request
+    response = requests.post(url, json=payload)
+
+    # Check if the request was successful
+    if response.status_code == 200:
+        response_text = []
+        lines = response.text.strip().split('\n')
+
+        for line in lines:
+            json_response = json.loads(line)
+            if 'response'  in json_response:
+                response_text.append(json_response['response'])
+
+        print(''.join(response_text))
+    else:
+        print(f"Error: {response.status_code}, {response.text}")
 
 #loads the model and processor
 model = AutoModelForCausalLM.from_pretrained("microsoft/Florence-2-base", trust_remote_code=True, revision="main")
 processor = AutoProcessor.from_pretrained("microsoft/Florence-2-base", trust_remote_code=True, revision="main")
-
 #gets the images
-image_directory = "/app/testphotos"
+image_directory = "/home/ryanrearden/Documents/SAGE_fromLaptop/summer2024/ryan/code/laptop_dev/florenceGemma_image_match/testphotos"
 
 #lists the images
 image_files = [f for f in os.listdir(image_directory)]
@@ -59,6 +85,7 @@ for image in image_files:
   startprogram = time.time()
 
   image = readImage(image)
+  
 
   #gives a few descriptive sentences
   task_prompt = '<MORE_DETAILED_CAPTION>'
@@ -84,8 +111,14 @@ for image in image_files:
   endprogram = time.time()
   print(f"Time took running the program: ", (endprogram-startprogram), " seconds\n\n")
 
+  image_description = (description_text, descriptions, printed_labels)
+  
   #prints the info 
-  print(description_text, descriptions, printed_labels)
+  print(image_description)
+  image.show()
+
+  user_description = "Tell me when an image with a car at night appears on node W0B5"
+  runOllama(user_description, image_description)
 
 
 

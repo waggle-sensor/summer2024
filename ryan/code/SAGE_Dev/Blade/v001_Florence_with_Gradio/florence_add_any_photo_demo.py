@@ -7,13 +7,14 @@ import copy
 from PIL import Image, ImageDraw, ImageFont 
 import io
 import matplotlib.pyplot as plt
-import matplotlib.patches as patches
+import matplotlib.patches as patches  
+
 
 import random
 import numpy as np
 
-import subprocess
-subprocess.run('pip install flash-attn --no-build-isolation', env={'FLASH_ATTENTION_SKIP_CUDA_BUILD': "TRUE"}, shell=True)
+#import subprocess
+#subprocess.run('pip install flash-attn --no-build-isolation', env={'FLASH_ATTENTION_SKIP_CUDA_BUILD': "TRUE"}, shell=True)
 
 device = "cuda"
 models = {
@@ -289,7 +290,7 @@ with gr.Blocks(css=css) as demo:
         with gr.Row():
             with gr.Column():
                 input_img = gr.Image(label="Input Picture")
-                model_selector = gr.Dropdown(choices=list(models.keys()), label="Model", value='microsoft/Florence-2-large')
+                model_selector = gr.Dropdown(choices=list(models.keys()), label="Model", value='microsoft/Florence-2-base')
                 task_type = gr.Radio(choices=['Single task', 'Cascased task'], label='Task type selector', value='Single task')
                 task_prompt = gr.Dropdown(choices=single_task_list, label="Task Prompt", value="Caption")
                 task_type.change(fn=update_task_dropdown, inputs=task_type, outputs=task_prompt)

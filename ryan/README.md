@@ -204,3 +204,6 @@ As I am going along, I may contunue to make adjustments to my code. I think it i
 ![Ryan's Board July 8th, 2024 Morning](https://github.com/waggle-sensor/summer2024/blob/main/ryan/RyanBoard/IMG_3726.jpg)
 
 
+Today I loaded Gemma-2 onto my laptop and tried a prototype of search. Seems to be going ok. The Blade stopped working so I can't make too much real progress until that gets fixed. I can still do some stuff locally. All going well. Still trying to think of what should go on the blade and what should go on the node.
+
+![Ryan's Board July 8th, 2024 Afternoon](https://github.com/waggle-sensor/summer2024/blob/main/ryan/RyanBoard/IMG_3728.jpg)
