@@ -189,12 +189,18 @@ Benchmarking on the nodes is the number one priority today. Especially before th
 
 I was able to deploy everything and it seemed to work well. I ended the day by reformatting my files in my github to make it easier for useability. I hope to add documentation to everything as well so it's not a complete mess. 
 
-![Ryan's Board July 2nd, 2024 Morining](https://github.com/waggle-sensor/summer2024/blob/main/ryan/RyanBoard/IMG_3703.jpg)
+![Ryan's Board July 2nd, 2024 Afternoon](https://github.com/waggle-sensor/summer2024/blob/main/ryan/RyanBoard/IMG_3703.jpg)
 
 # July 5th, 2024
 
 I will continue to improve my codebase so that it can be read and understood by people. The goal within the next few days is to have READMEs and comments on my code so they can be forked and modified with ease. 
 
 Next week I will get back to imporving the code/dockerfile, making a better search feature, and adding important features for blade and node search functionality. 
+
+# July 8th, 2024
+
+As I am going along, I may contunue to make adjustments to my code. I think it is better to imporve as I move so that I don't have to go back and fix things every other week. The main goal is to turn the code into a more usable prototype so that it can be implimented without many issues. I will also benchmark the power/memory usage. I did this on Wednesday but only briefly. I would like to create a more consitent showcase so that it can be proven that one LLM is better than the other. 
+
+![Ryan's Board July 8th, 2024 Morning](https://github.com/waggle-sensor/summer2024/blob/main/ryan/RyanBoard/IMG_3726.jpg)
 
 
