@@ -207,3 +207,10 @@ As I am going along, I may contunue to make adjustments to my code. I think it i
 Today I loaded Gemma-2 onto my laptop and tried a prototype of search. Seems to be going ok. The Blade stopped working so I can't make too much real progress until that gets fixed. I can still do some stuff locally. All going well. Still trying to think of what should go on the blade and what should go on the node.
 
 ![Ryan's Board July 8th, 2024 Afternoon](https://github.com/waggle-sensor/summer2024/blob/main/ryan/RyanBoard/IMG_3728.jpg)
+
+
+# July 9th, 2024
+
+While the Blade is still down I am going to try to completly containerize the huggingFace model on the node to see if that speeds up deployment. It would be nice if it does. I will also make a diagram or two to show what the eventual end goal is. I think that will help in the Thursday meeting. 
+
+![Ryan's Board July 8th, 2024 Afternoon](https://github.com/waggle-sensor/summer2024/blob/main/ryan/RyanBoard/IMG_3729.jpg)
