@@ -1,14 +1,76 @@
 # Daily logs
 
-Link to the code repository I'm working on: [PTZJEPA](https://github.com/Brookluo/PTZJEPA/tree/main)
+Link to the code repository I'm working on: [PTZJEPA](https://github.com/Brookluo/PTZJEPA)
+These codes are merged into the [main waggle repository](https://github.com/waggle-sensor/PTZJEPA)
+
+## Week 07/08 -- 07/14
+
+### 07/10 Tue
+
+- The DBSCAN result for the embeddings shows that the model learns some clear pattern of the image
+  but after looking into the images, I didn't find a clear meaning of the clusters. Will try to look into the images more.
+- Discussed this result with Dario and he suggested that there might be some potential bugs in the code
+  causing the model to learn the wrong information.
+- The nodes are down, so I cannot check the life-long learning workflow on the Dell blade.
+
+### 07/09 Mon
+
+- Trying to understand the meanings of the clusters from the world model
+- Trying to run the whole workflow for life-long learning on the Dell blade
+
+## Week 07/01 -- 07/07
+
+### 07/05 Fri
+
+- Finished the evaluation of the fourth channel
+- Generated some tSNE plots for the embeddings to show the clusterization
+- There are some distinct clusters and start to look into the meaning of each cluster
+
+### 07/04 Thu
+
+- Independence day
+
+### 07/03 Wed
+
+- Attended the team meeting
+- Finished the training and started the evaluation of the fourth channel
+
+### 07/02 Tue
+
+- Fixed issues with image directories
+- Finished adding the depth as a fourth channel
+- Started the fourth channel training on the Dell blade
+
+### 07/01 Mon
+
+- Start to add the depth as the fourth channel
+- Improved the logging messages inside the training
 
 ## Week 06/24 -- 06/30
 
 Main focus: evaluate the world model training performance and the dreamer training
 
+### 06/28 Fri
+
+- Modified the code to use position directly rather parsing the distance from the image name
+- Had more discussions on interpreting the embeddings and the clusters
+  - The model seems to **not** learn the depth or zoom information very well
+  - Adding the depth or zoom as the fourth channel
+  - Transform (such as normalization or projection) the reward into wider space for model to learn it better
+
+### 06/27 Thu
+
+- Merged the code from my repository to the main waggle repository
+- Tested the code to run on Dell blade controlling both the Axis and Hanwha cameras
+- Attended the team meeting and discussed the next steps
+- Got feedback from the team on the evaluation results
+  - Check input from the world model and add more diagnostics for the dataset
+  - Calculate the distance between each image and visualize the distribution. Potentially adding distance as a weight for the reward
+  - If possible, test the framework with a dynamic environment?
+
 ### 06/26 Wed
 
-- Finished the evaluatin and found several issues:
+- Finished the evaluation and found several issues:
   - Rewards from the world model span in a very narrow range
   - The self prediction reward is unexpectedly high
   - The n step prediction does not have a clear path
