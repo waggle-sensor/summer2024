@@ -175,11 +175,11 @@ I primarily research with [Google Scholar](https://scholar.google.com) and [Pape
 
 ## July 9th
 
-
+- Attempted running CUDA locally.
 
 ## July 10th
 
-
+- Continued dense captioning application for edge and querying application for cloud.
 
 ## July 11th
 
