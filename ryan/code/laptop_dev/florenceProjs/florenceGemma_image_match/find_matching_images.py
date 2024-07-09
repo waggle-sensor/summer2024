@@ -51,7 +51,7 @@ def runOllama(user_description, image_description):
     # Define the data payload as a dictionary
     payload = {
         "model": "gemma2:latest",
-        "prompt": f"The user asks {user_description} An image came back with the description: {image_description} Do you think the user would like to see the image attached to the description based on what the user wants and what the description is? Say ONLY YES or NO based on what you think"
+        "prompt": f"The user asks {user_description} An image came back with the description: {image_description} Do you think the user would like to see the image attached to the description based on what the user wants and what the description is? If you are unsure, error on the side of no. Say ONLY True or False based on what you think"
     }
 
     # Send the POST request
@@ -67,15 +67,19 @@ def runOllama(user_description, image_description):
             if 'response'  in json_response:
                 response_text.append(json_response['response'])
 
-        print(''.join(response_text))
+        isValid = (''.join(response_text))
+
+        print(isValid)
+        return isValid
     else:
         print(f"Error: {response.status_code}, {response.text}")
+        return "Null"
 
 #loads the model and processor
 model = AutoModelForCausalLM.from_pretrained("microsoft/Florence-2-base", trust_remote_code=True, revision="main")
 processor = AutoProcessor.from_pretrained("microsoft/Florence-2-base", trust_remote_code=True, revision="main")
 #gets the images
-image_directory = "/home/ryanrearden/Documents/SAGE_fromLaptop/summer2024/ryan/code/laptop_dev/florenceGemma_image_match/testphotos"
+image_directory = "/home/ryanrearden/Documents/SAGE_fromLaptop/summer2024/ryan/images/sagePhotos"
 
 #lists the images
 image_files = [f for f in os.listdir(image_directory)]
@@ -115,10 +119,14 @@ for image in image_files:
   
   #prints the info 
   print(image_description)
-  image.show()
 
-  user_description = "Tell me when an image with a car at night appears on node W0B5"
-  runOllama(user_description, image_description)
+
+  user_description = "Tell me when an image with a black SUV appears on node W0B5"
+  isValid = runOllama(user_description, image_description)
+
+  if "True" in isValid:
+      image.show()
+
 
 
 

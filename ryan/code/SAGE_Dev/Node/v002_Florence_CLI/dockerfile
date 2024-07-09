@@ -1,0 +1,20 @@
+# Use a lightweight Python base image
+FROM python:3.11
+
+# Install required dependencies
+RUN pip install Pillow==10.3.0 Requests==2.32.3 sage_data_client==0.8.0 transformers==4.41.2 timm einops
+
+# Set working directory
+WORKDIR /app
+
+# Copy your Python scripts and other necessary files
+COPY florence_for_node_cpu.py flash_attn.py ./
+
+#copy other directories
+COPY Florence-2-base ./Florence-2-base
+COPY testphotos ./testphotos
+
+
+# Command to run your Python scripts sequentially
+CMD ["python", "-u", "florence_for_node_cpu.py"]
+

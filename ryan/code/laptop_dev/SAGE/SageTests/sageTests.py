@@ -67,8 +67,8 @@ def download_file(url, session, output_dir):
 #Takes in nodes. Returns df
 def getData(nodes):
   return pd.concat([sage_data_client.query(
-      start="2024-05-05T06:00:00.000Z",
-      end="2024-05-05T09:00:00.000Z",
+      start="2024-05-06T06:00:00.000Z",
+      end="2024-05-08T09:00:00.000Z",
       filter={
           "plugin": "registry.sagecontinuum.org/theone/imagesampler:0.3.0.*",
           "vsn": node
@@ -213,7 +213,7 @@ def group_components(components_from_description, boxes_from_description, identi
 #Gets user parameters
 #username = input(f"\nPlease input your username: \n")
 username = "rrearden"
-
+userToken = "b0afbb8de725b7206441b0b0535e4a2f3f6cd5eb"
 #userToken = input(f"\nPlease input your user token: \n")
 #print("Don't foget to add your usertoken ")
 all_sage_info = download_and_store_SAGEinfo() 

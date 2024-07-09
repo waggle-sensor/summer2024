@@ -1,0 +1,4 @@
+matplotlib==3.9.1
+Pillow==10.4.0
+Requests==2.32.3
+transformers==4.42.3
