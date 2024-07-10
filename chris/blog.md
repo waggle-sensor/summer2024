@@ -75,16 +75,23 @@ I continued to work with the sage data client and added more filtering options t
 ## 06/27/2024
 Today I started trying to define a model that could predict my data. I started with the mnist example that I received from Yongho. I simplified the model structure to a simple feedforward network and customized it to use a pandas dataset. I then tried classifying data, but the model didn't converge. Despite this, I had a relatively high accuracy. This doesn't seem right, so I'll need to dig further into this.
 
+## 06/28/2024
+Yongho and I are planning to move the mimir and grafana instances off of the NX in order to save resources on the NX. We are getting a laptop to have a metrics instance on.
+
 ## 07/01/2024
+Taking a look at the data I had gathered, there was not a strong correlation between any measurements except the tegra measurement of cpu utilization and power. Taking a step back, we decided to simplify our data gathering process at least initially. Instead of randomization, we decided to linearly interpolate the data and to add an option to use cpu only.
 
 ## 07/02/2024
+I spent today splitting up the ansible playbook into a modular design. With this, we can enable or disable various aspects of the system when flashing a new device. This both makes the process more modular and more reproducible. I also continued to look at my data. 
 
 ## 07/03/2024
+I spent today flashing the laptop and looking at the deterministic cpu data. Once again, the only plots that are correlated are the tegra measurements of cpu and power. This means we need to take a step back and look at our variables once again. We decided to recreate this experiement on the NX instead of on W023. We will try this next week.
 
 ## 07/08/2024
+I reflashed the NX in order to remvoe the extra bloat that was added to the device. I also tested that the laptop's mimir and grafana instaces were working. 
 
 ## 07/09/2024
-
+Today I spent figuring out why we weren't seeing any metrics published to the database. It turns out that we needed to specify the http protocol in the address for the laptop. That is, we needed to turn 10.31.81.129:8080... into http://10.31.81.129:8080. Now, we are getting metrics published! Unfortunately, we aren't getting any tegra metrics published because nvidia changed the format for jetpack 5.1.2. Yongho is working on rewriting the jetson-exporter and then we will have data to look at.
 
 ## 07/10/2024
 Today I caught up on documentation. I started by catching up on my blog. Then, I started working on starting final documentation to recreate my project from the summer. This includes perf-mon, stressme, and results.
