@@ -88,7 +88,7 @@ I spent today splitting up the ansible playbook into a modular design. With this
 I spent today flashing the laptop and looking at the deterministic cpu data. Once again, the only plots that are correlated are the tegra measurements of cpu and power. This means we need to take a step back and look at our variables once again. We decided to recreate this experiement on the NX instead of on W023. We will try this next week.
 
 ## 07/08/2024
-I reflashed the NX in order to remvoe the extra bloat that was added to the device. I also tested that the laptop's mimir and grafana instaces were working. 
+I reflashed the NX in order to remove the extra bloat that was added to the device. I also tested that the laptop's mimir and grafana instaces were working. 
 
 ## 07/09/2024
 Today I spent figuring out why we weren't seeing any metrics published to the database. It turns out that we needed to specify the http protocol in the address for the laptop. That is, we needed to turn 10.31.81.129:8080... into http://10.31.81.129:8080. Now, we are getting metrics published! Unfortunately, we aren't getting any tegra metrics published because nvidia changed the format for jetpack 5.1.2. Yongho is working on rewriting the jetson-exporter and then we will have data to look at.
