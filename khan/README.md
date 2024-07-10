@@ -179,7 +179,8 @@ I primarily research with [Google Scholar](https://scholar.google.com) and [Pape
 
 ## July 10th
 
-- Continued dense captioning application for edge and querying application for cloud.
+- Continued designing poster and presentation.
+- Started creating VILA-1.5-13B demo.
 
 ## July 11th
 
