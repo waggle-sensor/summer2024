@@ -213,8 +213,14 @@ Today I loaded Gemma-2 onto my laptop and tried a prototype of search. Seems to 
 
 While the Blade is still down I am going to try to completly containerize the huggingFace model on the node to see if that speeds up deployment. It would be nice if it does. I will also make a diagram or two to show what the eventual end goal is. I think that will help in the Thursday meeting. 
 
-![Ryan's Board July 8th, 2024 Afternoon](https://github.com/waggle-sensor/summer2024/blob/main/ryan/RyanBoard/IMG_3729.jpg)
+![Ryan's Board July 9th, 2024 Morning](https://github.com/waggle-sensor/summer2024/blob/main/ryan/RyanBoard/IMG_3729.jpg)
 
 The nodes are now all down. I continued to test Ollama with Gemma and Florence-2. I also fixed some docker problems and got the hugging face model to run locally. I also made a chart to show a possible plan for Sage Search. My hope is that by the afternoon the nodes will be back up.
 
-![Ryan's Board July 8th, 2024 Afternoon](https://github.com/waggle-sensor/summer2024/blob/main/ryan/RyanBoard/IMG_3732.jpg)
+![Ryan's Board July 9th, 2024 Afternoon](https://github.com/waggle-sensor/summer2024/blob/main/ryan/RyanBoard/IMG_3732.jpg)
+
+# July 10th, 2024 
+
+Nodes are still down :( I could work on my poster and presentation but will probably do that early next week when I have some nice graphs and information to present about the nodes/blades. For now I will figure out the things I can do on my laptop that I know will work with the system. If I knew about what was going to happen I would have made sure to do everything with the nodes and blades earlier in the week. That is ok though. There are still things to do. 
+
+![Ryan's Board July 10th, 2024 Morning](https://github.com/waggle-sensor/summer2024/blob/main/ryan/RyanBoard/IMG_3733.jpg)
