@@ -224,3 +224,7 @@ The nodes are now all down. I continued to test Ollama with Gemma and Florence-2
 Nodes are still down :( I could work on my poster and presentation but will probably do that early next week when I have some nice graphs and information to present about the nodes/blades. For now I will figure out the things I can do on my laptop that I know will work with the system. If I knew about what was going to happen I would have made sure to do everything with the nodes and blades earlier in the week. That is ok though. There are still things to do. 
 
 ![Ryan's Board July 10th, 2024 Morning](https://github.com/waggle-sensor/summer2024/blob/main/ryan/RyanBoard/IMG_3733.jpg)
+
+Just made a slack bot after a long time of not knowing what was going on. It runs Gemma via Ollama. Whohooo
+
+![Ryan's Board July 10th, 2024 Afternoon](https://github.com/waggle-sensor/summer2024/blob/main/ryan/RyanBoard/IMG_3735.jpg)

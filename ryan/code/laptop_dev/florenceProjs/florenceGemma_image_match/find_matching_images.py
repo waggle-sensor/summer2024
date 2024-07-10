@@ -121,7 +121,7 @@ for image in image_files:
   print(image_description)
 
 
-  user_description = "Tell me when an image with a black SUV appears on node W0B5"
+  user_description = "Let me know when a dangerous car is on the road"
   isValid = runOllama(user_description, image_description)
 
   if "True" in isValid:

@@ -19,7 +19,7 @@ def plot_bbox(image, boxes, label, font_size=50, box_width=10):
     return image
 
 # Load descriptions from JSON file
-data_file_path = "/home/ryanrearden/Documents/SAGE_fromLaptop/summer2024/ryan/code/scripts/SAGE/SageSearch/data.json"
+data_file_path = "/home/ryanrearden/Documents/SAGE_fromLaptop/summer2024/ryan/code/SAGE_Dev/External/data.json"
 
 if not os.path.exists(data_file_path):
     raise FileNotFoundError(f"JSON file not found: {data_file_path}")
