@@ -50,3 +50,41 @@ Today I wrote a dockerfile and began testing it. It was fairly simple to write, 
 Today I worked on a few different things. For starters, I migrated the stress code to a new repo called stressme. With this, the Dockerfile sits at the top level of the container, and we can use the waggle build and push github action for docker containers. This saved me a lot of work reinventing the wheel. Now, in this process, I discovered a few bugs, but ultimately, I was able to build and push my docker image. In this, I ran into another problem. This image doesn't allow me to import pytorch. I'm not sure why that is yet, but I will have to look into it more tomorrow.
 
 The other thing I began working on was the data pipeline from Grafana to what will eventually be a model. Grafana displays data nicely, but I can't manipulate it with something like a machine learning model. So, we can query the Grafana api for data to manipulate locally. I began playing with the api to get a feel for it.
+
+## 06/18/2024
+Today I worked on debugging the pytorch issue within the image. The solution to this issue is running a container with the nvidia container runtime. We can do this in Docker using the --runtime flag, but there is not an easy equivalent in Kubernetes. Today, I worked on installing the nvidia runtime container and setting it to the versions that are in the waggle production. We were able to specify the nvidia runtime, but it had no cuda libraries within it.
+
+## 06/19/2024
+Since we are blocked on the kubernetes runtime issue, I spent the day looking into various machine learning techniques that we might want to apply to our data. Remember that our ultimate goal is to predict the power consumption of a program from other metrics such as cpu and gpu utilization. I started by looking at the pytorch solution to the mnist problem. This involves a CNN to classify images. I also spent the day reading up on various pieces of theory such as convolutions, transformers, etc. Seongha recommended that we use a timeseries transformer predictor. 
+
+## 06/20/2024
+I spent most of today reading and editing Yongho's paper. It explains some of the foundational work he has done in building a performance metrics system for waggle. This includes the jetson-exporter and his sidecar container. We also made progress on the cuda container issue. As we expected the issue is with the runtime choice. To specify this in kubernetes, you need to define a RuntimeClass object (which updates the config.toml to use a new runtime) and tag the container with it. I added these various steps to the ansible script for future provisioning.
+
+## 06/21/2024
+Today, I tried to run the container after creating the nvidia RuntimeClass object. First, I ran into some issues with pulling the image. Kubernetes fails to pull it due to its size. To resolve this issue, we have to pull with k3s ctr. After, this I tried running the image and still didn't have any cuda libraries installed. 
+
+## 06/24/2024
+To get past the roadblock of the nvidia container issue, we decided to run the stressme app I developed on a sage node. We decided to run it on W023 (at the main gate) to start gathering some data. This meant that I needed to start looking at the sage data client to pull my data. 
+
+## 06/25/2024
+I continued working with the sage data client to pull data and eventually formatted it in a way that was usable to me. I'm not super familiar with pandas so it was a fun opportunity to try it out! We ran into a weird issue with my app that caused it to not terminate on the sage node. The cpu stress of my app is provided by stress-ng. If you run it with less than a second passed as an argument, it won't terminate.
+
+## 06/26/2024
+I continued to work with the sage data client and added more filtering options to supplement the fairly simple sage data client. Yongho also resolved the issue with nvidia container issue. To solve it, we upgraded the nx to use jetpack 5.1.2 and had to use a new base container image.
+
+## 06/27/2024
+Today I started trying to define a model that could predict my data. I started with the mnist example that I received from Yongho. I simplified the model structure to a simple feedforward network and customized it to use a pandas dataset. I then tried classifying data, but the model didn't converge. Despite this, I had a relatively high accuracy. This doesn't seem right, so I'll need to dig further into this.
+
+## 07/01/2024
+
+## 07/02/2024
+
+## 07/03/2024
+
+## 07/08/2024
+
+## 07/09/2024
+
+
+## 07/10/2024
+Today I caught up on documentation. I started by catching up on my blog. Then, I started working on starting final documentation to recreate my project from the summer. This includes perf-mon, stressme, and results.
