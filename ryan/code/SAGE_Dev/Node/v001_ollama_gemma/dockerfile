@@ -1,0 +1,5 @@
+FROM ollama/ollama
+
+COPY gemma2 /root/.ollama/models 
+
+COPY bigBlob /root/.ollama/models/blobs

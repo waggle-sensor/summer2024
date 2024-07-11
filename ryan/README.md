@@ -234,3 +234,7 @@ Just made a slack bot after a long time of not knowing what was going on. It run
 I am going to make the presentation for the meeting and show where all of the information is coming from (and is going to). I will also keep checking the node status and possibly put the slack bot into a dockerized container. 
 
 ![Ryan's Board July 10th, 2024 Morning](https://github.com/waggle-sensor/summer2024/blob/main/ryan/RyanBoard/IMG_3737.jpg)
+
+Nodes are kind of back up. I deployed ollama on a docker container and shipped it onto the blade. I also shipped it to W0B5 but running into some small problems. A lot fo things are happening now
+
+![Ryan's Board July 10th, 2024 Afternoon](https://github.com/waggle-sensor/summer2024/blob/main/ryan/RyanBoard/IMG_3739.jpg)

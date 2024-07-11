@@ -1,0 +1,6 @@
+FROM python:3.11
+
+RUN pip install Requests==2.32.3 slack_bolt==1.19.1
+
+COPY app.py ./
+CMD ["python", "app.py"]
