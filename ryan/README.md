@@ -228,3 +228,9 @@ Nodes are still down :( I could work on my poster and presentation but will prob
 Just made a slack bot after a long time of not knowing what was going on. It runs Gemma via Ollama. Whohooo
 
 ![Ryan's Board July 10th, 2024 Afternoon](https://github.com/waggle-sensor/summer2024/blob/main/ryan/RyanBoard/IMG_3735.jpg)
+
+# July 11th, 2024
+
+I am going to make the presentation for the meeting and show where all of the information is coming from (and is going to). I will also keep checking the node status and possibly put the slack bot into a dockerized container. 
+
+![Ryan's Board July 10th, 2024 Morning](https://github.com/waggle-sensor/summer2024/blob/main/ryan/RyanBoard/IMG_3737.jpg)
