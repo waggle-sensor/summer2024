@@ -244,3 +244,7 @@ Nodes are kind of back up. I deployed ollama on a docker container and shipped i
 Today I will try to get the Gemma2 Ollama working on the node, and see if a full demo can be set up. I will also try to just ship a full ready-to-go container and see what happens. In addition, if I have time, I will stress test the node deployment and figure out the output tokens/second.  
 
 ![Ryan's Board July 12th, 2024 Morning](https://github.com/waggle-sensor/summer2024/blob/main/ryan/RyanBoard/IMG_3743.jpg)
+
+A lot of good things happened today. I think I am eventually going to move on from Gemma as a search LLM and stick to a normal algorithm. It is 11.4 gigs total and doesn't seem to run on the nodes. It is way too much. Here is what I need to work in total: slack-bot--blade--node--Florence-2--isFit--blade--slack. right now I have bits and peices of all of these but have yet to combine it. I should probably run actual tests at somepoint since I am doing a lot more building than testing. That may be an issue in the future. I hope everything will come together next week in larger components
+
+![Ryan's Board July 12th, 2024 Afternoon](https://github.com/waggle-sensor/summer2024/blob/main/ryan/RyanBoard/IMG_3744.jpg)

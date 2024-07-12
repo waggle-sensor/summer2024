@@ -1,4 +1,3 @@
 ```
-docker run -d NAME
-docker exec -it CONTAINERID
+docker run -d --network=host NAME
 ```
