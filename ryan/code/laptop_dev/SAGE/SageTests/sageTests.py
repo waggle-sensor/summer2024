@@ -213,7 +213,7 @@ def group_components(components_from_description, boxes_from_description, identi
 #Gets user parameters
 #username = input(f"\nPlease input your username: \n")
 username = "rrearden"
-userToken = "b0afbb8de725b7206441b0b0535e4a2f3f6cd5eb"
+
 #userToken = input(f"\nPlease input your user token: \n")
 #print("Don't foget to add your usertoken ")
 all_sage_info = download_and_store_SAGEinfo() 

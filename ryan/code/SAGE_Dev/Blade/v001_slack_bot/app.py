@@ -7,7 +7,7 @@ import requests
 
 def runOllama(prompt):
     # Define the URL of your local server
-    url = 'http://localhost:11433/api/generate'
+    url = 'http://localhost:11435/api/generate'
 
     # Define the data payload as a dictionary
     payload = {
