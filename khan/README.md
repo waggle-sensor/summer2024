@@ -184,11 +184,13 @@ I primarily research with [Google Scholar](https://scholar.google.com) and [Pape
 
 ## July 11th
 
-
+- Continued designing poster and presentation.
+- Started creating VILA-1.5-13B demo.
 
 ## July 12th
 
-
+- Continued designing poster and presentation.
+- Started creating VILA-1.5-13B demo.
 
 ## July 15th (Week 7)
 
