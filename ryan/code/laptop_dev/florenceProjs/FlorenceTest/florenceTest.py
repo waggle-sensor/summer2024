@@ -17,6 +17,8 @@ def run_example(task_prompt, text_input=None):
     else:
         prompt = task_prompt + text_input
     inputs = processor(text=prompt, images=image, return_tensors="pt")
+    
+    start_time = time.time()  # Start timing
     generated_ids = model.generate(
       input_ids=inputs["input_ids"].cuda(),
       pixel_values=inputs["pixel_values"].cuda(),
@@ -25,12 +27,22 @@ def run_example(task_prompt, text_input=None):
       do_sample=False,
       num_beams=3,
     )
+    end_time = time.time()  # End timing
+    
     generated_text = processor.batch_decode(generated_ids, skip_special_tokens=False)[0]
     parsed_answer = processor.post_process_generation(
         generated_text, 
         task=task_prompt, 
         image_size=(image.width, image.height)
     )
+    
+    # Calculate tokens per second
+    num_tokens = len(generated_ids[0])
+    time_taken = end_time - start_time
+    tokens_per_second = num_tokens / time_taken
+    print(f"Output tokens: {num_tokens}")
+    print(f"Time taken: {time_taken:.2f} seconds")
+    print(f"Tokens per second: {tokens_per_second:.2f}")
 
     return parsed_answer
 
@@ -73,8 +85,6 @@ def plot_bbox(image, data):
       
     # Show the plot  
     plt.show()  
-
-
 
 #imgIpt = "/home/ryanrearden/Documents/SAGE_fromLaptop/summer2024/ryan/code/scripts/SAGE/Ambulance.jpg"
 imgIpt = "/home/ryanrearden/Downloads/IMG_3678.jpg"

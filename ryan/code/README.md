@@ -58,4 +58,10 @@ so if I wanted to transfer something to a waggle node I would find the directory
 rsync -avz folder waggle-dev-node-NODE:/home/waggle/rrearden 
 
 
+### How to build for multiple platforms docker
+
+```
+docker buildx build --platform linux/amd64,linux/arm64 -t myimage:latest .
+```
+
 

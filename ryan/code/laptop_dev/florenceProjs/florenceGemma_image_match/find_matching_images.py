@@ -5,7 +5,7 @@ import time
 import os 
 import json
 
-device = "cpu"
+device = "cuda"
 #takes in an image url/dir returns an readable image 
 def readImage(imgIpt):
     #a horrible hackish way to determine if its an URL or a downloaded img

@@ -254,3 +254,9 @@ A lot of good things happened today. I think I am eventually going to move on fr
 I am going to stay on the hunt for a better search algorithm rather than relying on Gemma-2. I think I saw a few things floating around but have yet to check them out. The primary goal of the day is to chart all of the power usage on W0B5 and W0B4 (Florence-2 and LLaVA) as well as make an output comparison. It would be great to get that done so that I can throw it on my poster as well. Tomorrow, the goal will be to make the poster and presentation.
 
 ![Ryan's Board July 12th, 2024 Morning](https://github.com/waggle-sensor/summer2024/blob/main/ryan/RyanBoard/IMG_3753.jpg)
+
+Solid progress on generating output tokens per second. Will try to make graphs tomorrow morning 
+
+![Ryan's Board July 12th, 2024 Morning](https://github.com/waggle-sensor/summer2024/blob/main/ryan/RyanBoard/IMG_3759.jpg)
+
+

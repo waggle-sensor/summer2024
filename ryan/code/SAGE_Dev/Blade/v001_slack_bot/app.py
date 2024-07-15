@@ -7,11 +7,11 @@ import requests
 
 def runOllama(prompt):
     # Define the URL of your local server
-    url = 'http://localhost:11434/api/generate'
+    url = 'http://localhost:11437/api/generate'
 
     # Define the data payload as a dictionary
     payload = {
-        "model": "gemma2:latest",
+        "model": "llava",
         "OLLAMA-DEBUG": 1,
         "prompt": prompt
     }
@@ -56,12 +56,24 @@ def runOllama(prompt):
 app = App(token='')
 #app = App(token=os.environ["SLACK_BOT_TOKEN"])
 
+#get bot ID
+bot_id = app.client.auth_test()["user_id"]
 
 @app.event("message")
 def handle_message_events(body, logger, say):
-    # Extract the message text from the body dictionary
+    print(body)
+    print()
     message_text = body["event"]["text"]
-    botReply = runOllama(message_text)
+    #may not exist 
+    #url = body["event"]["blocks"][0]["elements"][0]["elements"][0]["url"]
+
+    print(body["event"]["files"][0]["url_private"])
+    message = message_text
+    # Extract the message text from the body dictionary
+    if f"<@{app.client.auth_test()['user_id']}>" in message_text:
+        say("Hello!")
+    else:
+        botReply = runOllama(message)
 
     say(botReply)
 
