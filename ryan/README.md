@@ -248,3 +248,9 @@ Today I will try to get the Gemma2 Ollama working on the node, and see if a full
 A lot of good things happened today. I think I am eventually going to move on from Gemma as a search LLM and stick to a normal algorithm. It is 11.4 gigs total and doesn't seem to run on the nodes. It is way too much. Here is what I need to work in total: slack-bot--blade--node--Florence-2--isFit--blade--slack. right now I have bits and peices of all of these but have yet to combine it. I should probably run actual tests at somepoint since I am doing a lot more building than testing. That may be an issue in the future. I hope everything will come together next week in larger components
 
 ![Ryan's Board July 12th, 2024 Afternoon](https://github.com/waggle-sensor/summer2024/blob/main/ryan/RyanBoard/IMG_3744.jpg)
+
+# July 15th, 2024
+
+I am going to stay on the hunt for a better search algorithm rather than relying on Gemma-2. I think I saw a few things floating around but have yet to check them out. The primary goal of the day is to chart all of the power usage on W0B5 and W0B4 (Florence-2 and LLaVA) as well as make an output comparison. It would be great to get that done so that I can throw it on my poster as well. Tomorrow, the goal will be to make the poster and presentation.
+
+![Ryan's Board July 12th, 2024 Morning](https://github.com/waggle-sensor/summer2024/blob/main/ryan/RyanBoard/IMG_3753.jpg)
