@@ -7,11 +7,12 @@ import requests
 
 def runOllama(prompt):
     # Define the URL of your local server
-    url = 'http://localhost:11435/api/generate'
+    url = 'http://localhost:11434/api/generate'
 
     # Define the data payload as a dictionary
     payload = {
         "model": "gemma2:latest",
+        "OLLAMA-DEBUG": 1,
         "prompt": prompt
     }
 
@@ -22,13 +23,29 @@ def runOllama(prompt):
     if response.status_code == 200:
         response_text = []
         lines = response.text.strip().split('\n')
+        last_line_data = None
 
-        for line in lines:
+        for i, line in enumerate(lines):
             json_response = json.loads(line)
-            if 'response'  in json_response:
+            if 'response' in json_response:
                 response_text.append(json_response['response'])
+                if i == len(lines) - 1:
+                    last_line_data = json_response
 
-        botReply = (''.join(response_text))
+
+        if last_line_data:
+            total_duration_s = last_line_data['total_duration'] / 1e9
+            load_duration_ms = last_line_data['load_duration'] / 1e6
+            prompt_eval_duration_ms = last_line_data['prompt_eval_duration'] / 1e6
+            eval_count = last_line_data['eval_count']
+            eval_duration_s = last_line_data['eval_duration'] / 1e9
+            eval_rate = eval_count / eval_duration_s
+
+
+
+
+        botReply = (''.join(response_text)) + f"\n\nTotal duration: {total_duration_s}s\nLoad duration: {load_duration_ms}ms\neval rate: {eval_rate} tokens\s"
+        #botReply = (''.join(verbose_text))
 
         return botReply
     else:
