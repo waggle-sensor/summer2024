@@ -257,6 +257,14 @@ I am going to stay on the hunt for a better search algorithm rather than relying
 
 Solid progress on generating output tokens per second. Will try to make graphs tomorrow morning 
 
-![Ryan's Board July 12th, 2024 Morning](https://github.com/waggle-sensor/summer2024/blob/main/ryan/RyanBoard/IMG_3759.jpg)
+![Ryan's Board July 12th, 2024 Afternoon](https://github.com/waggle-sensor/summer2024/blob/main/ryan/RyanBoard/IMG_3759.jpg)
+
+# July 16th, 2024
+
+I am *actually* going to do testing today. Then I will put all of it in my poster/presentation this afternoon and tomorrow. Today's goal is trying to get all of the good pictures and screenshots to show what I have been doing. 
+
+
+![Ryan's Board July 12th, 2024 Morning](https://github.com/waggle-sensor/summer2024/blob/main/ryan/RyanBoard/IMG_3762.jpg)
+
 
 
