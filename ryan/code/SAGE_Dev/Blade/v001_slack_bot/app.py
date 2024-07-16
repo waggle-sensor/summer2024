@@ -7,7 +7,7 @@ import requests
 
 def runOllama(prompt):
     # Define the URL of your local server
-    url = 'http://localhost:11437/api/generate'
+    url = 'http://localhost:11434/api/generate'
 
     # Define the data payload as a dictionary
     payload = {
@@ -32,7 +32,7 @@ def runOllama(prompt):
                 if i == len(lines) - 1:
                     last_line_data = json_response
 
-
+            '''
         if last_line_data:
             total_duration_s = last_line_data['total_duration'] / 1e9
             load_duration_ms = last_line_data['load_duration'] / 1e6
@@ -40,11 +40,11 @@ def runOllama(prompt):
             eval_count = last_line_data['eval_count']
             eval_duration_s = last_line_data['eval_duration'] / 1e9
             eval_rate = eval_count / eval_duration_s
+            '''
 
 
 
-
-        botReply = (''.join(response_text)) + f"\n\nTotal duration: {total_duration_s}s\nLoad duration: {load_duration_ms}ms\neval rate: {eval_rate} tokens\s"
+        botReply = (''.join(response_text)) #+ f"\n\nTotal duration: {total_duration_s}s\nLoad duration: {load_duration_ms}ms\neval rate: {eval_rate} tokens\s"
         #botReply = (''.join(verbose_text))
 
         return botReply
@@ -67,19 +67,18 @@ def handle_message_events(body, logger, say):
     #may not exist 
     #url = body["event"]["blocks"][0]["elements"][0]["elements"][0]["url"]
 
-    print(body["event"]["files"][0]["url_private"])
+    #print(body["event"]["files"][0]["url_private"])
     message = message_text
     # Extract the message text from the body dictionary
     if f"<@{app.client.auth_test()['user_id']}>" in message_text:
         say("Hello!")
     else:
         botReply = runOllama(message)
-
-    say(botReply)
+        say(botReply)
 
 if __name__ == "__main__":
- #   SocketModeHandler(app, os.environ["SLACK_APP_TOKEN"]).start()
-    SocketModeHandler(app, '').start() 
+    SocketModeHandler(app, os.environ["SLACK_APP_TOKEN"]).start()
+    #SocketModeHandler(app, '').start() 
 
 
 
