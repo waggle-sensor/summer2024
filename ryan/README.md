@@ -271,5 +271,9 @@ Testing in progress. Poster also in progress. Will be done by 10:00 am tomorrow!
 
 ![Ryan's Board July 12th, 2024 Afternoon](https://github.com/waggle-sensor/summer2024/blob/main/ryan/RyanBoard/IMG_3763.jpg)
 
+# July 17th, 2024
+
+Final crunch time for poster and presentation. The data is coming in which is good! I'll just parse it out and put it in. Then, if I have time, I'll keep working on the slackbot. 
+
 
 
