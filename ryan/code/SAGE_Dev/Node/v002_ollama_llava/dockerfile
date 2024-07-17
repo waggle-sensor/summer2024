@@ -1,0 +1,12 @@
+# Use a lightweight Python base image
+FROM python:3.11
+
+RUN pip install Requests==2.32.3
+
+
+COPY data.json image_describer.py ./
+COPY sagePhotos ./sagePhotos
+
+# Command to run your Python scripts sequentially
+CMD ["python", "-u", "image_describer.py"]
+

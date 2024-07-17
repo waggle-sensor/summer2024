@@ -1,25 +1,26 @@
 import os
 import json
 import requests
+import base64
 from slack_bolt import App
 from slack_bolt.adapter.socket_mode import SocketModeHandler
 
-image_save_directory = '/home/ryanrearden/Documents/SAGE_fromLaptop/summer2024/ryan/code/slack_dev/imgs'
 def runOllama(image_path):
-    # Define the URL of your local server
+     
+    with open(image_path, "rb") as image_file:
+        encoded_image = base64.b64encode(image_file.read()).decode('utf-8')
     url = 'http://localhost:11434/api/generate'
 
-    # Define the data payload
     payload = {
         "model": "llava",
         "OLLAMA-DEBUG": 1,
-        "image_path": image_path
+        "prompt": "What is in this piture?",
+        "stream": False, 
+        "images": [encoded_image]
     }
 
-    # Send the POST request
     response = requests.post(url, json=payload)
 
-    # Check if the request was successful
     if response.status_code == 200:
         response_text = []
         lines = response.text.strip().split('\n')
@@ -33,13 +34,18 @@ def runOllama(image_path):
                     last_line_data = json_response
 
         if last_line_data:
+            #try to print these but if it they are not there print zero
             total_duration_s = last_line_data.get('total_duration', 0) / 1e9
             load_duration_ms = last_line_data.get('load_duration', 0) / 1e6
             eval_count = last_line_data.get('eval_count', 0)
             eval_duration_s = last_line_data.get('eval_duration', 0) / 1e9
             eval_rate = eval_count / eval_duration_s if eval_duration_s != 0 else 0
 
-            botReply = (''.join(response_text)) + f"\n\nTotal duration: {total_duration_s}s\nLoad duration: {load_duration_ms}ms\neval rate: {eval_rate} tokens/s"
+            #zero means something went wrong
+            if total_duration_s == 0:
+                return "Null"
+            else: 
+                botReply = (''.join(response_text)) + f"\n\nTotal duration: {total_duration_s}s\nLoad duration: {load_duration_ms}ms\neval rate: {eval_rate} tokens/s"
         else:
             botReply = ''.join(response_text)
         
@@ -48,10 +54,8 @@ def runOllama(image_path):
         print(f"Error: {response.status_code}, {response.text}")
         return "Null"
 
-# Install the Slack app and get xoxb- token in advance
 app = App(token=os.environ["SLACK_BOT_TOKEN"])
 
-# Get bot ID
 bot_id = app.client.auth_test()["user_id"]
 
 @app.event("message")
@@ -60,27 +64,34 @@ def handle_message_events(body, logger, say):
         file_info = body["event"]["files"][0]
         file_url = file_info["url_private"]
 
+        #must do this to prove that is allowed to download the image
         headers = {
             'Authorization': f'Bearer {os.environ["SLACK_BOT_TOKEN"]}'
         }
         response = requests.get(file_url, headers=headers)
 
         if response.status_code == 200:
-            # Define the image path
-            image_path = os.path.join(image_save_directory, "temp_image.jpg")
-            with open(image_path, "wb") as f:
-                for chunk in response.iter_content(chunk_size=8192):
-                    if chunk:
-                        f.write(chunk)
-                        print("downloading")
-            print(f"Image downloaded to: {image_path}")
-            
-            # Run Ollama on the image
-            botReply = runOllama(image_path)
-            say(text=botReply)
+            #if success, put the temp img in the same directory (easy)
+            current_dir = os.path.dirname(os.path.abspath(__file__))
+            image_path = os.path.join(current_dir, "temp_image.jpg")
+            try:
+                #try to open it and download in smaller chunks 
+                with open(image_path, "wb") as f:
+                    for chunk in response.iter_content(chunk_size=8192):
+                        if chunk:
+                            f.write(chunk)
 
-            # Optionally delete the temporary image file
-            os.remove(image_path)
+            except Exception as e:
+                say(text="Failed to save the image.")
+                return
+            #if everything works it shoudl run ollama 
+            if os.path.exists(image_path):
+                botReply = runOllama(image_path)
+                say(text=botReply)
+
+                os.remove(image_path)
+            else:
+                say(text="Failed to download the image.")
         else:
             say(text="Failed to download the image.")
     else:

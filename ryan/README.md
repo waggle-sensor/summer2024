@@ -267,4 +267,9 @@ I am *actually* going to do testing today. Then I will put all of it in my poste
 ![Ryan's Board July 12th, 2024 Morning](https://github.com/waggle-sensor/summer2024/blob/main/ryan/RyanBoard/IMG_3762.jpg)
 
 
+Testing in progress. Poster also in progress. Will be done by 10:00 am tomorrow!
+
+![Ryan's Board July 12th, 2024 Afternoon](https://github.com/waggle-sensor/summer2024/blob/main/ryan/RyanBoard/IMG_3763.jpg)
+
+
 

@@ -5,11 +5,11 @@ from transformers import AutoProcessor, AutoModelForCausalLM
 import time 
 import os 
 import json
-
+import datetime
 #where all of the cool info is stored
 json_file_path = "data.json"
 
-def jsonIT(img_path, description, avg_tps, completeTime, json_file_path):
+def jsonIT(img_path, description, avg_tps, completeTime, timestamp, json_file_path):
     # Keeps data JSON-friendly 
     #img_path = img_path.as_posix()
 
@@ -21,6 +21,7 @@ def jsonIT(img_path, description, avg_tps, completeTime, json_file_path):
         "tokens per second": avg_tps,
         #Total time = from image to description
         "Total Time": completeTime,
+        "timestamp": timestamp
   
     }
 
@@ -135,8 +136,9 @@ for image in image_files:
   
   description = "".join([item for sublist in [description_text, descriptions, printed_labels] for item in sublist])
   #description = " ".join(description_text + descriptions + printed_labels)
+  timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
-  jsonIT(img_path, description, avg_tps, completeTime, json_file_path)
+  jsonIT(img_path, description, avg_tps, completeTime, timestamp, json_file_path)
 
 
 
