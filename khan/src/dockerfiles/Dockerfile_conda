@@ -1,0 +1,23 @@
+FROM python:3.10
+
+RUN apt-get update \
+    && apt-get install -y git wget bzip2 ca-certificates build-essential
+
+RUN wget --quiet https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/miniconda.sh \
+    && /bin/bash ~/miniconda.sh -b -p /opt/conda \
+    && rm ~/miniconda.sh
+
+# Set up environment variables
+ENV PATH="/opt/conda/bin:$PATH"
+ENV CONDA_EXE="/opt/conda/bin/conda"
+
+# Verify conda installation
+RUN /opt/conda/bin/conda init bash
+
+RUN /opt/conda/bin/conda create -n myenv python=3.11 -y
+SHELL ["/bin/bash", "--login", "-c"]
+
+RUN echo "conda activate myenv" >> ~/.bashrc
+
+# Install cudatoolkit-dev
+# RUN /opt/conda/bin/conda install -n myenv -c conda-forge cudatoolkit-dev -y
