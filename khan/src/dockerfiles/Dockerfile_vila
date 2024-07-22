@@ -1,0 +1,33 @@
+FROM python:3.10.14-bullseye
+
+RUN apt-get update && apt-get install -y \
+    ffmpeg libsm6 libxext6 libhdf5-dev
+
+WORKDIR /app
+
+COPY requirements.txt requirements.txt
+
+RUN pip install -r requirements.txt
+
+# Install specific PyTorch version
+RUN pip install pytorch==2.0.1 torchvision==0.15.2 torchaudio==2.0.2 pytorch-cuda=11.7 -c pytorch -c nvidia
+
+# Install additional packages
+RUN pip install pywaggle[all] h5py "numpy<2"
+
+# Clone VILA repository
+RUN git clone https://github.com/NVlabs/VILA && \
+    cd VILA && \
+    pip install -e . && \
+    cd ..
+
+# Clone llm-awq repository
+RUN git clone -b nv_laptop https://github.com/mit-han-lab/llm-awq && \
+    cd llm-awq && \
+    bash install.sh && \
+    cd vila_helper && \
+    bash download_vila.sh VILA1.5-7b-AWQ && \
+    bash vila_launcher.sh VILA1.5-7b-AWQ/
+
+# Set default command
+CMD ["/bin/sh", "-c", "bash"]
