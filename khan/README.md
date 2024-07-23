@@ -175,22 +175,22 @@ I primarily research with [Google Scholar](https://scholar.google.com) and [Pape
 
 ## July 9th
 
-- Attempted running CUDA locally.
+- Ran models with CUDA locally.
 
 ## July 10th
 
 - Continued designing poster and presentation.
-- Started creating VILA-1.5-13B demo.
+- Started creating VILA-1.5-3B demo.
 
 ## July 11th
 
 - Continued designing poster and presentation.
-- Started creating VILA-1.5-13B demo.
+- Continued creating VILA-1.5-3B demo.
 
 ## July 12th
 
 - Continued designing poster and presentation.
-- Started creating VILA-1.5-13B demo.
+- Continued creating VILA-1.5-3B demo.
 
 ## July 15th (Week 7)
 
@@ -209,3 +209,17 @@ I primarily research with [Google Scholar](https://scholar.google.com) and [Pape
 
 
 ## July 19th
+
+- Finished poster and presentation, and prepared for presenting.
+- Created VILA Dockerfile and listed all dependencies.
+
+## July 22th
+
+- Finished VILA Dockerfile.
+- Pushed files to repository.
+
+## July 23rd
+
+- Established directory structure and corrected location of materials.
+- Pushed files to repository.
+- Added features to integrate with the model.
