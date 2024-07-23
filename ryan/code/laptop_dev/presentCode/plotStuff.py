@@ -1,6 +1,6 @@
 import json
 import matplotlib.pyplot as plt
-from datetime import datetime
+from datetime import datetime, timedelta
 import numpy as np
 
 # Load JSON data
@@ -9,6 +9,14 @@ with open('/home/ryanrearden/Documents/SAGE_fromLaptop/tegdata_florence.json', '
 
 with open('/home/ryanrearden/Documents/SAGE_fromLaptop/florencedata.json', 'r') as file:
     data2 = json.load(file)
+
+# Load JSON data
+with open('/home/ryanrearden/Documents/SAGE_fromLaptop/tegdata_llava.json', 'r') as file:
+    data3 = json.load(file)
+
+with open('/home/ryanrearden/Documents/SAGE_fromLaptop/llavadata.json', 'r') as file:
+    data4 = json.load(file)
+
 
 def plotWithAllCPU():
     # Extract timestamps and CPU percentages
@@ -254,7 +262,7 @@ def graphCPUwithToken():
     ax1.set_xlabel('Time (hours)')
     ax1.set_ylabel('Average Overall CPU Utilization (%)')
     ax1.tick_params(axis='y')
-    ax1.set_title('Florence-2-base on Edge: Average Overall CPU Utilization with Image Description Generation Over Time')
+    ax1.set_title('LLaVA on Edge: Average Overall CPU Utilization with Image Description Generation Over Time')
     ax1.grid(True)
 
     # Synchronize tokens generated with CPU data timestamps
@@ -275,12 +283,325 @@ def graphCPUwithToken():
     plt.tight_layout()
     plt.show()
 
-# Extract "Total Time" values from each entry
-total_times = [entry["Total Time"] for entry in data2]
+def getAvgTime():
+    # Extract "Total Time" values from each entry
+    total_times = [entry["Total Time"] for entry in data2]
 
-# Calculate the average of "Total Time"
-if total_times:
-    average_total_time = sum(total_times) / len(total_times)
-    print(f"Average Total Time: {average_total_time} seconds")
-else:
-    print("No data available")
+    # Calculate the average of "Total Time"
+    if total_times:
+        average_total_time = sum(total_times) / len(total_times)
+        print(f"Average Total Time: {average_total_time} seconds")
+    else:
+        print("No data available")
+
+def plotComparison():
+    # Function to filter entries within the first 10 hours
+    def filter_data_within_9_hours(data, start_time):
+        return [entry for entry in data if datetime.strptime(entry["timestamp"], '%Y-%m-%d %H:%M:%S') - start_time <= timedelta(hours=9)]
+
+    # Function to calculate average total time
+    def calculate_average_total_time(data):
+        total_times = [entry["Total Time"] for entry in data if "Total Time" in entry]
+        if total_times:
+            return sum(total_times) / len(total_times)
+        return 0
+
+    # Function to calculate average CPU usage
+    def calculate_average_cpu_usage(data):
+        cpu_usages = [
+            sum([int(p.split('%')[0]) for p in entry["CPU"].split(',')]) / len(entry["CPU"].split(','))
+            for entry in data if "CPU" in entry
+        ]
+        if cpu_usages:
+            return sum(cpu_usages) / len(cpu_usages)
+        return 0
+
+    # Determine the start time from the first dataset
+    start_time = datetime.strptime(data[0]["timestamp"], '%Y-%m-%d %H:%M:%S')
+
+    # Filter data within the first 10 hours
+    filtered_data = filter_data_within_9_hours(data, start_time)
+    filtered_data2 = filter_data_within_9_hours(data2, start_time)
+    filtered_data3 = filter_data_within_9_hours(data3, start_time)
+    filtered_data4 = filter_data_within_9_hours(data4, start_time)
+
+    # Calculate averages for filtered data
+    avg_total_time_florence = calculate_average_total_time(filtered_data2)
+    avg_total_time_llava = calculate_average_total_time(filtered_data4)
+
+    avg_cpu_usage_florence = calculate_average_cpu_usage(filtered_data)
+    avg_cpu_usage_llava = calculate_average_cpu_usage(filtered_data3)
+
+
+    # Prepare data for plotting
+    labels = ['Florence-2', 'LLaVA']
+    avg_total_times = [avg_total_time_florence, avg_total_time_llava]
+    avg_cpu_usages = [avg_cpu_usage_florence, avg_cpu_usage_llava]
+
+    x = range(len(labels))  # the label locations
+
+    # Create a bar graph
+    fig, ax1 = plt.subplots(figsize=(14, 8))
+
+    bar_width = 0.35
+    opacity = 0.8
+
+    # Bar for average total time
+    bars1 = ax1.bar(x, avg_total_times, bar_width, alpha=opacity, color='dimgrey', label='Average Total Time (s)')
+
+    # Create another y-axis for CPU usage
+    ax2 = ax1.twinx()
+    bars2 = ax2.bar([p + bar_width for p in x], avg_cpu_usages, bar_width, alpha=opacity, color='slateblue', label='Average CPU Usage (%)')
+
+    # Set labels and titles
+    ax1.set_xlabel('Models')
+    ax1.set_ylabel('Average Total Time (s)', color='dimgrey')
+    ax2.set_ylabel('Average CPU Usage (%)', color='slateblue')
+    ax1.set_title('Average Total Time and CPU Usage for Florence-2 and LLaVA')
+    ax1.set_xticks([p + bar_width / 2 for p in x])
+    ax1.set_xticklabels(labels)
+
+    # Add legends
+    ax1.legend(loc='upper left')
+    ax2.legend(loc='upper right')
+
+    # Display the plot
+    plt.tight_layout()
+    plt.show()
+
+def betterplotComparison():
+    # Function to filter entries within the first 9 hours
+    def filter_data_within_9_hours(data, start_time):
+        return [entry for entry in data if datetime.strptime(entry["timestamp"], '%Y-%m-%d %H:%M:%S') - start_time <= timedelta(hours=9)]
+
+    # Function to calculate average total time
+    def calculate_average_total_time(data):
+        total_times = [entry["Total Time"] for entry in data if "Total Time" in entry]
+        if total_times:
+            return sum(total_times) / len(total_times)
+        return 0
+
+    # Function to calculate average CPU usage
+    def calculate_average_cpu_usage(data):
+        cpu_usages = [
+            sum([int(p.split('%')[0]) for p in entry["CPU"].split(',')]) / len(entry["CPU"].split(','))
+            for entry in data if "CPU" in entry
+        ]
+        if cpu_usages:
+            return sum(cpu_usages) / len(cpu_usages)
+        return 0
+
+    # Determine the start time from the first dataset
+    start_time = datetime.strptime(data[0]["timestamp"], '%Y-%m-%d %H:%M:%S')
+
+    # Filter data within the first 9 hours
+    filtered_data = filter_data_within_9_hours(data, start_time)
+    filtered_data2 = filter_data_within_9_hours(data2, start_time)
+    filtered_data3 = filter_data_within_9_hours(data3, start_time)
+    filtered_data4 = filter_data_within_9_hours(data4, start_time)
+
+    # Calculate averages for filtered data
+    avg_total_time_florence = calculate_average_total_time(filtered_data2)
+    avg_total_time_llava = calculate_average_total_time(filtered_data4)
+
+    avg_cpu_usage_florence = calculate_average_cpu_usage(filtered_data)
+    avg_cpu_usage_llava = calculate_average_cpu_usage(filtered_data3)
+
+    # Prepare data for plotting
+    labels = ['Florence-2']
+    avg_total_times_florence = [avg_total_time_florence]
+    avg_cpu_usages_florence = [avg_cpu_usage_florence]
+
+    # Create the first bar graph for Average Total Time
+    fig1, ax1 = plt.subplots(figsize=(6, 8))
+
+    bar_width = 0.35
+    opacity = 0.8
+
+    # Bar for average total time for Florence-2
+    bars1 = ax1.bar(labels, avg_total_times_florence, bar_width, alpha=opacity, color='dimgrey', label='Florence-2 Total Time (s)')
+
+    # Plot dashed lines for LLaVA average total time
+    ax1.axhline(y=avg_total_time_llava, color='red', linestyle='--', label='LLaVA Total Time (s)')
+
+    # Set labels and titles
+    ax1.set_xlabel('', fontsize=18)
+    ax1.set_ylabel('Average Total Runtime Per Image (s)', color='black', fontsize=18)
+    ax1.set_title(f'Average Total Runtime Per Image \n for Florence-2 and LLaVA', fontsize=18)
+    ax1.set_xticks([p for p in range(len(labels))])
+    ax1.set_xticklabels(labels, fontsize=18)
+    ax1.tick_params(axis='y', labelsize=16)
+    ax1.tick_params(axis='x', labelsize=16)
+
+    # Add legend
+    ax1.legend(loc='lower center', fontsize=16)
+
+    # Display the plot
+    plt.tight_layout()
+    plt.show()
+
+    # Create the second bar graph for Average CPU Usage
+    fig2, ax2 = plt.subplots(figsize=(6, 8))
+
+    # Bar for average CPU usage for Florence-2
+    bars2 = ax2.bar(labels, avg_cpu_usages_florence, bar_width, alpha=opacity, color='slateblue', label='Florence-2 CPU Usage (%)')
+
+    # Plot dashed lines for LLaVA average CPU usage
+    ax2.axhline(y=avg_cpu_usage_llava, color='blue', linestyle='--', label='LLaVA CPU Usage (%)')
+
+    # Set labels and titles
+    ax2.set_xlabel('', fontsize=18)
+    ax2.set_ylabel('Average CPU Usage (%)', color='black', fontsize=18)
+    ax2.set_title('Average CPU Usage for Florence-2 and LLaVA', fontsize=18)
+    ax2.set_xticks([p for p in range(len(labels))])
+    ax2.set_xticklabels(labels, fontsize=18)
+    ax1.tick_params(axis='y', labelsize=16)
+    ax1.tick_params(axis='x', labelsize=16)
+
+
+    # Add legend
+    ax2.legend(loc='lower center', fontsize=16)
+
+    # Display the plot
+    plt.tight_layout()
+    plt.show()
+
+
+
+def graphCPUwithToken2():
+    # Extract relevant data from the first dataset (Florence-2), filtering by time range
+    timestamps1 = [datetime.strptime(entry["timestamp"], '%Y-%m-%d %H:%M:%S') for entry in data]
+    average_cpu_percentages1 = [sum([int(p.split('%')[0]) for p in entry["CPU"].split(',')]) / len(entry["CPU"].split(',')) for entry in data]
+
+    # Convert timestamps1 to hours relative to the first timestamp
+    first_timestamp = timestamps1[0]
+    hours_from_start1 = [(ts - first_timestamp).total_seconds() / 3600.0 for ts in timestamps1]
+
+    # Extract relevant data from the second dataset (Florence-2), filtering by time range
+    timestamps2 = [datetime.strptime(entry["timestamp"], '%Y-%m-%d %H:%M:%S') for entry in data2]
+    tokens_generated1 = [50 if entry["tokens per second"] else None for entry in data2]
+
+    # Extract relevant data from the third dataset (LLaVA), filtering by time range
+    timestamps3 = [datetime.strptime(entry["timestamp"], '%Y-%m-%d %H:%M:%S') for entry in data3]
+    average_cpu_percentages2 = [sum([int(p.split('%')[0]) for p in entry["CPU"].split(',')]) / len(entry["CPU"].split(',')) for entry in data3]
+
+    # Convert timestamps3 to hours relative to the first timestamp
+    first_timestamp3 = timestamps3[0]
+    hours_from_start3 = [(ts - first_timestamp3).total_seconds() / 3600.0 for ts in timestamps3]
+
+    # Extract relevant data from the fourth dataset (LLaVA), filtering by time range
+    timestamps4 = [datetime.strptime(entry["timestamp"], '%Y-%m-%d %H:%M:%S') for entry in data4]
+    tokens_generated2 = [50 if entry["tokens per second"] else None for entry in data4]
+
+    # Plot average CPU percentage over time for both Florence-2 and LLaVA
+    fig, ax1 = plt.subplots(figsize=(14, 8))
+
+    # Plot Florence-2 average CPU percentage over time
+    ax1.plot(hours_from_start1, average_cpu_percentages1, 'deepskyblue', label='Florence-2 Average CPU Utilization', zorder=2)
+
+    # Plot LLaVA average CPU percentage over time
+    ax1.plot(hours_from_start3, average_cpu_percentages2, 'orange', label='LLaVA Average CPU Utilization', zorder=2)
+
+    ax1.set_xlabel('Time (hours)')
+    ax1.set_ylabel('Average Overall CPU Utilization (%)')
+    ax1.tick_params(axis='y')
+    ax1.set_title('Comparison of Average Overall CPU Utilization with Image Description Generation Over Time')
+    ax1.grid(True)
+
+    # Synchronize tokens generated with CPU data timestamps for Florence-2
+    for ts, token in zip(timestamps2, tokens_generated1):
+        if token is not None:
+            # Find the index of the closest timestamp in timestamps1 to ts
+            closest_index = min(range(len(timestamps1)), key=lambda i: abs(timestamps1[i] - ts))
+            closest_cpu_percentage = average_cpu_percentages1[closest_index]
+            # Plot the red dot at the corresponding CPU percentage value
+            ax1.scatter([hours_from_start1[closest_index]], [closest_cpu_percentage], color='darkmagenta', marker='o', zorder=3)
+
+    # Synchronize tokens generated with CPU data timestamps for LLaVA
+    for ts, token in zip(timestamps4, tokens_generated2):
+        if token is not None:
+            # Find the index of the closest timestamp in timestamps3 to ts
+            closest_index = min(range(len(timestamps3)), key=lambda i: abs(timestamps3[i] - ts))
+            closest_cpu_percentage = average_cpu_percentages2[closest_index]
+            # Plot the red dot at the corresponding CPU percentage value
+            ax1.scatter([hours_from_start3[closest_index]], [closest_cpu_percentage], color='red', marker='x', zorder=3)
+
+    plt.xlim(0, 10)
+
+    # Add legend for both Florence-2 and LLaVA
+    plt.legend(loc='lower left')
+    plt.tight_layout()
+    plt.show()
+
+
+def graphCPUwithToken3():
+    # Extract relevant data from the first dataset (Florence-2), filtering by time range
+    timestamps1 = [datetime.strptime(entry["timestamp"], '%Y-%m-%d %H:%M:%S') for entry in data]
+    average_cpu_percentages1 = [sum([int(p.split('%')[0]) for p in entry["CPU"].split(',')]) / len(entry["CPU"].split(',')) for entry in data]
+
+    # Convert timestamps1 to hours relative to the first timestamp
+    first_timestamp = timestamps1[0]
+    hours_from_start1 = [(ts - first_timestamp).total_seconds() / 3600.0 for ts in timestamps1]
+
+    # Extract relevant data from the second dataset (Florence-2), filtering by time range
+    timestamps2 = [datetime.strptime(entry["timestamp"], '%Y-%m-%d %H:%M:%S') for entry in data2]
+    tokens_generated1 = [50 if entry["tokens per second"] else None for entry in data2]
+
+    # Extract relevant data from the third dataset (LLaVA), filtering by time range
+    timestamps3 = [datetime.strptime(entry["timestamp"], '%Y-%m-%d %H:%M:%S') for entry in data3]
+    average_cpu_percentages2 = [sum([int(p.split('%')[0]) for p in entry["CPU"].split(',')]) / len(entry["CPU"].split(',')) for entry in data3]
+
+    # Convert timestamps3 to hours relative to the first timestamp
+    first_timestamp3 = timestamps3[0]
+    hours_from_start3 = [(ts - first_timestamp3).total_seconds() / 3600.0 for ts in timestamps3]
+
+    # Extract relevant data from the fourth dataset (LLaVA), filtering by time range
+    timestamps4 = [datetime.strptime(entry["timestamp"], '%Y-%m-%d %H:%M:%S') for entry in data4]
+    tokens_generated2 = [50 if entry["tokens per second"] else None for entry in data4]
+
+    # Plot average CPU percentage over time for both Florence-2 and LLaVA
+    fig, ax1 = plt.subplots(figsize=(14, 8))
+
+    # Plot Florence-2 average CPU percentage over time
+    ax1.plot(hours_from_start1, average_cpu_percentages1, 'deepskyblue', label='Florence-2 Average CPU Utilization', zorder=2)
+
+    # Plot LLaVA average CPU percentage over time
+    ax1.plot(hours_from_start3, average_cpu_percentages2, 'orange', label='LLaVA Average CPU Utilization', zorder=2)
+
+    ax1.set_xlabel('Time (hours)', fontsize=18)
+    ax1.set_ylabel('Average Overall CPU Utilization (%)', fontsize=18)
+    ax1.tick_params(axis='y', labelsize=16)
+    ax1.tick_params(axis='x', labelsize=16)
+    ax1.set_title('Comparison of Average Overall CPU Utilization with Image Description Generation Over Time', fontsize=18)
+    ax1.grid(True)
+
+    # Synchronize tokens generated with CPU data timestamps for Florence-2
+    for ts, token in zip(timestamps2, tokens_generated1):
+        if token is not None:
+            # Find the index of the closest timestamp in timestamps1 to ts
+            closest_index = min(range(len(timestamps1)), key=lambda i: abs(timestamps1[i] - ts))
+            closest_cpu_percentage = average_cpu_percentages1[closest_index]
+            # Plot the red dot at the corresponding CPU percentage value
+            ax1.scatter([hours_from_start1[closest_index]], [closest_cpu_percentage], color='darkmagenta', marker='o', label='Florence-2 Image Description Generation', zorder=3)
+
+    # Synchronize tokens generated with CPU data timestamps for LLaVA
+    for ts, token in zip(timestamps4, tokens_generated2):
+        if token is not None:
+            # Find the index of the closest timestamp in timestamps3 to ts
+            closest_index = min(range(len(timestamps3)), key=lambda i: abs(timestamps3[i] - ts))
+            closest_cpu_percentage = average_cpu_percentages2[closest_index]
+            # Plot the red dot at the corresponding CPU percentage value
+            ax1.scatter([hours_from_start3[closest_index]], [closest_cpu_percentage], color='red', marker='x', label='LLaVA Image Description Generation', zorder=3)
+
+    plt.xlim(0, 10)
+
+    # Add legend for both Florence-2 and LLaVA
+    handles, labels = ax1.get_legend_handles_labels()
+    by_label = dict(zip(labels, handles))
+    plt.legend(by_label.values(), by_label.keys(), loc='lower left', fontsize=18)
+    plt.tight_layout()
+    plt.show()
+
+
+
+betterplotComparison()

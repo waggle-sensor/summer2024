@@ -275,5 +275,12 @@ Testing in progress. Poster also in progress. Will be done by 10:00 am tomorrow!
 
 Final crunch time for poster and presentation. The data is coming in which is good! I'll just parse it out and put it in. Then, if I have time, I'll keep working on the slackbot. 
 
+![Ryan's Board July 12th, 2024 Morning](https://github.com/waggle-sensor/summer2024/blob/main/ryan/RyanBoard/IMG_3766.jpg)
+
+AFTERNOON: No need to show board still working on the presentation and fixing up the poster a little bit. Should be back on track with integration after it is finished. Still crunch time :) 
+
+# July 22nd, 2024
+
+Just need to present and work on the slack bot. Will start updating board this afternoon
 
 

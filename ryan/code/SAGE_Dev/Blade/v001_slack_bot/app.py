@@ -7,12 +7,12 @@ import requests
 
 def runOllama(prompt):
     # Define the URL of your local server
-    url = 'http://localhost:11434/api/generate'
+    url = 'http://localhost:11433/api/generate'
 
     # Define the data payload as a dictionary
     payload = {
-        "model": "llava",
-        "OLLAMA-DEBUG": 1,
+        "model": "gemma2:latest",
+        #"OLLAMA-DEBUG": 1,
         "prompt": prompt
     }
 
@@ -32,57 +32,55 @@ def runOllama(prompt):
                 if i == len(lines) - 1:
                     last_line_data = json_response
 
-            '''
-        if last_line_data:
-            total_duration_s = last_line_data['total_duration'] / 1e9
-            load_duration_ms = last_line_data['load_duration'] / 1e6
-            prompt_eval_duration_ms = last_line_data['prompt_eval_duration'] / 1e6
-            eval_count = last_line_data['eval_count']
-            eval_duration_s = last_line_data['eval_duration'] / 1e9
-            eval_rate = eval_count / eval_duration_s
-            '''
 
 
-
-        botReply = (''.join(response_text)) #+ f"\n\nTotal duration: {total_duration_s}s\nLoad duration: {load_duration_ms}ms\neval rate: {eval_rate} tokens\s"
+        #botReply = (''.join(response_text)) + f"\n\nTotal duration: {total_duration_s}s\nLoad duration: {load_duration_ms}ms\neval rate: {eval_rate} tokens\s"
         #botReply = (''.join(verbose_text))
+    botReply = (''.join(response_text))
+    return botReply
 
-        return botReply
-    else:
-        print(f"Error: {response.status_code}, {response.text}")
-        return "Null"
+    '''
+            if last_line_data:
+                total_duration_s = last_line_data['total_duration'] / 1e9
+                load_duration_ms = last_line_data['load_duration'] / 1e6
+                prompt_eval_duration_ms = last_line_data['prompt_eval_duration'] / 1e6
+                eval_count = last_line_data['eval_count']
+                eval_duration_s = last_line_data['eval_duration'] / 1e9
+                eval_rate = eval_count / eval_duration_s
+    '''
 
-# Install the Slack app and get xoxb- token in advance
-app = App(token='')
-#app = App(token=os.environ["SLACK_BOT_TOKEN"])
+    '''
+        else:
+            print(f"Error: {response.status_code}, {response.text}")
+            return "Null"
+    '''
 
-#get bot ID
-bot_id = app.client.auth_test()["user_id"]
+def loadSageData():
+    filename = "/home/ryanrearden/Documents/SAGE_fromLaptop/sageinfo.json"
+    try:
+        with open(filename, "r") as f:
+            data = json.load(f)
+            return data
+    except FileNotFoundError:
+        print(f"Error: Could not find local SAGEinfo file: {filename}")
+        return None
+    except json.JSONDecodeError:
+        print(f"Error: Invalid JSON format in local SAGEinfo file: {filename}")
+        return None
 
-@app.event("message")
-def handle_message_events(body, logger, say):
-    print(body)
-    print()
-    message_text = body["event"]["text"]
-    #may not exist 
-    #url = body["event"]["blocks"][0]["elements"][0]["elements"][0]["url"]
+#takes in location and sageData. Returns a list of nodes
+def getnodes(location, sageData):
+    nodes = []
+    print(location)
+    for item in sageData:
+        address = item.get("address", "_")
+        vsn = item.get("vsn", "_")
+        if location != "" and location.lower() in address.lower():
+            nodes.append(vsn)
 
-    #print(body["event"]["files"][0]["url_private"])
-    message = message_text
-    # Extract the message text from the body dictionary
-    if f"<@{app.client.auth_test()['user_id']}>" in message_text:
-        say("Hello!")
-    else:
-        botReply = runOllama(message)
-        say(botReply)
-
-if __name__ == "__main__":
-    SocketModeHandler(app, os.environ["SLACK_APP_TOKEN"]).start()
-    #SocketModeHandler(app, '').start() 
-
-
-
-
-
-
+        if location != "" and location.lower()==vsn.lower():
+            nodes.append(vsn)
+            return nodes
+    return nodes 
+    
 
