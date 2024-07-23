@@ -83,5 +83,5 @@ Today I spent all my time cleaning up my poster after listening to all the feedb
 While I was sick, I submitted my poster and started working on cleaning up my presentation. I didn't want the presentation slides to be just writing, so I cut down a lot of the words, which I could say on my own. I also started working on updating the summer2024 repo and organizing my work.
 
 # July 22nd, 2024
-I presented my project today. After this I worked on cleaning up my github and adding to my research report paper.
+I presented my project today. After this I worked on cleaning up my github and adding to my research report paper!
 
