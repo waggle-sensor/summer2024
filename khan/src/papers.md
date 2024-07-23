@@ -30,5 +30,5 @@
 ### Object Detection and Semantic Segmentation
 - **[Matching Anything by Segmenting Anything](https://arxiv.org/abs/2406.04221)**
 
-### Object Detection and Semantic Segmentation for Image
+### Object Detection and Semantic Segmentation for Images
 - **[YOLOv10: Real-Time End-to-End Object Detection](https://arxiv.org/abs/2405.14458)**
