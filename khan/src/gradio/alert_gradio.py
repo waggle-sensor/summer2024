@@ -23,9 +23,9 @@ def check_negative_words(sentence, negative_words):
 
 def analyze_text(text):
     sentiment = analyze_sentiment(text)
-    negative_words = ["flame", "car crash", ""]
+    negative_words = ["flame", "car crash", "injury"]
     alert = check_negative_words(text, negative_words)
-    alert_message = "Alert: negative sentiment." if alert else "No alert."
+    alert_message = "Sentiment is predefined and hence known." if alert else "Sentiment is not predefined and hence unknown."
     return sentiment, alert_message
 
 iface = gr.Interface(

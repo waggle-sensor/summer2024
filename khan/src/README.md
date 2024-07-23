@@ -14,7 +14,7 @@ Currently, the main components and test files are in `gradio`. These will integr
 
 ## Media Location
 
-LCRC contains a media folder within my folder and can be used to obtain media for testing. The media can also be replaced with any other sample as needed.
+Use this [Box](https://anl.app.box.com/folder/276406989371) media folder to obtain media for testing. The media can also be replaced with any other sample as needed.
 
 ## Models Outside of Packages
 
