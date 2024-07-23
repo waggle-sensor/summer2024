@@ -1,0 +1,35 @@
+FROM nvidia/cuda:11.8.0-devel-ubuntu22.04
+
+RUN apt-get update && \
+    apt-get install -y openssh-server python3-pip vim git tmux
+
+# Install VILA
+RUN git clone https://github.com/Efficient-Large-Model/VILA.git /root/VILA
+WORKDIR /root/VILA
+RUN pip install --upgrade pip
+RUN pip install torch==2.0.1 torchvision==0.15.2 torchaudio==2.0.2 --index-url https://download.pytorch.org/whl/cu118
+RUN wget https://github.com/Dao-AILab/flash-attention/releases/download/v2.4.2/flash_attn-2.4.2+cu118torch2.0cxx11abiFALSE-cp310-cp310-linux_x86_64.whl
+RUN pip install flash_attn-2.4.2+cu118torch2.0cxx11abiFALSE-cp310-cp310-linux_x86_64.whl --extra-index-url https://download.pytorch.org/whl/cu118
+
+RUN pip install setuptools_scm --index-url=https://pypi.org/simple
+RUN pip install -e . && pip install -e ".[train]"
+
+RUN pip install git+https://github.com/huggingface/transformers@v4.36.2
+RUN site_pkg_path=$(python3 -c 'import site; print(site.getsitepackages()[0])')
+RUN cp -rv ./llava/train/transformers_replace/* $site_pkg_path/transformers/
+
+# Install llm-awq
+RUN git clone https://github.com/mit-han-lab/llm-awq /root/llm-awq
+WORKDIR /root/llm-awq
+RUN pip install -e .
+WORKDIR /root/llm-awq/awq/kernels
+# https://github.com/pytorch/extension-cpp/issues/71#issuecomment-1183674660
+# TORCH_CUDA_ARCH_LIST=$(python3 -c 'import torch; print(".".join(map(str, torch.cuda.get_device_capability(0))))')
+# TORCH_CUDA_ARCH_LIST="8.0+PTX" for A100
+RUN export TORCH_CUDA_ARCH_LIST="8.0+PTX"
+RUN python3 setup.py install
+
+RUN pip install opencv-python-headless
+
+RUN rm -rf /var/lib/apt/lists/*
+RUN rm -rf /root/.cache
