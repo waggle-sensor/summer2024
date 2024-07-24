@@ -83,4 +83,70 @@ def getnodes(location, sageData):
             return nodes
     return nodes 
     
+# Install the Slack app and get xoxb- token in advance
+app = App(token='')
+#app = App(token=os.environ["SLACK_BOT_TOKEN"])
 
+sageData = loadSageData()
+
+@app.event("message")
+def handle_message_events(body, logger, say):
+    # Extract the message text from the body dictionary
+    message_text = body["event"]["text"]
+    print(body)
+
+    #To at, it is in the form <@...>
+    bot_ID = "<@" + body["authorizations"][0]["user_id"] + ">"
+    user_ID = "<@" + body["event"]["user"] + ">"
+
+    #Bot gets confused when you give it the bot ID. better to just not
+    message_text = message_text[(len(bot_ID) + 1):]
+
+    try: 
+        #Prompt engineering plus Ollama
+        botReply = runOllama(f"Please only reply with with what the user is searching for and where. Reply specifically what there user is looking for as well as the location they are looking for it on a new line: If the user asked Tell me when you see a car in Chicago, print car, then on a newline print Chicago. If the user asks When there is a dog on the street in W026, print dog on the street and then on a newline print W026. Perform like that. Now go ahead with this one: {message_text}")
+        #bot will reply with noun\nlocation
+        #seperating by newline will split these
+        importantWords = botReply.splitlines()
+
+        # Safety Checks
+        try:
+            lookFor = importantWords[0] if importantWords[0] else ""  # None if empty
+            location = importantWords[1].replace(" ", "") if len(importantWords) > 1 else ""  # Check list length
+        except IndexError:
+            print("Error: importantWords has less than two elements. Skipping processing.")
+            lookFor = ""
+            location = ""
+        say(user_ID)
+        #if it is a node
+        node_list = getnodes(location, sageData)
+        if isinstance(node_list, list) and len(node_list) > 0:
+            say(f"Deploying at {location} and looking for {lookFor}")
+        else:
+            say("No matching nodes found. Please try again")
+            
+
+    except Exception as error:
+        print(error)
+        say(error)
+
+if __name__ == "__main__":
+ #   SocketModeHandler(app, os.environ["SLACK_APP_TOKEN"]).start()
+    SocketModeHandler(app, '').start()
+
+
+'''
+# Basic listener that triggers and says "hello" when the script runs
+@app.event("message")
+def handle_app_mention(event, say):
+    say("hello")
+
+# Function to trigger an event to run the say command
+def trigger_mention():
+    # Using app.client to send a message that mentions the app, which triggers the event listener
+    user_id = app.client.auth_test()["user_id"]
+    app.client.chat_postMessage(
+        channel=user_id,
+        text=f"<@{user_id}>"
+    )
+'''
