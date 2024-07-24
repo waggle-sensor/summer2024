@@ -14,7 +14,7 @@ Currently, the main components and test files are in `gradio`. These will integr
 
 ## Media Location
 
-Google Drive will contain a media folder within my folder and can be used to obtain media for testing. The media can also be replaced with any other sample as needed.
+LCRC contains a media folder within my folder and can be used to obtain media for testing. The media can also be replaced with any other sample as needed.
 
 ## Models Outside of Packages
 
