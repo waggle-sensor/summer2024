@@ -7,7 +7,15 @@ import time
 from datetime import datetime, timezone
 import argparse
 from transformers import AutoProcessor, AutoModelForCausalLM
+import requests
+import json
 
+def sendMessage(text):
+   
+    headers = {'Content-type': 'application/json'}
+    data = {'text': text}
+
+    response = requests.post(url, headers=headers, data=json.dumps(data))
 
 logging.basicConfig(
     level=logging.INFO,
@@ -17,42 +25,49 @@ logging.basicConfig(
 model = AutoModelForCausalLM.from_pretrained("./Florence-2-base", local_files_only=True, trust_remote_code=True)
 processor = AutoProcessor.from_pretrained("./Florence-2-base", local_files_only=True, trust_remote_code=True)
 
-
+sendMessage("Just got started with the script on the node")
 #takes in a task prompt and image, returns an answer 
 def run_example(task_prompt, image, text_input=None):
+    sendMessage("run_example 1/5")
     if text_input is None:
         prompt = task_prompt
     else:
         prompt = task_prompt + text_input
     inputs = processor(text=prompt, images=image, return_tensors="pt")
-    
-    generated_ids = model.generate(
-      input_ids=inputs["input_ids"],
-      pixel_values=inputs["pixel_values"],
-      max_new_tokens=1024,
-      early_stopping=False,
-      do_sample=False,
-      num_beams=3,
-    )
-
+    try: 
+        sendMessage("run_example 2/5")
+        generated_ids = model.generate(
+        input_ids=inputs["input_ids"],
+        pixel_values=inputs["pixel_values"],
+        max_new_tokens=1024,
+        early_stopping=False,
+        do_sample=False,
+        num_beams=3,
+        )
+    except Exception as e:
+        sendMessage(e)
+    sendMessage("run_example 3/5")
     generated_text = processor.batch_decode(generated_ids, skip_special_tokens=False)[0]
+    sendMessage("run_example 4/5")
     parsed_answer = processor.post_process_generation(
         generated_text, 
         task=task_prompt, 
         image_size=(image.width, image.height)
     )
-
+    sendMessage("run_example 5/5")
     return parsed_answer
 
 #takes in an image (img), returns a description (string)
 def generateDescription(image):
     task_prompt = '<MORE_DETAILED_CAPTION>'
+    sendMessage("set task to MDC")
     description_text = run_example(task_prompt, image)
     description_text = description_text[task_prompt]
 
     #takes those details from the setences and finds labels and boxes in the image
     task_prompt = '<CAPTION_TO_PHRASE_GROUNDING>'
     boxed_descriptions = run_example(task_prompt, image, description_text)
+    sendMessage("set task to CTPG")
 
     #only prints out labels not bboxes
     descriptions = boxed_descriptions[task_prompt]['labels']
@@ -60,13 +75,14 @@ def generateDescription(image):
 
     #finds other things in the image that the description did not explicitly say
     task_prompt = '<DENSE_REGION_CAPTION>'
+    sendMessage("set task to DRC")
     labels = run_example(task_prompt, image)
 
     #only prints out labels not bboxes
     printed_labels = labels[task_prompt]['labels']
     
     description = "".join([item for sublist in [description_text, descriptions, printed_labels] for item in sublist])
-
+    sendMessage("Made a description!")
     return description
 
 
@@ -74,7 +90,9 @@ def capture(plugin, cam, args):
     sample_file_name = "sample.jpg"
     text_file_name = "description.txt"
     sample = cam.snapshot()
+    sendMessage("Took a picture")
     description = generateDescription(sample)
+    sendMessage("Finished making my description")
     with open(text_file_name, "w") as text_file:
         text_file.write(description)
     if args.out_dir == "":
@@ -90,11 +108,13 @@ def capture(plugin, cam, args):
         sample.save(sample_path)
         with open(text_path, "w") as text_file:
             text_file.write(description)
+        sendMessage("Uploading")
         plugin.upload_file(sample_path)
         plugin.upload_file(text_path)
 
 def run(args):
     logging.info("starting image sampler.")
+    sendMessage("starting up in the run function")
     if args.cronjob == "":
         logging.info("capturing...")
         with Plugin() as plugin, Camera(args.stream) as cam:
@@ -118,10 +138,12 @@ def run(args):
             logging.info("capturing...")
             with Camera(args.stream) as cam:
                 capture(plugin, cam, args)
+                sendMessage("Done with the run function")
     return 0
 
 
 if __name__ == '__main__':
+    sendMessage("In main")
     parser = argparse.ArgumentParser()
     parser.add_argument(
         '-stream', dest='stream',

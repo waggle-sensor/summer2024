@@ -1,5 +1,7 @@
-croniter==3.0.0
-transformers==4.42.4
-transformers==4.32.1
-waggle==0.2.4
 pywaggle[vision] == 0.55.*
+croniter
+transformers
+waggle
+torch
+timm
+einops
