@@ -466,8 +466,6 @@ def betterplotComparison():
     plt.tight_layout()
     plt.show()
 
-
-
 def graphCPUwithToken2():
     # Extract relevant data from the first dataset (Florence-2), filtering by time range
     timestamps1 = [datetime.strptime(entry["timestamp"], '%Y-%m-%d %H:%M:%S') for entry in data]
@@ -602,6 +600,171 @@ def graphCPUwithToken3():
     plt.tight_layout()
     plt.show()
 
+def plotRAMandRAM():
+    # Extract timestamps, RAM, and SWAP usage
+    timestamps = []
+    ram_used = []
+    ram_total = []
+    ram2_used = []
+    ram2_total = []
 
+    for entry in data:
+        timestamps.append(datetime.strptime(entry["timestamp"], '%Y-%m-%d %H:%M:%S'))
+        ram_usage = entry["RAM"].split('/')
+        ram_used.append(int(ram_usage[0].replace('MB', '')))
+        ram_total.append(int(ram_usage[1].replace('MB', '')))
+    
+    for entry in data3:
+        timestamps.append(datetime.strptime(entry["timestamp"], '%Y-%m-%d %H:%M:%S'))
+        ram_usage = entry["RAM"].split('/')
+        ram2_used.append(int(ram_usage[0].replace('MB', '')))
+        ram2_total.append(int(ram_usage[1].replace('MB', '')))
+    
+    # Cut off after RAM_used ends
+    min_length = min(len(ram_used), len(ram2_used))
+    timestamps = timestamps[:min_length]
+    ram_used = ram_used[:min_length]
+    ram_total = ram_total[:min_length]
+    ram2_used = ram2_used[:min_length]
+    ram2_total = ram2_total[:min_length]
 
-betterplotComparison()
+    # Calculate hours after start
+    start_time = timestamps[0]
+    hours_after_start = [(ts - start_time).total_seconds() / 3600 for ts in timestamps]
+
+    # Plot RAM and SWAP usage over time
+    plt.figure(figsize=(12, 6))
+
+    # Plot RAM usage
+    plt.subplot(2, 1, 1)
+    plt.plot(hours_after_start, ram_used, label='RAM Used (MB)')
+    plt.plot(hours_after_start, ram_total, label='RAM Total (MB)', linestyle='--')
+    plt.xlabel('Hours After Start')
+    plt.ylabel('RAM (MB)')
+    plt.title('RAM Usage Over Time Florence-2')
+    plt.legend()
+    plt.tight_layout()
+
+    # Plot SWAP usage
+    plt.subplot(2, 1, 2)
+    plt.plot(hours_after_start, ram2_used, label='RAM Used (MB)')
+    plt.plot(hours_after_start, ram2_total, label='RAM Total (MB)', linestyle='--')
+    plt.xlabel('Hours After Start')
+    plt.ylabel('RAM (MB)')
+    plt.title('RAM Usage Over Time LLaVA')
+    plt.legend()
+    plt.tight_layout()
+
+    # Show the plot
+    plt.show()
+
+def plotRnR2():
+    # Extract timestamps, RAM, and SWAP usage
+    timestamps = []
+    ram_used = []
+    ram_total = []
+    ram2_used = []
+    ram2_total = []
+
+    for entry in data:
+        timestamps.append(datetime.strptime(entry["timestamp"], '%Y-%m-%d %H:%M:%S'))
+        ram_usage = entry["RAM"].split('/')
+        ram_used.append(int(ram_usage[0].replace('MB', '')))
+        ram_total.append(int(ram_usage[1].replace('MB', '')))
+    
+    for entry in data3:
+        timestamps.append(datetime.strptime(entry["timestamp"], '%Y-%m-%d %H:%M:%S'))
+        ram_usage = entry["RAM"].split('/')
+        ram2_used.append(int(ram_usage[0].replace('MB', '')))
+        ram2_total.append(int(ram_usage[1].replace('MB', '')))
+    
+    # Cut off after RAM_used ends
+    min_length = min(len(ram_used), len(ram2_used))
+    timestamps = timestamps[:min_length]
+    ram_used = ram_used[:min_length]
+    ram_total = ram_total[:min_length]
+    ram2_used = ram2_used[:min_length]
+    ram2_total = ram2_total[:min_length]
+
+    # Calculate hours after start
+    start_time = timestamps[0]
+    hours_after_start = [(ts - start_time).total_seconds() / 3600 for ts in timestamps]
+
+    # Plot RAM and SWAP usage over time
+    plt.figure(figsize=(12, 6))
+
+    # Plot RAM and SWAP usage
+    plt.plot(hours_after_start, ram_used, label='RAM Used while running Florence-2 (MB)')
+    plt.plot(hours_after_start, ram_total, label='RAM Total (MB)', linestyle='--')
+    plt.plot(hours_after_start, ram2_used, label='RAM used while running LLaVA (MB)')
+
+    plt.xlabel('Hours After Start', fontsize=14)
+    plt.ylabel('RAM (MB)',fontsize=14)
+    plt.title('RAM Usage Over Time',fontsize=14)
+    plt.legend(fontsize=14)
+    plt.tight_layout()
+
+    # Show the plot
+    plt.show()
+
+def plotTokensPerSecond():
+    # Extract timestamps and tokens per second for both datasets
+    timestamps_florence = []
+    tokens_per_second_florence = []
+    timestamps_llava = []
+    tokens_per_second_llava = []
+
+    for entry in data2:
+        timestamps_florence.append(datetime.strptime(entry["timestamp"], '%Y-%m-%d %H:%M:%S'))
+        tokens_per_second_florence.append(entry["tokens per second"])
+    
+    for entry in data4:
+        timestamps_llava.append(datetime.strptime(entry["timestamp"], '%Y-%m-%d %H:%M:%S'))
+        tokens_per_second_llava.append(entry["tokens per second"])
+    
+    # Determine the start and end times based on the shorter timeframe
+    start_time = max(timestamps_florence[0], timestamps_llava[0])
+    end_time = min(timestamps_florence[-1], timestamps_llava[-1])
+
+    # Filter data points within the shorter timeframe
+    filtered_florence_times = [ts for ts in timestamps_florence if start_time <= ts <= end_time]
+    filtered_florence_tokens = [tokens_per_second_florence[i] for i, ts in enumerate(timestamps_florence) if start_time <= ts <= end_time]
+    filtered_llava_times = [ts for ts in timestamps_llava if start_time <= ts <= end_time]
+    filtered_llava_tokens = [tokens_per_second_llava[i] for i, ts in enumerate(timestamps_llava) if start_time <= ts <= end_time]
+
+    # Calculate hours after start
+    hours_after_start_florence = [(ts - start_time).total_seconds() / 3600 for ts in filtered_florence_times]
+    hours_after_start_llava = [(ts - start_time).total_seconds() / 3600 for ts in filtered_llava_times]
+
+    # Plot tokens per second for both datasets
+    plt.figure(figsize=(12, 6))
+
+    # Plot Florence-2 tokens per second
+    plt.plot(hours_after_start_florence, filtered_florence_tokens, label='Florence-2 Tokens per Second')
+    
+    # Plot LLaVA tokens per second
+    plt.plot(hours_after_start_llava, filtered_llava_tokens, label='LLaVA Tokens per Second')
+
+    # Calculate and plot trend lines
+    if hours_after_start_florence and filtered_florence_tokens:
+        z_florence = np.polyfit(hours_after_start_florence, filtered_florence_tokens, 1)
+        p_florence = np.poly1d(z_florence)
+        plt.plot(hours_after_start_florence, p_florence(hours_after_start_florence), linestyle='--', color='blue', label='Florence-2 Trend Line')
+
+    if hours_after_start_llava and filtered_llava_tokens:
+        z_llava = np.polyfit(hours_after_start_llava, filtered_llava_tokens, 1)
+        p_llava = np.poly1d(z_llava)
+        plt.plot(hours_after_start_llava, p_llava(hours_after_start_llava), linestyle='--', color='orange', label='LLaVA Trend Line')
+
+    plt.xlabel('Hours After Start', fontsize=14)
+    plt.ylabel('Tokens per Second', fontsize=14)
+    plt.title('Tokens per Second Over Time with Trend Lines', fontsize=14)
+    plt.legend(fontsize=14)
+    plt.tight_layout()
+
+    # Show the plot
+    plt.show()
+
+plotRnR2()
+plotTokensPerSecond()
+CPUPowerWithTokens()

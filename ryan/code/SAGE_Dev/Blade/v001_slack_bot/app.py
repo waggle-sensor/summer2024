@@ -1,9 +1,11 @@
 import os
-
 from slack_bolt import App
 from slack_bolt.adapter.socket_mode import SocketModeHandler
 import json
 import requests
+import sage_data_client 
+from pathlib import Path 
+import pandas as pd
 
 def runOllama(prompt):
     # Define the URL of your local server
@@ -82,14 +84,29 @@ def getnodes(location, sageData):
             nodes.append(vsn)
             return nodes
     return nodes 
-    
+
+
+#-----------------
+
+#-----------------
 # Install the Slack app and get xoxb- token in advance
 app = App(token='')
 #app = App(token=os.environ["SLACK_BOT_TOKEN"])
 
 sageData = loadSageData()
 
-@app.event("message")
+webhook_url = ""
+
+
+##############################
+##############################
+##############################
+#VERY IMPORTANT NOT TO DELETE#
+##############################
+##############################
+##############################
+'''
+@app.event("app_mention")
 def handle_message_events(body, logger, say):
     # Extract the message text from the body dictionary
     message_text = body["event"]["text"]
@@ -129,7 +146,14 @@ def handle_message_events(body, logger, say):
     except Exception as error:
         print(error)
         say(error)
-
+'''
+##############################
+##############################
+##############################
+#VERY IMPORTANT NOT TO DELETE#
+##############################
+##############################
+##############################
 if __name__ == "__main__":
  #   SocketModeHandler(app, os.environ["SLACK_APP_TOKEN"]).start()
     SocketModeHandler(app, '').start()

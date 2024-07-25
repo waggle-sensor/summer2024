@@ -287,4 +287,5 @@ Just need to present and work on the slack bot. Will start updating board this a
 
 Having to delete all of the API tokens to git push is really annoying. I think that is why I haven't been updating the blog because I don't want to delete it every time . The problem is that if I accidentally push an API token, VS Code gets really angry and I have to git revert and do a lot of stuff that takes up time. There is probably a better way than having to delete and push. Maybe if I use a .txt file and read from there. But then when it comes time to push on the node I don't know what a good "secret" solution is. Unless, maybe, we had the tokens hidden on the sage site and it would be allowed to ping. I don't know. Anyways, today I have to make a presentation for the meeting and put a few things together. I would really really like to get Florence working finally as a plugin. That better work by the end of the day. If not, I will just keep working on it over the weekend because it's annoying that it hasn't worked right out of the box. Hopefully good things to come. 
 
-
+AFTERNOON:
+The node is still really slow but I was able to get slack to get images from the server so that is a plus. Almost there

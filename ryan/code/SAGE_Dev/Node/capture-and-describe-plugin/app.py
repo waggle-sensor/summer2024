@@ -9,7 +9,27 @@ import argparse
 from transformers import AutoProcessor, AutoModelForCausalLM
 import requests
 import json
+import resource
+from PIL import Image
 
+
+
+def limit_memory():
+    soft, hard = resource.getrlimit(resource.RLIMIT_AS)
+    resource.setrlimit(resource.RLIMIT_AS, (5 * 1024 * 1024 * 1024, soft))
+
+limit_memory()
+
+# Set CPU affinity to the first 4 cores
+def set_cpu_affinity(cores):
+    pid = os.getpid()
+    os.sched_setaffinity(pid, cores)
+
+set_cpu_affinity({0, 1})
+
+
+
+url = ''
 def sendMessage(text):
    
     headers = {'Content-type': 'application/json'}
@@ -17,10 +37,19 @@ def sendMessage(text):
 
     response = requests.post(url, headers=headers, data=json.dumps(data))
 
+def readImage(imgIpt):
+    #opens image if its already on the computer
+    image = Image.open(f'{imgIpt}')
+    image = image.convert("RGB")
+    
+    return image
+
+
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s %(message)s',
     datefmt='%Y/%m/%d %H:%M:%S')
+
 
 model = AutoModelForCausalLM.from_pretrained("./Florence-2-base", local_files_only=True, trust_remote_code=True)
 processor = AutoProcessor.from_pretrained("./Florence-2-base", local_files_only=True, trust_remote_code=True)
@@ -90,13 +119,15 @@ def capture(plugin, cam, args):
     sample_file_name = "sample.jpg"
     text_file_name = "description.txt"
     sample = cam.snapshot()
+    print(sample)
     sendMessage("Took a picture")
-    description = generateDescription(sample)
-    sendMessage("Finished making my description")
-    with open(text_file_name, "w") as text_file:
-        text_file.write(description)
     if args.out_dir == "":
         sample.save(sample_file_name)
+        img = readImage(sample_file_name)
+        description = generateDescription(img)
+        sendMessage("Finished making my description")
+        with open(text_file_name, "w") as text_file:
+            text_file.write(description)
         plugin.upload_file(sample_file_name)
         plugin.upload_file(text_file_name)
     else:
@@ -106,9 +137,13 @@ def capture(plugin, cam, args):
         sample_path = os.path.join(base_dir, dt.astimezone(timezone.utc).strftime('%Y-%m-%dT%H:%M:%S%z.jpg'))
         text_path = os.path.join(base_dir, "description.txt")
         sample.save(sample_path)
+        img = readImage(sample_file_name)
+        description = generateDescription(img)
+        sendMessage("Finished making my description")
         with open(text_path, "w") as text_file:
             text_file.write(description)
         sendMessage("Uploading")
+        sendMessage(description)
         plugin.upload_file(sample_path)
         plugin.upload_file(text_path)
 
