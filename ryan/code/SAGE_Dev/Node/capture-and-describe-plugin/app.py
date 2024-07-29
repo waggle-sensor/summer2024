@@ -10,7 +10,7 @@ from transformers import AutoProcessor, AutoModelForCausalLM
 import requests
 import json
 from PIL import Image
-
+from collections import OrderedDict
 
 def readImage(imgIpt):
     #opens image if its already on the computer
@@ -81,9 +81,21 @@ def generateDescription(image):
 
     #only prints out labels not bboxes
     printed_labels = labels[task_prompt]['labels']
-    
-    description = "".join([item for sublist in [description_text, descriptions, printed_labels] for item in sublist])
-    return description
+
+    # Join description_text into a single string
+    description_text_joined = "".join(description_text)
+
+    # Combine all lists into one list
+    combined_list = [description_text_joined] + descriptions + printed_labels
+
+    # Remove duplicates while preserving order
+    unique_items = list(OrderedDict.fromkeys(combined_list))
+
+    # Join the unique items into a single string with spaces between them
+    final_description = " ".join(unique_items)
+
+    logging.info(final_description)
+    return final_description
 
 
 def capture(plugin, cam, args):
