@@ -95,3 +95,48 @@ Today I spent figuring out why we weren't seeing any metrics published to the da
 
 ## 07/10/2024
 Today I caught up on documentation. I started by catching up on my blog. Then, I started working on starting final documentation to recreate my project from the summer. This includes perf-mon, stressme, and results.
+
+## 07/11/2024
+Today I finalized the first version of the data pipeline from mimir. This pulls data from mimir and places it into a csv file.
+
+## 07/12/2024
+Today I read over some work from Henry on optimization problems. Then, I started working on my poster. 
+
+## 07/15/2024
+Today I started working on my poster. I worked on creating graphics for my poster that show the framework that we worked on implementing. 
+
+## 07/16/2024
+Today I finished my poster. For this, I started taking a look at the data that we had collected from stressme. We see a linear relationship between system level CPU stress and power. We see a similar, but slightly noisier, relationship between container level CPU stress and power. I gave my poster to Yongho for feedback.
+
+## 07/17/2024
+Today I finished up my presentation for the SAGE/Waggle summer student seminar on Monday. I also addressed all comments that Yongho gave me on my poster.
+
+## 07/18/2024
+Now that we have some data from stressme, our new goal is to run SAGE applications and profile them by their resource utilization. Today, I worked on converting our infrastructure to work with Jetpack 4.4.1 and convert the SAGE applications to runnable kubernetes files.
+
+## 07/19/2024
+I continued with my work from yesterday and ran into the issue that our ansible provisioning script doesn't work on Jetpack 4.4.1. I will need to rewrite parts of this to ensure that it works.
+
+## 07/22/2024
+I tried to resolve this issue, but had no luck so far. The simple solution is to use kubernetes command line tools to deploy everything. However, since these are templates on the provisioning machine, this isn't easy. I tried downloading them from github, but realized that this won't work since they are templates. For now, we will try using Jetpack 4.6.1.
+
+## 07/23/2024
+Jetpack 4.6.1 doesn't work either. However, the issue is different this time. We were unable to get SAGE applications to run on Jetpack 4.6.1. So, although our provisioning script works, we are unable to run applications. This means that we will have to convert the ansible to work with Jetpack 4.4.1 (a known version that SAGE apps can run on). I spent the rest of the day working on deliverables
+
+## 07/24/2024
+Today I worked on updating the Ansible script and continued working on my deliverables. 
+
+## 07/25/2024
+Today I worked on getting multiple devices set up for data gathering. This involved flashing several nanos and getting them provisioned. I also setup the playback server on each device.
+
+## 07/26/2024
+KAYAK KAYAK KAYAK!!
+
+## 07/29/2024
+Today, we continued on working towards the multi device setup. We ran into a few issues.
+
+## 07/30/2024
+Today was the CELS student event, and I spent the rest of my time working on deliverables.
+
+## 07/31/2024
+Today I worked on updating all of my documents and deliverables. I also walked through the flashing process with Yongho.
