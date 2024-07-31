@@ -1,11 +1,11 @@
 # General Information
 This folder contains two scripts, one to plot the mpl file itself in color and another to plot 5 minute intervals of the mpl file. These scripts will work on the mini_mpl zip files found in /lcrc/project/waggle/public_html/datasets after you have downloaded them to you local machine. 
 
-## mplplotter.py
+### mplplotter.py
 The mplplotter.py script creates an output that looks like this
 ![Output](/abraham/Images/202203161900.mpl.png)
 
-## mplavg.py
+### mplavg.py
 The mplavg.py script creates an output that looks like this
 ![Output](/abraham/Images/pc0-5.png)
 
