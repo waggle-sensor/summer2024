@@ -10,6 +10,8 @@ trends, but we found they shared little correlation with each other.
 
 ![Image](/abraham/Images/solar.png)
 
+<img src="/abraham/Images/solar.png" alt="Solar Image" width="500">
+
 
 Due to this we looked more into the cloud classification aspect of this research. A sky classification model was built that predicted whether the image was clear sky, 0, or other, 1. Some hyperparameters chosen include ResNet50 pretrained, Cross-Entropy Loss Function, and Adam Optimizer. The ResNet50 model received 98% test accuracy with recall and precision above 98% for both classes.  This is where we encountered our next big problem. We were unable to represent the sky condition in numbers with the LiDAR data, so we chose to just find the correlation or relationship between irradiance data, images, and corresponding LiDAR data. This would help to prove the benefit of LiDAR in predicting sky conditions, and consequently solar data. LiDAR data would help specifically to divide the ”other” class in the sky classification model into more descriptive classes like cloudy, thick overcast, hazy, etc. 
 
