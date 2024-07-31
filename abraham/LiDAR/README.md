@@ -17,4 +17,4 @@ scp your_username@lcrc.anl.gov:/lcrc/project/waggle/public_html/datasets/minimpl
 ```
 
 ## How To Run The Scripts
-To run the scripts you would need to update the filename_path variable to the path of the mpl file in your machine that you are using. 
+To run the scripts you would need to update the filename_path variable to the path of the mpl file in your machine that you are using. Just for idea, if the plots don't work for you, you can update the "mplavg.py" script or both scripts to save the data to a csv file instead of a plot. It may make it easier for you to manipulate the data. 
