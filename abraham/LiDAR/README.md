@@ -4,6 +4,7 @@ This folder contains two scripts, one to plot the mpl file itself in color and a
 ![Output](/abraham/Images/202203161900.mpl.png)
 
 ## The mplavg.py script creates an output that looks like this
+![Output](/abraham/Images/pc0-5.png)
 
 ## To download files from lcrc to a local path on your computer
  ```sh
