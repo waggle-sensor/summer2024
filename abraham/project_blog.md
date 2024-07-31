@@ -2,16 +2,15 @@
 
 LIDAR technology, with its ability to create detailed maps of atmospheric environments, can potentially solve the issue of blockers by providing precise information about the location and height of obstructions. It proposes many benefits that can’t be offered by a regular camera, especially the fact that it provides accurate data in all different types of weather conditions including fog, rain, and low light. This information can be used to adjust solar irradiance estimates and sky predictions, making them more accurate in any setting. Current models experience difficulties in the presense of blockers and unfamiliar sky conditions. We believe LiDAR to potentially solve this issue and allow us to deploy these nodes in urban areas. 
 
-![Image](/abraham/Images/202203022300.png)
+
+<p align="center"> <img src="/abraham/Images/202203022300" width="800"> </p> 
+
 
 ## Problems & Results
 A major problem occurred when we were trying to gather solar wattage data. We naturally assumed wattage and irradiance to follow similar 
 trends, but we found they shared little correlation with each other. 
 
 
-<div style="text-align: center;">
-  <img src="/abraham/Images/solar.png" alt="Solar Image" width="700">
-</div>
 
 <p align="center"> <img src="/abraham/Images/solar.png" width="700"> </p> 
 
