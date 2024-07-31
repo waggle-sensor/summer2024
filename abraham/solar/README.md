@@ -3,6 +3,8 @@ This folder contains the csv file used for training and the model training scrip
 
 The model performed alright scoring a r2 score of 0.75. This meant that 75% of the variance in the dependent variable(wattage) was predictable from the independent variables(images). Besides model performance, we noticed unusual behavior with the wattage data as it did not follow the same trend as irradiance throughout the day. It peaked very early in the morning, not at around noon, which is were irradiance peaked and where wattage should've peaked. Due to this, we decided to focus more on the sky classification aspect of LiDAR data. 
 
+An inference application was not made, but it would involve a couple of steps, including loading the trained model, preprocessing the input images, running the inference to predict the wattage values, and then postprocessing the results for interpretation or further use.
+
 ## How To Get Data
 The dataset images can be found in /lcrc/project/waggle/summer_projects/summer2024/ruben_abraham. In this folder, you will see a zip file called "watt_model_dataset."
 
