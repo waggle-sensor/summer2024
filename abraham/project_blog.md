@@ -30,9 +30,9 @@ Due to this we looked more into the cloud classification aspect of this research
 
 ## Findings
 For this specific Hazy sky condtion
--Solar irradiance is much lower peaking around 600 W/m2
--LiDAR plots show high intensity values around 6,000m where clouds are detected
--Average signal strength shows a drastic peak similarly around 6,000m.
+- Solar irradiance is much lower peaking around 600 W/m2
+- LiDAR plots show high intensity values around 6,000m where clouds are detected
+- Average signal strength shows a drastic peak similarly around 6,000m.
 
 Although I could not put all of the sky conditions and their observations, it is clear from this one example that using LiDAR data helps better classify a sky condition. 2D images of the sky work in many conditions. Though, when features in the image are unrecognizable or unfamiliar to the model, LiDAR data can be used to disambiguate. 
 
