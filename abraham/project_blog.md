@@ -28,10 +28,13 @@ Due to this we looked more into the cloud classification aspect of this research
 ### Irradiance Throughout Day
 <p align="center"> <img src="/abraham/Images/3:04.png" width="500"> </p> 
 
+## Findings
+For this specific Hazy sky condtion
+-Solar irradiance is much lower peaking around 600 W/m2
+-LiDAR plots show high intensity values around 6,000m where clouds are detected
+-Average signal strength shows a drastic peak similarly around 6,000m.
 
-
-
-
+Although I could not put all of the sky conditions and their observations, it is clear from this one example that using LiDAR data helps better classify a sky condition. 2D images of the sky work in many conditions. Though, when features in the image are unrecognizable or unfamiliar to the model, LiDAR data can be used to disambiguate. 
 
 ## Conclusions & Future Work
 Although a ML model was not created in these 10 weeks, based on the correlation between LiDAR data, image, and solar irradiance data, we can say that LiDAR data is very beneficial in the prediction of sky conditions and the estimation of solar irradiance. It should be used in pair to the images. In the future, we aim to convert LiDAR data into numerical values that represent sky conditions. Solving this issue will allow us to create a dataset and, subsequently, develop a model that incorporates both image and LiDAR data. This model would be able to classify sky conditions and eventually estimate solar irradiance, very accurately.
