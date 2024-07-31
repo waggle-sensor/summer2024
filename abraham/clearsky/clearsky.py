@@ -183,4 +183,4 @@ def test(test_loader, criterion, device):
 train(epochs, criterion, optimizer, scheduler, train_loader, val_loader, device)
 test(test_loader, criterion, device)
 
-torch.save(model.state_dict(), 'resnet50_classification.pth')
+torch.save(model.state_dict(), 'resnet50_clearsky.pth')
