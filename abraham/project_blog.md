@@ -18,10 +18,13 @@ Due to this we looked more into the cloud classification aspect of this research
 
 ### Hazy Image
 <p align="center"> <img src="/abraham/Images/1646413225671167201-sample.jpg" width="500"> </p>
+
 ### LiDAR Plot
 <p align="center"> <img src="/abraham/Images/202203041700.png" width="500"> </p>
+
 ### First 5 Minute Average Signal Intensity
 <p align="center"> <img src="/abraham/Images/hazy0-5.png" width="500"> </p>
+
 ### Irradiance Throughout Day
 <p align="center"> <img src="/abraham/Images/3:04.png" width="500"> </p> 
 
