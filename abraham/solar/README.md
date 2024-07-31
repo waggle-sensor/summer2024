@@ -19,4 +19,4 @@ scp your_username@lcrc.anl.gov:/lcrc/project/waggle/summer_projects/summer2024/r
 ```
 
 ## How To Run The Model Training Script
-In order to run the script, you must have updated the "img+power||(1)" csv file with the correct image paths on your local machine. Once the csv file is corrected, then you must update the file path in "model.py" itself to the corrected csv file. 
+In order to run the script, you must have updated the "img+power||(1).csv" file with the correct image paths on your local machine. Once the csv file is corrected, then you must update the file path in "model.py" itself to the corrected csv file. 
