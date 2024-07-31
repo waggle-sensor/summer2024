@@ -15,8 +15,8 @@ You can download the model like this.
 ```sh
 scp your_username@lcrc.anl.gov:/lcrc/project/waggle/summer_projects/summer2024/ruben_abraham/resnet50_clearsky.pth /your/local/path/on/computer
 ```
-
-
+## How To Run The Model Training Script
+In order to run the script, you must have updated the csv file with the correct image paths on your local machine. Once the csv file is corrected, then you must update the file path in the script itself to the corrected csv file. 
 
 
 
