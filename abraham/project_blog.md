@@ -20,13 +20,13 @@ Due to this we looked more into the cloud classification aspect of this research
 <p align="center"> <img src="/abraham/Images/lidar_sky-solar1a.jpg" width="300"> <img src="/abraham/Images/lidar_sky-solar2a.jpg" width="300"> <img src="/abraham/Images/lidar_sky-solar3a.jpg" width="300"></p>
 
 ### LiDAR Plot
-<p align="center"> <img src="/abraham/Images/lidar_sky-solar1b.jpg" width="300"> <img src="/abraham/Images/lidar_sky-solar2b.jpg" width="300"> <img src="/abraham/Images/lidar_sky-solar3b.jpg" width="300"> </p>
+<p align="center"> <img src="/abraham/Images/lidar_sky-solar1b.jpg" width="300"> <img src="/abraham/Images/lidar_sky-solar2b.png" width="300"> <img src="/abraham/Images/lidar_sky-solar3b.png" width="300"> </p>
 
 ### First 5 Minute Average Signal Intensity
-<p align="center"> <img src="/abraham/Images/lidar_sky-solar1c.jpg" width="300"> <img src="/abraham/Images/lidar_sky-solar2c.jpg" width="300"> <img src="/abraham/Images/lidar_sky-solar3c.jpg" width="300"></p>
+<p align="center"> <img src="/abraham/Images/lidar_sky-solar1c.jpg" width="300"> <img src="/abraham/Images/lidar_sky-solar2c.png" width="300"> <img src="/abraham/Images/lidar_sky-solar3c.png" width="300"></p>
 
 ### Irradiance Throughout Day
-<p align="center"> <img src="/abraham/Images/lidar_sky-solar1d.jpg" width="500"> <img src="/abraham/Images/lidar_sky-solar2d.jpg" width="300">  <img src="/abraham/Images/lidar_sky-solar3d.jpg" width="300"> </p> 
+<p align="center"> <img src="/abraham/Images/lidar_sky-solar1d.jpg" width="500"> <img src="/abraham/Images/lidar_sky-solar2d.jpg" width="300">  <img src="/abraham/Images/lidar_sky-solar3d.png" width="300"> </p> 
 
 ## Findings
 For this specific Hazy sky condtion
