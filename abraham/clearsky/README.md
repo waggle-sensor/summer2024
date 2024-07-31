@@ -3,6 +3,8 @@ This folder contains the model training file and the dataset it was trained on. 
 
 The model performed really well scoring 98% test accuracy with precision and recall both above 97% for both classes. There is currently no inferencing function for the model, because it was not fully complete to our liking. We wanted to use LiDAR data to seperate the other class or 0 class into more descriptive classes, but were unable to do so. 
 
+An inference application for this current model trained on images and their corresponding labels would involve several steps, including loading the trained model, preprocessing the input images, running the inference to predict what class the image is (clearsky,0 or other,1), and then postprocessing the results for interpretation or further use.
+
 ## How To Get Data
 The images are located in /lcrc/project/waggle/summer_projects/summer2024/ruben_abraham. In this folder, there is a file called "clear_model_dataset.zip."
 
