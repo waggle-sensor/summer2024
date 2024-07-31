@@ -1,5 +1,5 @@
 # General Information
-This folder contains the csv file used for training and the model training script. The dataset is comprised of image paths and their corresponding wattage value. The model I trained was a regression model that estimating the solar wattage based on a given sky face image. 
+This folder contains the csv file used for training and the model training script. The dataset is comprised of image paths and their corresponding wattage value. The model I trained was a regression model that estimated the solar wattage based on a given sky-face image. 
 
 ## How To Get Data
 The dataset images can be found in /lcrc/project/waggle/summer_projects/summer2024/ruben_abraham. In this folder, you will see a zip file called "watt_model_dataset."
