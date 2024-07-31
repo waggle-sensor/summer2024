@@ -15,5 +15,5 @@ Once extracted, it contains the "storage.sagecontinuum.org" folder which contain
 The model is also found in the "ruben_abraham" folder called "resnet50Watt.pth." 
 You can download the model like this
 ```sh
-scp your_username@lcrc.anl.gov:/lcrc/project/waggle/summer_projects/summer2024/ruben_abraham /your/local/path/on/computer
+scp your_username@lcrc.anl.gov:/lcrc/project/waggle/summer_projects/summer2024/ruben_abraham/resnet50Watt.pth /your/local/path/on/computer
 ```
