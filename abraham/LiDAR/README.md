@@ -4,7 +4,7 @@ This folder contains two scripts, one to plot the mpl file itself in color and a
 
 ### mplplotter.py
 The mplplotter.py script creates an output that looks like this
-![Output](/abraham/Images/202203022300.png)
+![Output](/abraham/Images/lidar_sky-solar1.png)
 
 ### mplavg.py
 The mplavg.py script creates an output that looks like this
