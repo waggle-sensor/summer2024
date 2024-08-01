@@ -26,7 +26,7 @@ Due to this we looked more into the cloud classification aspect of this research
 <p align="center"> <img src="/abraham/Images/lidar_sky-solar1c.jpg" width="300"> <img src="/abraham/Images/lidar_sky-solar2c.png" width="300"> <img src="/abraham/Images/lidar_sky-solar3c.png" width="300"></p>
 
 ### Irradiance Throughout Day
-<p align="center"> <img src="/abraham/Images/lidar_sky-solar1d.jpg" width="500"> <img src="/abraham/Images/lidar_sky-solar2d.jpg" width="300">  <img src="/abraham/Images/lidar_sky-solar3d.png" width="300"> </p> 
+<p align="center"> <img src="/abraham/Images/lidar_sky-solar1d.jpg" width="300"> <img src="/abraham/Images/lidar_sky-solar2d.png" width="300">  <img src="/abraham/Images/lidar_sky-solar3d.png" width="300"> </p> 
 
 ## Findings
 For this specific Hazy sky condtion
