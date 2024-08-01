@@ -1,14 +1,16 @@
 # General Information
-This folder contains two scripts, one to plot the mpl file itself in color and another to plot 5 minute intervals of the mpl file. These scripts will work on the mini_mpl zip files found in /lcrc/project/waggle/public_html/datasets after you have downloaded them to you local machine. 
+This folder contains two scripts, one to plot the mpl file itself in color and another to plot 5 minute intervals of the mpl file. These scripts will work on the mini_mpl files found in /lcrc/project/waggle/public_html/datasets after you have downloaded them to your local machine. 
 
 
-### mplplotter.py
+## mplplotter.py
 The mplplotter.py script creates an output that looks like this
-![Output](/abraham/Images/lidar_sky-solar1.png)
 
-### mplavg.py
+<p align="center"> <img src="/abraham/Images/lidar_sky-solar1.png" width="700"> </p> 
+
+## mplavg.py
 The mplavg.py script creates an output that looks like this
-![Output](/abraham/Images/pc0-5.png)
+
+<p align="center"> <img src="/abraham/Images/pc0-5.png" width="700"> </p> 
 
 ## How To Get Files
 To download files from lcrc to a local path on your computer
