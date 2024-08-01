@@ -1,6 +1,6 @@
 # Using LIDAR to Aid Models in Solar Estimation and Sky Classification
 
-LIDAR technology, with its ability to create detailed maps of atmospheric environments, can potentially solve the issue of blockers by providing precise information about the location and height of obstructions. It proposes many benefits that can’t be offered by a regular camera, especially the fact that it provides accurate data in all different types of weather conditions including fog, rain, and low light. This information can be used to adjust solar irradiance estimates and sky predictions, making them more accurate in any setting. Current models experience difficulties in the presense of blockers and unfamiliar sky conditions. We believe LiDAR to potentially solve this issue and allow us to deploy these nodes in urban areas. 
+LIDAR technology, with its ability to create detailed maps of atmospheric environments, can potentially solve the issue of blockers by providing precise information about the location and height of obstructions. It proposes many benefits that can’t be offered by a regular camera, especially the fact that it provides accurate data in all different types of weather conditions including fog, rain, and low light. This information can be used to adjust solar irradiance estimates and sky predictions, making them more accurate in any setting. Current models experience difficulties in the presense of blockers and unfamiliar sky conditions. We believe LiDAR can potentially solve this issue and allow us to deploy these nodes in urban areas. 
 
 
 <p align="center"> <img src="/abraham/Images/lidar_sky-solar1.png" width="700"> </p> 
@@ -8,13 +8,13 @@ LIDAR technology, with its ability to create detailed maps of atmospheric enviro
 
 ## Problems & Results
 A major problem occurred when we were trying to gather solar wattage data. We naturally assumed wattage and irradiance to follow similar 
-trends, but we found they shared little correlation with each other. 
+trends, but we found they shared little correlation with each other. Wattage peaks early in the morning and is generally higher than irradiance which is very abnormal. 
 
 
 
 <p align="center"> <img src="/abraham/Images/lidar_sky-solar2.png" width="700">
 
-Due to this we looked more into the cloud classification aspect of this research. A sky classification model was built that predicted whether the image was clear sky, 0, or other, 1. Some hyperparameters chosen include ResNet50 pretrained, Cross-Entropy Loss Function, and Adam Optimizer. The ResNet50 model received 98% test accuracy with recall and precision above 98% for both classes.  This is where we encountered our next big problem. We were unable to represent the sky condition in numbers with the LiDAR data, so we chose to just find the correlation or relationship between irradiance data, images, and corresponding LiDAR data. This would help to prove the benefit of LiDAR in predicting sky conditions, and consequently solar data. LiDAR data would help specifically to divide the ”other” class in the sky classification model into more descriptive classes like cloudy, thick overcast, hazy, etc. 
+Due to this we looked more into the sky classification aspect of this research. We built a model that predicted whether the image was clear sky, 0, or other, 1. Some hyperparameters we chose included ResNet50 pretrained, Cross-Entropy Loss Function, and Adam Optimizer. The ResNet50 model performed well, receiving 98% test accuracy with recall and precision above 97% for both classes.  This is where we encountered our next big problem. We were unable to represent the sky condition in numbers with the LiDAR data, so we chose to just find the correlation or relationship between irradiance data, images, and corresponding LiDAR data. This would help to prove the benefit of LiDAR in predicting sky conditions, and consequently solar data. Our original plan was to use LiDAR data to divide the ”other” class in the sky classification model into more descriptive classes like cloudy, thick overcast, hazy, etc. 
 
 ### Images (Hazy, Clear, Cloudy)
 
