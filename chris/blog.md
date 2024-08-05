@@ -50,3 +50,93 @@ Today I wrote a dockerfile and began testing it. It was fairly simple to write, 
 Today I worked on a few different things. For starters, I migrated the stress code to a new repo called stressme. With this, the Dockerfile sits at the top level of the container, and we can use the waggle build and push github action for docker containers. This saved me a lot of work reinventing the wheel. Now, in this process, I discovered a few bugs, but ultimately, I was able to build and push my docker image. In this, I ran into another problem. This image doesn't allow me to import pytorch. I'm not sure why that is yet, but I will have to look into it more tomorrow.
 
 The other thing I began working on was the data pipeline from Grafana to what will eventually be a model. Grafana displays data nicely, but I can't manipulate it with something like a machine learning model. So, we can query the Grafana api for data to manipulate locally. I began playing with the api to get a feel for it.
+
+## 06/18/2024
+Today I worked on debugging the pytorch issue within the image. The solution to this issue is running a container with the nvidia container runtime. We can do this in Docker using the --runtime flag, but there is not an easy equivalent in Kubernetes. Today, I worked on installing the nvidia runtime container and setting it to the versions that are in the waggle production. We were able to specify the nvidia runtime, but it had no cuda libraries within it.
+
+## 06/19/2024
+Since we are blocked on the kubernetes runtime issue, I spent the day looking into various machine learning techniques that we might want to apply to our data. Remember that our ultimate goal is to predict the power consumption of a program from other metrics such as cpu and gpu utilization. I started by looking at the pytorch solution to the mnist problem. This involves a CNN to classify images. I also spent the day reading up on various pieces of theory such as convolutions, transformers, etc. Seongha recommended that we use a timeseries transformer predictor. 
+
+## 06/20/2024
+I spent most of today reading and editing Yongho's paper. It explains some of the foundational work he has done in building a performance metrics system for waggle. This includes the jetson-exporter and his sidecar container. We also made progress on the cuda container issue. As we expected the issue is with the runtime choice. To specify this in kubernetes, you need to define a RuntimeClass object (which updates the config.toml to use a new runtime) and tag the container with it. I added these various steps to the ansible script for future provisioning.
+
+## 06/21/2024
+Today, I tried to run the container after creating the nvidia RuntimeClass object. First, I ran into some issues with pulling the image. Kubernetes fails to pull it due to its size. To resolve this issue, we have to pull with k3s ctr. After, this I tried running the image and still didn't have any cuda libraries installed. 
+
+## 06/24/2024
+To get past the roadblock of the nvidia container issue, we decided to run the stressme app I developed on a sage node. We decided to run it on W023 (at the main gate) to start gathering some data. This meant that I needed to start looking at the sage data client to pull my data. 
+
+## 06/25/2024
+I continued working with the sage data client to pull data and eventually formatted it in a way that was usable to me. I'm not super familiar with pandas so it was a fun opportunity to try it out! We ran into a weird issue with my app that caused it to not terminate on the sage node. The cpu stress of my app is provided by stress-ng. If you run it with less than a second passed as an argument, it won't terminate.
+
+## 06/26/2024
+I continued to work with the sage data client and added more filtering options to supplement the fairly simple sage data client. Yongho also resolved the issue with nvidia container issue. To solve it, we upgraded the nx to use jetpack 5.1.2 and had to use a new base container image.
+
+## 06/27/2024
+Today I started trying to define a model that could predict my data. I started with the mnist example that I received from Yongho. I simplified the model structure to a simple feedforward network and customized it to use a pandas dataset. I then tried classifying data, but the model didn't converge. Despite this, I had a relatively high accuracy. This doesn't seem right, so I'll need to dig further into this.
+
+## 06/28/2024
+Yongho and I are planning to move the mimir and grafana instances off of the NX in order to save resources on the NX. We are getting a laptop to have a metrics instance on.
+
+## 07/01/2024
+Taking a look at the data I had gathered, there was not a strong correlation between any measurements except the tegra measurement of cpu utilization and power. Taking a step back, we decided to simplify our data gathering process at least initially. Instead of randomization, we decided to linearly interpolate the data and to add an option to use cpu only.
+
+## 07/02/2024
+I spent today splitting up the ansible playbook into a modular design. With this, we can enable or disable various aspects of the system when flashing a new device. This both makes the process more modular and more reproducible. I also continued to look at my data. 
+
+## 07/03/2024
+I spent today flashing the laptop and looking at the deterministic cpu data. Once again, the only plots that are correlated are the tegra measurements of cpu and power. This means we need to take a step back and look at our variables once again. We decided to recreate this experiement on the NX instead of on W023. We will try this next week.
+
+## 07/08/2024
+I reflashed the NX in order to remove the extra bloat that was added to the device. I also tested that the laptop's mimir and grafana instaces were working. 
+
+## 07/09/2024
+Today I spent figuring out why we weren't seeing any metrics published to the database. It turns out that we needed to specify the http protocol in the address for the laptop. That is, we needed to turn 10.31.81.129:8080... into http://10.31.81.129:8080. Now, we are getting metrics published! Unfortunately, we aren't getting any tegra metrics published because nvidia changed the format for jetpack 5.1.2. Yongho is working on rewriting the jetson-exporter and then we will have data to look at.
+
+## 07/10/2024
+Today I caught up on documentation. I started by catching up on my blog. Then, I started working on starting final documentation to recreate my project from the summer. This includes perf-mon, stressme, and results.
+
+## 07/11/2024
+Today I finalized the first version of the data pipeline from mimir. This pulls data from mimir and places it into a csv file.
+
+## 07/12/2024
+Today I read over some work from Henry on optimization problems. Then, I started working on my poster. 
+
+## 07/15/2024
+Today I started working on my poster. I worked on creating graphics for my poster that show the framework that we worked on implementing. 
+
+## 07/16/2024
+Today I finished my poster. For this, I started taking a look at the data that we had collected from stressme. We see a linear relationship between system level CPU stress and power. We see a similar, but slightly noisier, relationship between container level CPU stress and power. I gave my poster to Yongho for feedback.
+
+## 07/17/2024
+Today I finished up my presentation for the SAGE/Waggle summer student seminar on Monday. I also addressed all comments that Yongho gave me on my poster.
+
+## 07/18/2024
+Now that we have some data from stressme, our new goal is to run SAGE applications and profile them by their resource utilization. Today, I worked on converting our infrastructure to work with Jetpack 4.4.1 and convert the SAGE applications to runnable kubernetes files.
+
+## 07/19/2024
+I continued with my work from yesterday and ran into the issue that our ansible provisioning script doesn't work on Jetpack 4.4.1. I will need to rewrite parts of this to ensure that it works.
+
+## 07/22/2024
+I tried to resolve this issue, but had no luck so far. The simple solution is to use kubernetes command line tools to deploy everything. However, since these are templates on the provisioning machine, this isn't easy. I tried downloading them from github, but realized that this won't work since they are templates. For now, we will try using Jetpack 4.6.1.
+
+## 07/23/2024
+Jetpack 4.6.1 doesn't work either. However, the issue is different this time. We were unable to get SAGE applications to run on Jetpack 4.6.1. So, although our provisioning script works, we are unable to run applications. This means that we will have to convert the ansible to work with Jetpack 4.4.1 (a known version that SAGE apps can run on). I spent the rest of the day working on deliverables
+
+## 07/24/2024
+Today I worked on updating the Ansible script and continued working on my deliverables. 
+
+## 07/25/2024
+Today I worked on getting multiple devices set up for data gathering. This involved flashing several nanos and getting them provisioned. I also setup the playback server on each device.
+
+## 07/26/2024
+KAYAK KAYAK KAYAK!!
+
+## 07/29/2024
+Today, we continued on working towards the multi device setup. We ran into a few issues.
+
+## 07/30/2024
+Today was the CELS student event, and I spent the rest of my time working on deliverables.
+
+## 07/31/2024
+Today I worked on updating all of my documents and deliverables. I also walked through the flashing process with Yongho.

@@ -1,0 +1,20 @@
+# Use a lightweight Python base image
+#FROM waggle/plugin-base:1.1.1-base
+FROM python:3.11
+
+RUN apt-get update \
+  && apt-get install -y \
+  wget \
+  curl
+
+
+# COPY app.py /app/
+COPY app.py upload.py flash_attn.py requirements.txt ./
+RUN pip3 install --no-cache-dir -U -r ./requirements.txt
+
+
+COPY Florence-2-base ./Florence-2-base
+
+# Command to run your Python scripts sequentially
+CMD ["python3", "-u", "app.py"]
+

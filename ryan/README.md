@@ -275,5 +275,21 @@ Testing in progress. Poster also in progress. Will be done by 10:00 am tomorrow!
 
 Final crunch time for poster and presentation. The data is coming in which is good! I'll just parse it out and put it in. Then, if I have time, I'll keep working on the slackbot. 
 
+![Ryan's Board July 12th, 2024 Morning](https://github.com/waggle-sensor/summer2024/blob/main/ryan/RyanBoard/IMG_3766.jpg)
 
+AFTERNOON: No need to show board still working on the presentation and fixing up the poster a little bit. Should be back on track with integration after it is finished. Still crunch time :) 
 
+# July 22nd, 2024
+
+Just need to present and work on the slack bot. Will start updating board this afternoon
+
+# July 25th, 2024
+
+Having to delete all of the API tokens to git push is really annoying. I think that is why I haven't been updating the blog because I don't want to delete it every time . The problem is that if I accidentally push an API token, VS Code gets really angry and I have to git revert and do a lot of stuff that takes up time. There is probably a better way than having to delete and push. Maybe if I use a .txt file and read from there. But then when it comes time to push on the node I don't know what a good "secret" solution is. Unless, maybe, we had the tokens hidden on the sage site and it would be allowed to ping. I don't know. Anyways, today I have to make a presentation for the meeting and put a few things together. I would really really like to get Florence working finally as a plugin. That better work by the end of the day. If not, I will just keep working on it over the weekend because it's annoying that it hasn't worked right out of the box. Hopefully good things to come. 
+
+AFTERNOON:
+The node is still really slow but I was able to get slack to get images from the server so that is a plus. Almost there
+
+# August 5th, 2024
+
+Last week best week. 

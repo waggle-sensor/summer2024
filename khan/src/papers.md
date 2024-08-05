@@ -1,3 +1,10 @@
+### Vision Language Model Evaluation Benchmarks
+- **[Video-MME: The First-Ever Comprehensive Evaluation Benchmark of Multi-modal LLMs in Video Analysis](https://arxiv.org/abs/2405.21075)**
+
+- **[MMMU: A Massive Multi-discipline Multimodal Understanding and Reasoning Benchmark for Expert AGI](https://arxiv.org/abs/2311.16502)**
+
+- **[LVBench: An Extreme Long Video Understanding Benchmark](https://arxiv.org/abs/2406.08035)**
+
 ### Vision Language Models
 - **[LLaVA-NeXT-Interleave: Tackling Multi-image, Video, and 3D in Large Multimodal Models](https://arxiv.org/abs/2407.07895)**
 
@@ -17,15 +24,6 @@
 - **[Visual Instruction Tuning](https://arxiv.org/abs/2304.08485)**
 
 - **[Learning Transferable Visual Models From Natural Language Supervision](https://arxiv.org/abs/2103.00020)**
-
-- **[Visual Instruction Tuning](https://arxiv.org/abs/2304.08485)**
-
-### Vision Language Model Evaluation Benchmarks
-- **[Video-MME: The First-Ever Comprehensive Evaluation Benchmark of Multi-modal LLMs in Video Analysis](https://arxiv.org/abs/2405.21075)**
-
-- **[MMMU: A Massive Multi-discipline Multimodal Understanding and Reasoning Benchmark for Expert AGI](https://arxiv.org/abs/2311.16502)**
-
-- **[LVBench: An Extreme Long Video Understanding Benchmark](https://arxiv.org/abs/2406.08035)**
 
 ### Object Detection and Semantic Segmentation
 - **[Matching Anything by Segmenting Anything](https://arxiv.org/abs/2406.04221)**

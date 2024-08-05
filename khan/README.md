@@ -37,6 +37,10 @@ Exploring improvements for LLMs, including [efficiency](https://arxiv.org/abs/24
 
 I primarily research with [Google Scholar](https://scholar.google.com) and [Papers With Code](https://paperswithcode.com).
 
+## Presentation
+
+Presentation material is available within the [Google Drive folder](https://drive.google.com/drive/folders/1Ja2iQ47uc0zLK-9Q9Dm249wEu098vUff).
+
 ## June 3rd (Week 1)
 
 - Attended orientation, gaining insights into culture, policies, and procedures.
