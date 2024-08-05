@@ -28,7 +28,7 @@ Real-ESRGAN and SUPIR were the two models that I found to be the best revolution
   - [Hugging Face Demo](https://huggingface.co/spaces/Fabrice-TIERCELIN/SUPIR)
   - [Reddit Tutorial](https://www.reddit.com/r/StableDiffusion/comments/1b37h5z/supir_super_resolution_tutorial_to_run_it_locally/) (You have to still create a Dockerfile to run it on the Nodes)
 
-## Future Resources for Resarch
+## Future Resources for Research
 Feel free to use the following to research improved models
  - [Two Minute Papers YouTube Channel](https://www.youtube.com/@TwoMinutePapers)
  - [Papers with Code: Super Resolution](https://paperswithcode.com/task/super-resolution/latest)
