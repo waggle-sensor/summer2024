@@ -1,48 +1,58 @@
-# June 3rd
+# Daily Blog
+
+A quick summary of my progress every week for the Super Resolution project
+
+## Week 1
+
+### June 3rd
 
 Attended Orientation and Performed Training Tasks for the Week
 
-# June 4th
+### June 4th
 
 Continued finishing Training Tasks
 
-# June 5th
+### June 5th
 
 Started looking into papers to perform Super Resolution. Attended a DOE weekly meeting event.
 
-# June 6th
+### June 6th
 
 Looked through 4 different papers covering the history of Super Resolution and detailed methods on  how to perform super resolution using Neural Networks and Transformer Based Methods
 
-# June 7th 
+### June 7th 
 
 Wrapped up findings into a Presentation, but the results of each of these methods did not seem very promising
 
-# June 10th
+## Week 2
+
+### June 10th
 
 Discovered GAN-based methods, specifically Real-ESRGAN, which also includes open sourced code and has very promising results
 
-# June 11th
+### June 11th
 
 Looked through different Real-ESRGAN implementations and compared each of the results. 
 
-# June 12th
+### June 12th
 
 Briefly went through guides for connecting ssh into a gpu computer. Also attended the DOE weekly event.
 
-# June 13th
+### June 13th
 
 Summarized results for Real-ESRGAN for some of the node images that were provided. Learned that some of the results with low quality image inputs looked cartoonish. Need to test more results on text based images as well.
 
-# June 14th
+### June 14th
 
 Found two new models for Super Resolution called BIRD and OSEDiff. Read over research papers. Also now have access to Chicago street view images, so I can test over potential images where there are cars with license plate numbers.
 
-# June 17th
+## Week 3
+
+### June 17th
 
 The goal for this day was to try to implement the two implementations. Unfortunately, today was a rough day: BIRD required a GPU node, and there were connectivity issues with the GPU nodes. I also tried reimplementing on Google Colab but had issues with unzipping my files. I then moved to Jupyter Notebook by connecting through Polaris and my School Account using Anvil, but both sessions failed to start. Spent some time testing the new images I acquired in the Real-ESRGAN model. Also started looking into Docker for future setup with the GPU node.
 
-# June 18th
+### June 18th
 
 Goals:
 - Try to run other Real-ESRGAN implementations and BIRD in Google Colab and compare results
@@ -57,7 +67,7 @@ Final Update:
 - There did not seem to be much of a difference between other implementations of Real-ESRGAN trained on real world images with the results I showed last week. Maybe an improved GPU could have an improvement but highly doubt it
 - Started looking into Polaris, since Dario taught me how to import files into Polaris using Containers. Seems like I need to study Docker for tomorrow.
 
-# June 19th
+### June 19th
 
 Goals:
 - Run BIRD in Google Colab
@@ -78,7 +88,7 @@ Final Update:
   - Unfortunately computationally expensive, so can only test on small images
 - GigaGAN did not have an open-sourced implementation, and seemed to not be viable with its ridiculous computation power
 
-# June 20th
+### June 20th
 
 Goals:
 - Finish up testing SUPIR before the presentation today
@@ -91,7 +101,7 @@ Update 1:
   - When I have access, I want to test the model on the small blurry images Seongha sent.
   - Start learning Docker to setup the model locally in Argonne systems
 
-# June 21st
+### June 21st
 
 Goals:
 - Test the small blurry images
@@ -104,7 +114,9 @@ Update:
   - Getting GPU to work on PyTorch is quite tedious
 - Searching for additional source code for the SUPIR model so I can figure out what to use for the final product
 
-# June 24th
+## Week 4
+
+### June 24th
 
 Goals:
 - Continue studying source code on SUPIR
@@ -116,7 +128,7 @@ Update:
   - The UI version I showed on Thursday is a paid implementation, so I cannot directly access the source code
   - There is another free implementation, but uses a ComfyUI system so it is much more tedious for the user to use
 
-# June 25th
+### June 25th
 
 Update:
 - I was working at home due to the bad weather
@@ -124,7 +136,7 @@ Update:
 - Watched the old resources under https://docs.alcf.anl.gov/services/jupyter-hub/ in hopes of setting it up
 - Still having trouble setting up GPU
 
-# June 26th
+### June 26th
 
 Update:
 - Looked through very useful tutorials on learning Docker: language is not as hard to learn as I thought
@@ -132,21 +144,23 @@ Update:
 - Found real open-sourced directions on setting up SUPIR on Reddit, so will start writing a Dockerfile that follows these directions
   - https://www.reddit.com/r/StableDiffusion/comments/1b37h5z/supir_super_resolution_tutorial_to_run_it_locally/
 
-# June 27th
+### June 27th
 
 Update:
 - Finished writing a brief outline of the Dockerfile
 - Spent some time tweaking the Dockerfile to import the right packages and dependencies
 - Started working on Abstract
 
-# June 28th
+### June 28th
 
 Update:
 - Figured out how to install images: installed python 3.10:buster
 - Figured out how to add the necessary packages
 - Work was pretty smooth until I tried to install dependencies listed in requirements.txt so I need to fix that later
 
-# July 1st 
+## Week 5
+
+### July 1st 
 
 Goals:
 - Fix the issue with requirements.txt
