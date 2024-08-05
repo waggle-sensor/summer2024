@@ -9,7 +9,7 @@ Super Resolution is an Image Enhancement Technique, where the goal is to take a 
 Super Resolution plays a critical role in various fields for restoring old images to learn more about the history of our world, analyzing satellite images to create improved maps, and analyzing microscopic organisms in medical diagnoses. As technological and scientific advancements continue to improve, there is an increase in demand for image enhancement tools: the aid of AI in enhancing images can prove to be less costly for the development of advanced microscopes, telescopes, and cameras, and can help create additional tools in aiding in scientific discoveries.
 
 ## Methods
-From the research that I have collected, GAN (Generative Adversial Network) methods and Diffusion methods are the best methods for Super Resolution at the moment. The following resources were very helpful in learning about each of the methods. Feel free to check out my poster to have a rough idea 
+From the research that I have collected, GAN (Generative Adversial Network) methods and Diffusion methods are the best methods for Super Resolution at the moment. The following resources were very helpful in learning about each of the methods. Feel free to check out my poster to have a rough idea on the topic or to confirm your understandings.
 - **GAN**
   - [IBM's Article](https://developer.ibm.com/articles/generative-adversarial-networks-explained/#introduction-to-gans0)
   - [Computerphile's YouTube video](https://www.youtube.com/watch?v=Sw9r8CL98N0)
