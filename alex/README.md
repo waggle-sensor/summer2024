@@ -18,7 +18,10 @@ From the research that I have collected, GAN (Generative Adversial Network) meth
   - [Computerphile's YouTube video](https://www.youtube.com/watch?v=1CIpzeNxIhU)
 
 ## Models
-Real-ESRGAN and SUPIR were the two models that I found to be the best revolutionary models in each of the GAN and Diffusion Model field. Below are some resources to learn more about them
+Real-ESRGAN and SUPIR were the two models that I found to be the best revolutionary models in each of the GAN and Diffusion Model field. Below are some resources to learn more about them and how to implement them into systems.
+
+For comprehensive results on each of the models, check out Slide 9 on my Presentation.
+
 - **Real-ESRGAN (2021 GAN Model)**
   - [Official GitHub](https://github.com/xinntao/Real-ESRGAN?tab=readme-ov-file#-updates)
   - [Hugging Face Demo](https://huggingface.co/spaces/akhaliq/Real-ESRGAN)
