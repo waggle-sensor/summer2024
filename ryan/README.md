@@ -289,3 +289,7 @@ Having to delete all of the API tokens to git push is really annoying. I think t
 
 AFTERNOON:
 The node is still really slow but I was able to get slack to get images from the server so that is a plus. Almost there
+
+# August 5th, 2024
+
+Last week best week. 
