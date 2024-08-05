@@ -6,5 +6,18 @@ Super Resolution is an Image Enhancement Technique, where the goal is to take a 
 This project serves to explore different types of super-resolution models and understand the feasibility of deploying such models into laboratory systems.
 
 ## Motivation
-Suoer Resolution plays a critical role in various fields for restoring old images to learn more about the history of our world, analyzing satellite images to create improved maps, and analyzing microscopic organisms in medical diagnoses. As technological and scientific advancements continue to improve, there is an increase in demand for image enhancement tools: the aid of AI in enhancing images can prove to be less costly for the development of advanced microscopes, telescopes, and cameras, and can help create additional tools in aiding in scientific discoveries.
+Super Resolution plays a critical role in various fields for restoring old images to learn more about the history of our world, analyzing satellite images to create improved maps, and analyzing microscopic organisms in medical diagnoses. As technological and scientific advancements continue to improve, there is an increase in demand for image enhancement tools: the aid of AI in enhancing images can prove to be less costly for the development of advanced microscopes, telescopes, and cameras, and can help create additional tools in aiding in scientific discoveries.
 
+## Important Links
+- Researching Topics (Use the following to research improved models):
+  - [Papers with Code: Image Restoration](https://paperswithcode.com/task/image-restoration/latest)
+  - [Papers with Code: Super Resolution](https://paperswithcode.com/task/super-resolution/latest)
+  - [Two Minute Papers YouTube Channel](https://www.youtube.com/@TwoMinutePapers)
+‎  ‎ 
+- Models:
+  - Real-ESRGAN
+    - [Official GitHub](https://github.com/xinntao/Real-ESRGAN?tab=readme-ov-file#-updates)
+    - [Hugging Face Demo](https://huggingface.co/spaces/akhaliq/Real-ESRGAN)
+  - SUPIR
+    - [Official GitHub](https://github.com/Fanghua-Yu/SUPIR)
+    - [Hugging Face Demo](https://huggingface.co/spaces/Fabrice-TIERCELIN/SUPIR)
