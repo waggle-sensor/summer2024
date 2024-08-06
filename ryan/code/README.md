@@ -9,12 +9,16 @@ Update: I am currently in the process of making code easier to find
 |
 |──SAGE_dev
 |
+|──slack_dev
+|
 |──veryold_andor_useless
 ```
 
 laptop_dev contains everything I am playing around with because I have a NVIDIA RTX 4060 on my laptop. I may also migrate some code from there to SAGE_dev when the time comes 
 
 SAGE_dev contains everything I deploy on the nodes and blades. The goal is to directly tranfer from the node/blade files onto the nodes/blades. This way I never loose any code and have it floating around. 
+
+slack_dev has some of my code I was using in order to figure out the Slack API 
 
 veryold_andor_useless is for historical purposes. If, one day, someone really needs to look at TroL, my code is still in there--it may be hard to figure out and use but I felt bad deleting it. 
 ## Things I always forget but would be useful to remember [in no particular order (yet)]
