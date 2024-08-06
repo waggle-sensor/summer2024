@@ -23,7 +23,7 @@ Real-ESRGAN and SUPIR were the two models that I found to be the best revolution
 For comprehensive results on each of the models, check out Slide 9 on my Presentation.
 
 - **Real-ESRGAN (2021 GAN Model)**
-  - [Official GitHub](https://github.com/xinntao/Real-ESRGAN?tab=readme-ov-file#-updates)
+  - [Official GitHub](https://github.com/xinntao/Real-ESRGAN)
   - [Hugging Face Demo](https://huggingface.co/spaces/akhaliq/Real-ESRGAN)
 - **SUPIR (April 2024 Diffusion Model)**
   - [Two Minute Papers Video](https://www.youtube.com/watch?v=POJ1w8H8OjY)
