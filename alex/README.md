@@ -37,6 +37,6 @@ For comprehensive results on each of the models, check out Slide 9 on my Present
 
 ## Future Resources for Research
 Feel free to use the following to research improved models
- - [Two Minute Papers YouTube Channel](https://www.youtube.com/@TwoMinutePapers)
+ - [Two Minute Papers YouTube Channel](https://www.youtube.com/@TwoMinutePapers) **Best Link to start**
  - [Papers with Code: Super Resolution](https://paperswithcode.com/task/super-resolution/latest)
  - [Papers with Code: Image Restoration](https://paperswithcode.com/task/image-restoration/latest)
