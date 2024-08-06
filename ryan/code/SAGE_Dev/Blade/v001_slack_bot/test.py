@@ -24,7 +24,7 @@ def process_file_from_url(url):
     try:
         # Initialize a session and download the file
         username = "rrearden"
-        userToken = ""
+        userToken =
         with requests.Session() as session:
             session.auth = (username, userToken)
             response = session.get(url.strip())

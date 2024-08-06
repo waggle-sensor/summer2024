@@ -90,8 +90,7 @@ def getnodes(location, sageData):
 
 #-----------------
 # Install the Slack app and get xoxb- token in advance
-app = App(token='')
-#app = App(token=os.environ["SLACK_BOT_TOKEN"])
+app = App(token=os.environ["SLACK_BOT_TOKEN"])
 
 sageData = loadSageData()
 
@@ -155,8 +154,8 @@ def handle_message_events(body, logger, say):
 ##############################
 ##############################
 if __name__ == "__main__":
- #   SocketModeHandler(app, os.environ["SLACK_APP_TOKEN"]).start()
-    SocketModeHandler(app, '').start()
+    SocketModeHandler(app, os.environ["SLACK_APP_TOKEN"]).start()
+
 
 
 '''
