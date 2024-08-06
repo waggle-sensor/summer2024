@@ -24,12 +24,16 @@ For comprehensive results on each of the models, check out Slide 9 on my Present
 
 - **Real-ESRGAN (2021 GAN Model)**
   - [Official GitHub](https://github.com/xinntao/Real-ESRGAN)
+  - [Paper](https://arxiv.org/abs/2107.10833)
   - [Hugging Face Demo](https://huggingface.co/spaces/akhaliq/Real-ESRGAN)
+  - [Other Links](https://github.com/xinntao/Real-ESRGAN?tab=readme-ov-file#-real-esrgan-training-real-world-blind-super-resolution-with-pure-synthetic-data)
 - **SUPIR (April 2024 Diffusion Model)**
-  - [Two Minute Papers Video](https://www.youtube.com/watch?v=POJ1w8H8OjY)
   - [Official GitHub](https://github.com/Fanghua-Yu/SUPIR)
+  - [Paper](https://arxiv.org/abs/2401.13627)
+  - [Two Minute Papers Video](https://www.youtube.com/watch?v=POJ1w8H8OjY)
   - [Hugging Face Demo](https://huggingface.co/spaces/Fabrice-TIERCELIN/SUPIR)
-  - [Reddit Tutorial](https://www.reddit.com/r/StableDiffusion/comments/1b37h5z/supir_super_resolution_tutorial_to_run_it_locally/) (You have to still create a Dockerfile to run it on the Nodes)
+  - [Reddit Tutorial](https://www.reddit.com/r/StableDiffusion/comments/1b37h5z/supir_super_resolution_tutorial_to_run_it_locally/)   (*Might not need because of Updated GitHub Instructions*)
+  - [Other Links](https://github.com/Fanghua-Yu/SUPIR?tab=readme-ov-file#cvpr2024-scaling-up-to-excellence-practicing-model-scaling-for-photo-realistic-image-restoration-in-the-wild)
 
 ## Future Resources for Research
 Feel free to use the following to research improved models
