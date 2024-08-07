@@ -1,0 +1,3 @@
+FROM ollama/ollama
+
+COPY llava/ /root/.ollama/models 

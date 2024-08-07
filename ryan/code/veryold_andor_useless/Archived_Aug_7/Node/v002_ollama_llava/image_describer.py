@@ -28,21 +28,16 @@ def jsonIT(img_path, description, avg_tps, completeTime, timestamp, json_file_pa
 
     # Read and update the existing data from the JSON file
     if Path(json_file_path).exists():
-        with open(json_file_path, "r+") as file:
-            try:
-                existing_data = json.load(file)
-                if not isinstance(existing_data, list):
-                    existing_data = []
-            except json.JSONDecodeError:
+        with open(json_file_path, "r+") as f:
                 existing_data = []
             
             # Append the new data
-            existing_data.append(new_data)
+                existing_data.append(new_data)
 
-            # Move the file pointer to the beginning and truncate the file
-            file.seek(0)
-            file.truncate()
-            json.dump(existing_data, file, indent=4)
+                # Move the file pointer to the beginning and truncate the file
+                file.seek(0)
+                file.truncate()
+                json.dump(existing_data, file, indent=4)
     else:
         # If the file doesn't exist, create it and write the new data
         with open(json_file_path, "w") as file:

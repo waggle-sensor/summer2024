@@ -58,7 +58,7 @@ def runOllama(prompt, isNode=False):
         return "Null"
     
 app = App(token=os.environ["SLACK_BOT_TOKEN"])
-webhook_url = "https://hooks.slack.com/services/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"
+webhook_url = ""
 
 #get bot ID
 bot_id = app.client.auth_test()["user_id"]
