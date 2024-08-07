@@ -293,3 +293,9 @@ The node is still really slow but I was able to get slack to get images from the
 # August 5th, 2024
 
 Last week best week. 
+
+# August 6th, 2024
+
+![Ryan's Board August 6th, 2024 Afternoon](https://github.com/waggle-sensor/summer2024/blob/main/ryan/RyanBoard/IMG_3872.jpg)
+
+The program just ran for the first time today. A slack message can be sent and an image will be sent back. Very exciting. Tomorrow I will fix some of the random bits that are holding the code together and get it in a better state. So glad things are actually working.

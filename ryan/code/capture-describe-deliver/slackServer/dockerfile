@@ -1,0 +1,21 @@
+FROM python:3.11
+
+
+WORKDIR /app
+
+COPY checkplugin.sh serverToUser.py userToServer.py requirements.txt /app/
+RUN pip install --no-cache-dir -r requirements.txt
+
+EXPOSE 11434
+
+RUN apt-get install -y procps
+
+RUN mkdir -p /app/data
+COPY user_data.json /app/data
+COPY sageinfo.json /app/data
+
+SET ENV VARIABLES HERE. HAD TO TAKE OUT FOR GH
+
+RUN chmod +x checkplugin.sh
+
+
