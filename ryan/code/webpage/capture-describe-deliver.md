@@ -3,7 +3,7 @@
 
 Across the United States and the world, the distributed network of Sage nodes captures over 2500 images per day. These nodes can capture photos with important features such as smoke, wildlife, and emergencies. Each image contains unique characteristics which, until now, were hard to look for without manually searching through the Sage database. With both the images and users in mind, this project had two goals: harness the power of machine learning to describe photos as they are taken, and build a user-friendly system to allow others to find what they are looking for within our database.
 
-![System Design][imgs/systemDesign.png]
+![System Design](https://github.com/waggle-sensor/summer2024/blob/main/ryan/code/webpage/systemDesign.png)
 
 ## Using machine learning to describe an image
 
@@ -14,7 +14,7 @@ Models that can take in one input and generate a different type of output are ca
 After some searching, two models matched the criteria that was looked for: LLava, and Florence-2-base. LLaVA has under five gigabytes worth of data and Florence-2-base has under half of a gigabyte of data. These sizes make it easy to load on any device we have. Also, both displayed medium to high accuracy in describing the images that were given to them.
 
 
-![Model Comparison][imgs/modelComparison.png]
+![Model Comparison](https://github.com/waggle-sensor/summer2024/blob/main/ryan/code/webpage/modelComparison.png)
 
 
 This figure shows a test conducted with over 200 images. LLaVA was tested on one node and Florence-2-base was tested on another. Both models were given the same amount of images and were left to generate descriptions. While LLaVA took over 24 hours to generate 200 descriptions, it took Florence-2-base 9 hours. In addition, the node's total CPU usage was 20% less while Florence-2-base than while LLaVA was running. In the end, Florence-2-base generated descriptions 300% faster with the same relative accuracy.
@@ -32,7 +32,7 @@ The Sage/Waggle team communicates to each other through the Slack messaging appl
 A bot was created called "Sage Search" which runs on one of the servers in the Sage network. Sage Search contains the large language model Gemma-2 which understands user queries. Sage Search also tells the image capturing devices when to start generating descriptions based on what the user requests and then sends images back that the user might want to see.
 
 
-![Slack Bot][imgs/slackBot.png]
+![Slack Bot](https://github.com/waggle-sensor/summer2024/blob/main/ryan/code/webpage/slackBot.png)
 
 This image shows a user requesting to find an image with a "white car" on a specific device. Although the description may have inaccuracies, the key features of the image are noted in detail. This highlights the system working as it should.
 
