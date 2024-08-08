@@ -11,7 +11,9 @@ import requests
 import json
 from PIL import Image
 from collections import OrderedDict
+import torch
 
+device = "cuda:0" if torch.cuda.is_available() else "cpu"
 
 def readImage(imgIpt):
     #opens image if its already on the computer
@@ -27,7 +29,7 @@ logging.basicConfig(
     datefmt='%Y/%m/%d %H:%M:%S')
 
 
-model = AutoModelForCausalLM.from_pretrained("./Florence-2-base", local_files_only=True, trust_remote_code=True)
+model = AutoModelForCausalLM.from_pretrained("./Florence-2-base", local_files_only=True, trust_remote_code=True).to(device)
 processor = AutoProcessor.from_pretrained("./Florence-2-base", local_files_only=True, trust_remote_code=True)
 
 
@@ -37,7 +39,7 @@ def run_example(task_prompt, image, text_input=None):
         prompt = task_prompt
     else:
         prompt = task_prompt + text_input
-    inputs = processor(text=prompt, images=image, return_tensors="pt")
+    inputs = processor(text=prompt, images=image, return_tensors="pt").to(device)
 
     generated_ids = model.generate(
     input_ids=inputs["input_ids"],

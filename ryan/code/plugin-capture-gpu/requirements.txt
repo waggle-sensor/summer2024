@@ -1,0 +1,7 @@
+pywaggle[vision] == 0.55.*
+croniter
+transformers
+waggle
+torch
+timm
+einops

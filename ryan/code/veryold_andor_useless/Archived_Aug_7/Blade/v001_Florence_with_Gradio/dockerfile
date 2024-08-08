@@ -27,4 +27,4 @@ EXPOSE 7860
 ENV GRADIO_SERVER_NAME="0.0.0.0"
 
 # Command to run your Python scripts sequentially
-CMD ["python", "-u", "florence_add_any_photo_demo.py"]                                 
+CMD ["python", "-u", "florence_add_any_photo_demo.py"]
