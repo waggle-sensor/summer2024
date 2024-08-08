@@ -15,6 +15,7 @@ From the research that I have collected, GAN (Generative Adversial Network) meth
   - [Computerphile's YouTube video](https://www.youtube.com/watch?v=Sw9r8CL98N0)
   - [Google's Course](https://developers.google.com/machine-learning/gan)
 - **Diffusion**
+  - [AssemblyAI's Article](https://www.assemblyai.com/blog/how-physics-advanced-generative-ai/#generative-ai-with-thermodynamics)
   - [Computerphile's YouTube video](https://www.youtube.com/watch?v=1CIpzeNxIhU)
 
 ## Models
