@@ -2,6 +2,12 @@
 
 ## Jetson Nano
 
+Failed...
+core dumped probably because of pytorch
+
+Will try to look for different version of pytorch that will be compatable. 
+
+
 ## Jetson NX
 
 Trying to install with the base container: nvcr.io/nvidia/l4t-pytorch:r35.2.1-pth2.0-py3
