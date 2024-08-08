@@ -5,6 +5,23 @@ These codes are merged into the [main waggle repository](https://github.com/wagg
 
 ## Week 08/05 -- 08/11
 
+### 08/06 Thu
+
+- Worked on running more instances with analysis
+- Writing the report and the science blog
+
+### 08/05 Wed
+
+- Fixed two bugs with the respawning process
+- Tested different dreams length to let model learn better
+- Added more diagnostics to check model loss, rewards, etc
+
+### 08/04 Tue
+
+- Added the respawning mechanism for old models
+- Tested the general workflow
+- Ran more diagnostics
+
 ### 08/03 Mon
 
 - After many iterations of the lifelong learning, the model finally starts to show some interesting behavior, such as moving the camera in an unexpected pattern. I changed the reward from max to min, so the model should minimize the reward rather than maximize it. Something might be wrong when the model tries to maximize the reward
