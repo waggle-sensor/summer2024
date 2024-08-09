@@ -7,13 +7,8 @@ import time
 from datetime import datetime, timezone
 import argparse
 from transformers import AutoProcessor, AutoModelForCausalLM
-import requests
-import json
 from PIL import Image
 from collections import OrderedDict
-import torch
-
-device = "cuda:0" if torch.cuda.is_available() else "cpu"
 
 def readImage(imgIpt):
     #opens image if its already on the computer
@@ -29,7 +24,7 @@ logging.basicConfig(
     datefmt='%Y/%m/%d %H:%M:%S')
 
 
-model = AutoModelForCausalLM.from_pretrained("./Florence-2-base", local_files_only=True, trust_remote_code=True).to(device)
+model = AutoModelForCausalLM.from_pretrained("./Florence-2-base", local_files_only=True, trust_remote_code=True)
 processor = AutoProcessor.from_pretrained("./Florence-2-base", local_files_only=True, trust_remote_code=True)
 
 
@@ -39,7 +34,7 @@ def run_example(task_prompt, image, text_input=None):
         prompt = task_prompt
     else:
         prompt = task_prompt + text_input
-    inputs = processor(text=prompt, images=image, return_tensors="pt").to(device)
+    inputs = processor(text=prompt, images=image, return_tensors="pt")
 
     generated_ids = model.generate(
     input_ids=inputs["input_ids"],
@@ -88,14 +83,16 @@ def generateDescription(image):
     # Join description_text into a single string
     description_text_joined = "".join(description_text)
 
-    # Combine all lists into one list
-    combined_list = [description_text_joined] + descriptions + printed_labels
+    #makes unique list of labels and adds commas
+    label_list = descriptions + printed_labels
+    unique_labels = list(OrderedDict.fromkeys(label_list))
+    labels = ", ".join(unique_labels)
 
-    # Remove duplicates while preserving order
-    unique_items = list(OrderedDict.fromkeys(combined_list))
+    # Combine all lists into one list
+    combined_list = ["DESCRIPTION:"] + [description_text_joined] + ["LABELS:"] + [labels]
 
     # Join the unique items into a single string with spaces between them
-    final_description = " ".join(unique_items)
+    final_description = " ".join(combined_list)
 
     logging.info(final_description)
     return final_description
@@ -105,15 +102,14 @@ def capture(plugin, cam, args):
     sample_file_name = "sample.jpg"
     text_file_name = "description.txt"
     sample = cam.snapshot()
+    ts = sample.timestamp
     print(sample)
     if args.out_dir == "":
         sample.save(sample_file_name)
         img = readImage(sample_file_name)
         description = generateDescription(img)
-        with open(text_file_name, "w") as text_file:
-            text_file.write(description)
-        plugin.upload_file(sample_file_name, meta={"description": f"1"})
-        plugin.upload_file(text_file_name)
+        plugin.upload_file(sample_file_name, timestamp=ts)
+        plugin.publish("description", description, timestamp=ts)
 
     else:
         dt = datetime.fromtimestamp(sample.timestamp / 1e9)

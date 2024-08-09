@@ -1,0 +1,9 @@
+transformers
+Pillow
+timm
+einops
+pywaggle[vision] == 0.55.*
+croniter
+waggle
+Requests
+opencv-python==4.8.0.74

@@ -3,12 +3,11 @@ from PIL import Image
 from transformers import AutoProcessor, AutoModelForCausalLM
 import time 
 import os 
-import torch
 
 
-device = "cuda:0" if torch.cuda.is_available() else "cpu"
-torch_dtype = torch.float16 if torch.cuda.is_available() else torch.float32
-print(device)
+
+device = "cuda"
+
 
 #takes in an image url/dir returns an readable image 
 def readImage(imgIpt):

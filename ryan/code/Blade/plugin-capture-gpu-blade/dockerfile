@@ -1,0 +1,23 @@
+# Use a lightweight Python base image
+#https://catalog.ngc.nvidia.com/orgs/nvidia/containers/l4t-pytorch
+FROM nvcr.io/nvidia/pytorch:24.01-py3
+
+RUN pip3 install --upgrade pip
+
+RUN apt-get update \
+  && apt-get install -y \
+  wget \
+  curl
+
+
+WORKDIR /app
+# COPY app.py /app/
+COPY app.py flash_attn.py requirements.txt upload.py /app/
+RUN pip3 install --no-cache-dir -U -r /app/requirements.txt
+
+COPY Florence-2-base /app/Florence-2-base
+COPY start.sh /app/start.sh
+# Command to run your Python scripts sequentially
+ENTRYPOINT ["/bin/bash", "/app/start.sh"]
+
+

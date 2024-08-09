@@ -12,11 +12,19 @@ import json
 from PIL import Image
 from collections import OrderedDict
 
+device = "cuda"
+model = AutoModelForCausalLM.from_pretrained("./Florence-2-base", local_files_only=True, trust_remote_code=True).to(device)
+processor = AutoProcessor.from_pretrained("./Florence-2-base", local_files_only=True, trust_remote_code=True)
+
 
 def readImage(imgIpt):
-    #opens image if its already on the computer
-    image = Image.open(f'{imgIpt}')
-    image = image.convert("RGB")
+    #a horrible hackish way to determine if its an URL or a downloaded img
+    if "http" in imgIpt:
+      image = Image.open(requests.get(imgIpt, stream=True).raw)
+    else: 
+        #opens image if its already on the computer
+        image = Image.open(f'{imgIpt}')
+        image = image.convert("RGB")
     
     return image
 
@@ -25,11 +33,7 @@ logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s %(message)s',
     datefmt='%Y/%m/%d %H:%M:%S')
-
-
-model = AutoModelForCausalLM.from_pretrained("./Florence-2-base", local_files_only=True, trust_remote_code=True)
-processor = AutoProcessor.from_pretrained("./Florence-2-base", local_files_only=True, trust_remote_code=True)
-
+    
 
 #takes in a task prompt and image, returns an answer 
 def run_example(task_prompt, image, text_input=None):
@@ -37,7 +41,7 @@ def run_example(task_prompt, image, text_input=None):
         prompt = task_prompt
     else:
         prompt = task_prompt + text_input
-    inputs = processor(text=prompt, images=image, return_tensors="pt")
+    inputs = processor(text=prompt, images=image, return_tensors="pt").to(device)
 
     generated_ids = model.generate(
     input_ids=inputs["input_ids"],
@@ -98,22 +102,24 @@ def generateDescription(image):
     logging.info(final_description)
     return final_description
 
-
 def capture(plugin, cam, args):
     sample_file_name = "sample.jpg"
     text_file_name = "description.txt"
-    sample = cam.snapshot()
-    print(sample)
-    if args.out_dir == "":
-        sample.save(sample_file_name)
-        img = readImage(sample_file_name)
-        description = generateDescription(img)
-        with open(text_file_name, "w") as text_file:
-            text_file.write(description)
-        plugin.upload_file(sample_file_name, meta={"description": f"1"})
-        plugin.upload_file(text_file_name)
-
+    if cam:
+        sample = cam.snapshot()
+        ts = sample.timestamp
     else:
+        sample_file_name = args.url
+        img = readImage(sample_file_name)
+        print(generateDescription(img))
+    if args.out_dir == "" and cam:
+            sample.save(sample_file_name)
+            img = readImage(sample_file_name)
+            description = generateDescription(img)
+            plugin.upload_file(sample_file_name, timestamp=ts)
+            plugin.publish("description", description, timestamp=ts)
+
+    if cam and args.out_dir != "":
         dt = datetime.fromtimestamp(sample.timestamp / 1e9)
         base_dir = os.path.join(args.out_dir, dt.astimezone(timezone.utc).strftime('%Y/%m/%d/%H'))
         os.makedirs(base_dir, exist_ok=True)
@@ -127,10 +133,21 @@ def capture(plugin, cam, args):
             text_file.write(description)
         plugin.upload_file(sample_path, meta={"description": f"{2}"})
         plugin.upload_file(text_path)
+    else: 
+        logging.info("see logs for print output of url img")
+        return 
 
 def run(args):
+    hasURL = False 
     logging.info("starting image sampler.")
-    if args.cronjob == "":
+    if args.url != "":
+        hasURL = True
+        logging.info("URL mode activated")
+        with Plugin() as plugin:
+            cam = ""
+            capture(plugin, cam, args)
+
+    if args.cronjob == "" and not hasURL:
         logging.info("capturing...")
         with Plugin() as plugin, Camera(args.stream) as cam:
             capture(plugin, cam, args)
@@ -150,7 +167,9 @@ def run(args):
             if next_in_seconds > 0:
                 logging.info(f'sleeping for {next_in_seconds} seconds')
                 time.sleep(next_in_seconds)
-            logging.info("capturing...")
+            if hasURL:
+                print("done :)")
+                return
             with Camera(args.stream) as cam:
                 capture(plugin, cam, args)
     return 0
@@ -171,7 +190,11 @@ if __name__ == '__main__':
         '-cronjob', dest='cronjob',
         action='store', default="", type=str,
         help='Time interval expressed in cronjob style')
-
+    parser.add_argument(
+        '-url', dest='url',
+        action='store', default="", type=str,
+        help="link to an image url"
+    )
     args = parser.parse_args()
     if args.out_dir != "":
         os.makedirs(args.out_dir, exist_ok=True)
