@@ -1,15 +1,15 @@
 # Exploration of Super Resolution Image Enhancement by Alexander Nishio
 
 ## Introduction
-Super Resolution is an Image Enhancement Technique, where the goal is to take a low resolution image and increase its resolution to improve its quality. In contrary with the reverse operation called the downscaling task, where a large area of pixels is converted into a small area of pixels, Super Resolution is a difficult task to execute: there are limited pixels on the original image to work with and the model must then predict and generate artificial data to create an improved image. 
+Super Resolution is an Image Enhancement Technique, where the goal is to take a low-resolution image and increase its resolution to improve its quality. In contrast with the reverse operation called the downscaling task, where a large area of pixels is converted into a small area of pixels, Super Resolution is a difficult task to execute: there are limited pixels on the original image to work with and the model must then predict and generate artificial data to create an improved image. 
 
 **This project serves to explore different types of super-resolution models and understand the feasibility of deploying such models into laboratory systems.**
 
 ## Motivation
-Super Resolution plays a critical role in various fields for restoring old images to learn more about the history of our world, analyzing satellite images to create improved maps, and analyzing microscopic organisms in medical diagnoses. As technological and scientific advancements continue to improve, there is an increase in demand for image enhancement tools: the aid of AI in enhancing images helps play a pivotal role for decreasing the costs of developing advanced microscopes, telescopes, and cameras.
+Super Resolution plays a critical role in various fields restoring old images to learn more about the history of our world, analyzing satellite images to create improved maps, and analyzing microscopic organisms in medical diagnoses. As technological and scientific advancements continue to improve, there is an increase in demand for image enhancement tools: the aid of AI in enhancing images helps play a pivotal role in decreasing the costs of developing advanced microscopes, telescopes, and cameras.
 
 ## Methods
-From the research that I have collected, GAN (Generative Adversial Network) methods and Diffusion methods are the best methods for Super Resolution at the moment. The following resources were very helpful in learning about each of the methods. Feel free to check out my poster to have a rough idea on the topic or to confirm your understandings.
+From the research that I have collected, GAN (Generative Adversarial Network) methods and Diffusion methods are the best methods for Super Resolution at the moment. The following resources were very helpful in learning about each of the methods. Feel free to check out my sage website [here](https://github.com/kneshio/sage-website/blob/main/src/pages/science/super-resolution.md#methods) for a brief overview of the methods or to confirm your understanding.
 - **GAN**
   - [IBM's Article](https://developer.ibm.com/articles/generative-adversarial-networks-explained/#introduction-to-gans0)
   - [Computerphile's YouTube video](https://www.youtube.com/watch?v=Sw9r8CL98N0)
@@ -19,9 +19,9 @@ From the research that I have collected, GAN (Generative Adversial Network) meth
   - [Computerphile's YouTube video](https://www.youtube.com/watch?v=1CIpzeNxIhU)
 
 ## Models
-Real-ESRGAN and SUPIR were the two models that I found to be the best revolutionary models in each of the GAN and Diffusion Model field. Below are some resources to learn more about them and how to implement them into systems.
+Real-ESRGAN and SUPIR were the two models that I found to be the best revolutionary models in each of the GAN and Diffusion Model fields. Below are some resources to learn more about them and how to implement them into systems.
 
-For comprehensive results on each of the models, check out Slide 9 on my Presentation.
+For comprehensive results on each of the models, feel free to check out my sage website [here](https://github.com/kneshio/sage-website/blob/main/src/pages/science/super-resolution.md#results).
 
 - **Real-ESRGAN (July 2021 GAN Model)**
   - [Official GitHub](https://github.com/xinntao/Real-ESRGAN)
