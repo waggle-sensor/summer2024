@@ -26,7 +26,7 @@
 
 To run,
 ```bash
-docker run -ti --rm real-esrgan python inference_realesrgan.py -n RealESRGAN_x4plus -i inputs --face_enhance
+sudo docker run -ti --rm real-esrgan python inference_realesrgan.py -n RealESRGAN_x4plus -i inputs --face_enhance
 ```
 
 ### SUPIR
@@ -65,6 +65,6 @@ docker run -ti --rm real-esrgan python inference_realesrgan.py -n RealESRGAN_x4p
 
 To run,
 ```bash
-docker run -d --name supir -p 6688:6688 supir
+sudo docker run -d --name supir -p 6688:6688 supir
 ```
 open your browser and go to https://localhost:6688
