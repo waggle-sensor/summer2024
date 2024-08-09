@@ -4,8 +4,6 @@
 
 ### Real-ESRGAN
 
-**Direct download to the Docker container**
-
 **Building the container**
 
 1. Clone the official Real-ESRGAN repository
@@ -27,6 +25,10 @@
 **Usage**
 
 ### SUPIR
+
+**Direct download to the Docker container**
+
+**Building the container**
 
 1. Clone the official SUPIR repository
    
@@ -54,3 +56,5 @@
     sudo docker build . -t supir
     sudo docker run --gpus all -it supir
     ```
+
+**Usage**
