@@ -24,6 +24,11 @@
 
 **Usage**
 
+To run,
+```bash
+docker run -ti --rm real-esrgan python inference_realesrgan.py -n RealESRGAN_x4plus -i inputs --face_enhance
+```
+
 ### SUPIR
 
 **Direct download to the Docker container**
@@ -56,5 +61,10 @@
     sudo docker build . -t supir
     sudo docker run --gpus all -it supir
     ```
-
 **Usage**
+
+To run,
+```bash
+docker run -d --name supir -p 6688:6688 supir
+```
+open your browser and go to https://localhost:6688
