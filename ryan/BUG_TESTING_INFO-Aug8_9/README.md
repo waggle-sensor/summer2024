@@ -29,7 +29,7 @@ I think it may be a memory issue. The nano is so small it can't even load this i
 HOW I ISOLATED IT:
 ```
 #Code that works:
-print("hi)
+print("hi")
 
 #code that doesn't work
 from transformers import AutoProcessor, AutoModelForCausalLM
@@ -40,6 +40,9 @@ Base image of python:3.11 seems to work fine
 Maybe this would help
 https://benjcunningham.org/installing-transformers-on-jetson-nano.html
 Maybe not though
+
+UPDATE: It is very very slow to even run through the steps on the website. I am guessing it is just a memory problem. We need to think about how make transformers not ambitious in its CPU consumption
+
 ## Jetson NX
 
 Trying to install with the base container: nvcr.io/nvidia/l4t-pytorch:r35.2.1-pth2.0-py3
