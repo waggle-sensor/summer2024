@@ -1,6 +1,6 @@
 # Daily Blog
 
-A quick summary of my progress every week for the Super Resolution project
+A quick summary of my progress every week during my 10 week stay during the internship
 
 ## Week 1
 
@@ -172,3 +172,59 @@ Update:
   - I manually did git clone from terminal and called the folder SUPIR and manually edited the requirements.txt to make this work
   - Ran into an issue in the middle where it could not find my SUPIR folder but performing docker rmi -f on the image seemed to fix it.
 - Got the rest technically working but not sure if my code fully works yet so need to tweek it more tomorrow
+
+### Forgot to update the rest of the week, therefore here is the summary:
+- I was not able to find a proper base image specifically for the SUPIR model
+- SUPIR model is too large (Docker container is 40GB and requires 4~10GB of VRAM)
+- SUPIR model cannot run on the blade properly, since it cannot run on CPU
+- Overall decided to switch projects due to the limited amount of progress I can make moving forward
+
+## Week 6
+
+### July 8th and 9th
+- Performed initial research on how to work with open-cv
+- Learned more about how to perform x-ray diffraction microscopy
+- Tried to get the callibration images loaded
+
+### July 10th
+- Learned how to create patches over images
+- Had red boxes over individual boxes by the end of the day
+
+### July 11th
+- Modified code to create square patches instead of rectangle patches
+- Attempted to create a stacked 40x41 patch laid side-by-side together
+  - Did not go very well as shown in the presentation
+
+### July 12th
+- Looked into other alternatives
+  - Tried to visualize images using rasterio instead of open-cv
+  - Tried to learn more about how to use Dioptas through glossing over source code
+  - Overall determined that project is too diffuclt to continue without more background information on how to perform x-ray diffraction microscopy
+ 
+## Week 7
+- Prepared for OMNI Fire Poster Conference and designed my poster
+- Prepared for Argonne Presentation Event and designed my presentation
+- Performed rehearsals to practice for both events
+
+## Week 8
+
+### July 22nd
+- Had my Argonne Presentation Event
+- Due to Week 6's conclusion on Friday, decided to help other interns finish their projects
+  - Decided to work with Michael on potentially designing a audio separator plugin
+
+### Rest of Week 8
+- Primarily performed research on how to run plugins
+- Collaborated with Michael to design a diagram for making the plugin
+- Found Sean's plugin that can start a microphone, record the audio samples, and send it to a storage system
+- Combined Michael's process_wav.py file with the plugin
+- Helped work on Dockerfile
+
+## Week 9
+
+Was away in Dallas for my OMNI Fire Poster Event (was very fun!) :)
+
+## Week 10
+
+- Primarily focused on writing documentation for Weeks 1~8
+- Wrote a blog post for the sage website
