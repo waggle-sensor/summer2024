@@ -40,8 +40,6 @@ For comprehensive results on each of the models, feel free to check out my sage 
 
 Click the link [here](https://github.com/kneshio/summer2024/blob/main/alex/week_1_to_5_super_resolution/installation.md) for an overview on the installation process for the Real-ESRGAN and the SUPIR model. 
 
-**Usage**
-
 ## Future Resources for Research
 Feel free to use the following to research improved models
  - [Two Minute Papers YouTube Channel](https://www.youtube.com/@TwoMinutePapers)    (*Best Link to start*)
