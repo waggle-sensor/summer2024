@@ -41,3 +41,6 @@ run with docker-compose
 ```
 sudo docker-compose build
 ```
+```
+sudo docker compose up -d
+```

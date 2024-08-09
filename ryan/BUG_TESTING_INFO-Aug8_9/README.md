@@ -1,5 +1,17 @@
 # Using Florence on different GPUS
 
+### important docker info:
+These images are now available: 
+- rrearden/waggleflorence:bladeT4cu116
+    - takes arguments of either -url or -stream
+    - If it is a URL it does not publish to the sagewebsite
+    - Some URL images don't work for some reason. See blade readme for a link that does work
+
+- rrearden/waggleflorence:plugin-capture-describe-cpu
+    - Untested but should contain a fully working plugin that takes images from stream and generates a description. All of that will be published to the cloud
+    - There is probably some weird issue in here. Refer to ryan/code/capture-describe-deliver/capture-and-describe-plugin/runme.sh to manually make it work on the node of your choice. 
+
+
 
 ## Jetson Nano
 
@@ -8,8 +20,26 @@ core dumped probably because of pytorch
 
 Will try to look for different version of pytorch that will be compatable. 
 
+I isolated it down to 
+```
+from transformers import AutoProcessor, AutoModelForCausalLM
+```
+I think it may be a memory issue. The nano is so small it can't even load this in a python script.
 
+HOW I ISOLATED IT:
+```
+#Code that works:
+print("hi)
 
+#code that doesn't work
+from transformers import AutoProcessor, AutoModelForCausalLM
+print("hi")
+```
+Base image of python:3.11 seems to work fine
+
+Maybe this would help
+https://benjcunningham.org/installing-transformers-on-jetson-nano.html
+Maybe not though
 ## Jetson NX
 
 Trying to install with the base container: nvcr.io/nvidia/l4t-pytorch:r35.2.1-pth2.0-py3
