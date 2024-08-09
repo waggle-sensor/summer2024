@@ -1,11 +1,13 @@
 # CODE README 
 
-Update: I am currently in the process of making code easier to find
+Update: I am currently in the process of making code easier to find. (may be like that for a while sorry)
 
 ## How things ar structured
 
 ```
-|──capture-describe-deploy
+|──Blade
+|
+|──capture-describe-deliver
 |
 |──veryold_andor_useless
 
