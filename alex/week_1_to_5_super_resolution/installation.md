@@ -6,7 +6,7 @@
 
 **Building the container**
 
-1. Clone the official Real-ESRGAN repository
+1. Clone the [official Real-ESRGAN repository](https://github.com/xinntao/Real-ESRGAN)
    
    ```
    git clone https://github.com/xinntao/Real-ESRGAN.git
@@ -14,8 +14,8 @@
    ```
 
 2. Download the Dockerfile [here](https://github.com/kneshio/summer2024/tree/main/alex/week_1_to_5_super_resolution/real-esrgan) and place it in the Real-ESRGAN folder
-
-3. Build the docker container
+3. Download pre-trained model: https://github.com/xinntao/Real-ESRGAN/releases/download/v0.1.0/RealESRGAN_x4plus.pth
+4. Build the docker container
    
     ```
     sudo docker build . -t real-esrgan
@@ -35,7 +35,7 @@ sudo docker run -ti --rm real-esrgan python inference_realesrgan.py -n RealESRGA
 
 **Building the container**
 
-1. Clone the official SUPIR repository
+1. Clone the [official SUPIR repository](https://github.com/Fanghua-Yu/SUPIR)
    
    ```
    git clone https://github.com/Fanghua-Yu/SUPIR.git
