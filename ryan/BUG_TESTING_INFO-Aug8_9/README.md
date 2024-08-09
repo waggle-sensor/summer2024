@@ -53,6 +53,13 @@ Changed to simple version. FlashAttention is only supported for CUDA 11.6 and ab
 
 Update: Trying shubhamgupto/jp5.1-cuda11.8-cudnn9-trt8.5
 
+- NX: Run shubhamgupto/jp5.1-cuda11.8-cudnn9-trt8.5
+    - pip in not installed with this container
+         - pip fixed with apt-get install -y python3-pip
+    - flash_attn module causing error "no module named packaging"
+            -installed setuptools fixed the issue
+        - flash_attn needs torch
+
 ## Jetson Orin
 
 ## Dell Blade 
@@ -61,6 +68,12 @@ Made a script that works with GPU. Currenrly running with base image of: nvcr.io
 
 Accepts -steam (untested) or -url (tested). If you go the route of the url, make sure that it is an image. Some images may not work. 
 I know that this one works because I tested it: https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Marmota_monax_UL_04.jpg/800px-Marmota_monax_UL_04.jpg?20130707224617
+
+- BLADE: Make a dockerfile for Blade that runs florence
+    - Blade V033 has a T4 and CUDA 11.6
+    - Blade works with image: nvcr.io/nvidia/pytorch:24.01-py3
+        - This image is huge. At another time, we should build an optomized image with components of this one. 
+
 
 ### Strange CUDA problem 
 There was a strange problem with pytorch and CUDA. If you ran 
@@ -90,17 +103,6 @@ exec python3 /app/app.py "$@"
 That did the trick
 
 ## TODO log 
+:) 
 
-
-- NX: Run shubhamgupto/jp5.1-cuda11.8-cudnn9-trt8.5
-    - pip in not installed with this container
-         - pip fixed with apt-get install -y python3-pip
-    - flash_attn module causing error "no module named packaging"
-            -installed setuptools fixed the issue
-        - flash_attn needs torch
-
-- BLADE: Make a dockerfile for Blade that runs florence
-    - Blade V033 has a T4 and CUDA 11.6
-    - Blade works with image: nvcr.io/nvidia/pytorch:24.01-py3
-        - This image is huge. At another time, we should build an optomized image with components of this one. 
 
