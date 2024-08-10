@@ -5,6 +5,14 @@ These codes are merged into the [main waggle repository](https://github.com/wagg
 
 ## Week 08/05 -- 08/11
 
+### 08/08 Sat
+
+- Finished the report and the science blog
+
+### 08/07 Fri
+
+- Continue working on the report and the science blog
+
 ### 08/06 Thu
 
 - Worked on running more instances with analysis

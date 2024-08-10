@@ -5,9 +5,11 @@ Author: Yufeng Luo, MCS Research Aide, University of Wyoming, Summer 2024
 ## Introduction
 
 The combination of computer vision (CV) and reinforcement learning (RL) has proven to have great potential, such as self-driving cars and autonomous robots.
+Many of those systems are inspired by human physiological or psychological phenomena, such as brain cortex structure, reasoning step, action motivation, etc.
+
 We are interested in exploring the capability of those combined systems in an edge computing environment using the SAGE framework with limitations on computing resources and communication bandwidth.
 Many SAGE nodes are in a wild environment, so the surroundings have dynamic and diverse image features.
-We aim to design a CV + RL system that coevolves with the camera’s surroundings and brings unexpected and extraordinary information such as wild fire, lightning strikes, etc.
+Inspired by human infant's eye movement to capture new information<sup>[[3](#references)]</sup>, we aim to design a CV + RL system that coevolves with the camera’s surroundings and brings unexpected and extraordinary information such as wild fire, lightning strikes, etc.
 
 Thanks to the recent development in vision transformer and its frameworks, the Image-Joint Embedding Predictive Architecture (I-JEPA) <sup>[[1](#references)]</sup> has been shown great capability for diverse computer vision tasks in self-supervised learning.
 We chose I-JEPA for our CV task.
@@ -112,19 +114,19 @@ The diagnostics are collected during the image gathering phase in lifelong train
 
 ## Result and Discussion
 
-Case study for `wm_00_00` and `ag_00_02` with AXIS camera.
+We have selected a demo case for the lifelong learning process. The world model is `wm_00_00` and the agent is `ag_00_02` using AXIS camera.From figure 4., world model has been restarted for 3 times (excluding the last red line where the training ends) and the spikes in the restart 3 shows that there are some information the model is trying to learn. We expect the oscillation in the final loss curve caused by the Exponential Mean Average (EMA) update on the target encoder, where the target encoder is trying to share information with via the EMA update.
 
 |![figure 4](./imgs/loss_yl.png)|
 |:--:|
-|*Figure 4. Loss curve for wm_00_00*|
+|*Figure 4. Loss curve for wm_00_00. Red dashed line marks the restart*|
 
 |![figure 5](./imgs/tsne_yl.png)|
 |:--:|
-|*Figure 5. tSNE plot for the target encoder embeddings collected during image gathering phase*|
+|*Figure 5. tSNE plot for the target encoder embeddings collected during image gathering phase. The clusters are distinct from each other with different rewards*|
 
 |![figure 6](./imgs/pointings_yl.png)|
 |:--:|
-|*Figure 6. absolution positions of the camera with reward and zoom values*|
+|*Figure 6. absolution positions of the camera with reward and zoom values. The agent has different moving strategies for different parts of the surrounding. It has a larger steps on the left, while choosing much smaller steps on the right side of the pan range.*|
 
 |![figure 7](./imgs/3d_pointings_yl.png)|
 |:--:|
@@ -132,11 +134,19 @@ Case study for `wm_00_00` and `ag_00_02` with AXIS camera.
 
 |![figure 8](./imgs/reward_comparison_yl.png)|
 |:--:|
-|*Figure 8. absolution positions of the camera with reward and zoom values*|
+|*Figure 8. Target, context and predictor embeddings with rewards. The top left panel shows the comparison of embeddings between context and target encoders. They overlap each other, which means target and context encoder shares similar information, as expected. The other five panels display the predictor embeddings given image pairs in a batch size of four. Steps are the number of actions between the pair of images and the reward assigned with the pair. The rewards are similar in range, but has a clear cluster and shape in the tSNE plot.*|
+
+The CV + RL system trained using DayDreamer workflow in lifelong learning mode has displayed show some interesting behaviors such as different step sizes, changing directions in various zones of the surrounding. On the other hand, it doesn't perform well on distinguishing areas with good and bad rewards. This issue could be due to the complexity of the environment and thus model does not have enough information to draw a boundary between more and less feature-rich area driven by curiosity.
+To fully understand the behavior and explain the choices by the agent from a statistical perspective requires more detailed analyses.
+
+This project's inspiration comes from infant's attention mechanism and we are aiming to reproduce some similar behaviors in the paper<sup>[[3](#references)]</sup> where more attention is paid to specific area. And thus, building a connection between the cyberphycial AI and biology reasoning. This, however, can possess some complex on how we evaluate the final results. With the current project, we hope to shed some light into this understanding the connection and develop future physical AI system based on biology inspirations.
 
 ## Acknowledgement
+
+I would like to thank my mentor Dr. Dario Dematties for many inspiring conversations and insightful advice. I would also express my gratitude to Dr. Raj Sankaran and Dr. Yongho Kim for their technical support on the camera and server systems. Finally, I want to thank SAGE team for providing this unique opportunity to let me explore in the realm of cyberphysical AI and edge computing! I have learned a lot this summer, once again!
 
 ## References
 
 1. Assran et al., Self-Supervised Learning from Images with a Joint-Embedding Predictive Architecture
 2. Wu et al., DayDreamer: World Models for Physical Robot Learning
+3. Tomalski et al., Selective Changes in Complexity of Visual Scanning for Social Stimuli in Infancy
