@@ -18,7 +18,7 @@ These images are now available:
 Failed...
 core dumped probably because of pytorch
 
-Will try to look for different version of pytorch that will be compatable. 
+Will try to look for different version of PyTorch that will be compatible. 
 
 I isolated it down to 
 ```
@@ -75,7 +75,7 @@ I know that this one works because I tested it: https://upload.wikimedia.org/wik
 - BLADE: Make a dockerfile for Blade that runs florence
     - Blade V033 has a T4 and CUDA 11.6
     - Blade works with image: nvcr.io/nvidia/pytorch:24.01-py3
-        - This image is huge. At another time, we should build an optomized image with components of this one. 
+        - This image is huge. At another time, we should build an optimized image with components of this one. 
 
 
 ### Strange CUDA problem 

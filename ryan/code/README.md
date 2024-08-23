@@ -14,11 +14,11 @@ Update: I am currently in the process of making code easier to find. (may be lik
 
 ```
 
-veryold_andor_useless is for historical purposes. If, one day, someone really needs to look at TroL, my code is still in there--it may be hard to figure out and use but I felt bad deleting it. 
+veryold_andor_useless is for historical purposes. If, one day, someone really needs to look at TroL, my code is still in there--it may be hard to figure out and use, but I felt bad deleting it. 
 ## Things I always forget but would be useful to remember [in no particular order (yet)]
 
 ### To port over to a node running Ollama and run llava
-You have to confiugre everything first
+You have to configure everything first
 
 
 1. First you want to ssh and port forward at the same time to be really cool. You may already have Ollama installed on your local machine. To prevent against issues, forward to a port close to it:
@@ -56,10 +56,23 @@ so if I wanted to transfer something to a waggle node I would find the directory
 rsync -avz folder waggle-dev-node-NODE:/home/waggle/rrearden 
 
 
-### How to build for multiple platforms docker
+### How to build for multiple platforms' docker
 
 ```
 docker buildx build --platform linux/amd64,linux/arm64 -t myimage:latest .
+
+
 ```
+
+### Cool  commands
+
+```
+tegrastats
+cat /usr/local/cuda/version.txt
+cat /etc/lsb-release
+cat /etc/nv_tegra_release
+df -h
+```
+
 
 
