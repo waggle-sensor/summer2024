@@ -3,9 +3,149 @@
 Link to the code repository I'm working on: [PTZJEPA](https://github.com/Brookluo/PTZJEPA)
 These codes are merged into the [main waggle repository](https://github.com/waggle-sensor/PTZJEPA)
 
+## Week 08/05 -- 08/11
+
+### 08/08 Sat
+
+- Finished the report and the science blog
+
+### 08/07 Fri
+
+- Continue working on the report and the science blog
+
+### 08/06 Thu
+
+- Worked on running more instances with analysis
+- Writing the report and the science blog
+
+### 08/05 Wed
+
+- Fixed two bugs with the respawning process
+- Tested different dreams length to let model learn better
+- Added more diagnostics to check model loss, rewards, etc
+
+### 08/04 Tue
+
+- Added the respawning mechanism for old models
+- Tested the general workflow
+- Ran more diagnostics
+
+### 08/03 Mon
+
+- After many iterations of the lifelong learning, the model finally starts to show some interesting behavior, such as moving the camera in an unexpected pattern. I changed the reward from max to min, so the model should minimize the reward rather than maximize it. Something might be wrong when the model tries to maximize the reward
+- Added another analysis suite to read the tracking results data and make pointings, embeddings, and commands plots with rewards.
+
+## Week 07/29 -- 08/04
+
+### 08/02 Fri
+
+- Finished coding the analysis tool for the learning results
+- Found the embeddings and the pointings have some interesting patterns, and needs to be fully understood and addressed before moving on
+- The agent seems to move to decrease the reward rather than increase the reward as expected
+
+### 08/01 Thu
+
+- Continued developing the analysis code
+- Merged the pull request for lifelong learning
+- Discussed the federated learning idea with centralized and decentralized ideas.
+- Attended the Learning on the Lawn poster session
+
+### 07/31 Wed
+
+- Started to develop the analysis code for the lifelong learning results
+- Formalized the lifelong learning code and discussed some training results and directory structure with Dario
+
+### 07/30 Tue
+
+- Add function to track all images, positions, commands, embeddings from the training
+- Finished checking some preliminary training results from the lifelong learning
+
+### 07/29 Mon
+
+- Fixed a bug on waggle plugin issue with the publishing the message
+- Fixed another bug on missing image when agent starts to capture images causing the program to halt
+
+## Week 07/22 -- 07/28
+
+### 07/26 Fri
+
+- Kayak day!
+
+### 07/25 Thu
+
+- Finally finished coding lifelong learning diagnostics and all information gathering procedure
+- Images, positions, commands and embeddings should be gathered while training the model when user provides `--track_all` argument
+
+### 07/24 Wed
+
+- Modified many parts of the code for clarification of the input
+- Update tracking functionalities
+- Added many auxiliary diagnostics, such as timestamps, to help understand the gathered data
+
+### 07/23 Tue
+
+- Tested the tracking all output results and fixed some path issues
+- Discussed some other diagnostics to gather during inference and training phase
+
+### 07/22 Mon
+
+- Add functions to generate diagnostics output such as embeddings, positions, commands, etc
+- Change saving the output embeddings from numpy to hdf5 to ensure performance and large data volume holding is possible.
+- Did SAGE project presentation!
+
+## Week 07/15 -- 07/21
+
+### 07/19 Fri
+
+- Continued to work on the tracking function and diagnostics gathering capabilities
+
+### 07/18 Thu
+
+- Changed the logger input and fixed a bug with input to the vision transformer
+- Started to develop the tracking function to track the lifelong learning model progress
+
+### 07/17 Wed
+
+- Fixed many issues with the code
+  - Program halts when the first image is not available or failed to acquire
+  - Some images with space in the file name can created a file error during saving
+  - File permission issue
+  - dtypes for inference to the model
+- Standardize the timestamp and filename for consistency and following analysis
+
+### 07/16 Tue
+
+- Finished coding the analysis function
+- I found the lifelong learning is too complex with many components. However, to explain some effects, we have to have some reproducility and explainability for the model. Those two aspects all reply on the traceability of the models. We need to add the traceability to the model
+- Conveyed this idea to Dario and he also agreed that we need some traceability for the models to analyze and explain later behaviors
+
+### 07/15 Mon
+
+- Reduced the redundant code
+- Started to code the analysis function to process the embeddings
+- Fixed some bugs for inference and permission issue
+- Added more logging information
+
 ## Week 07/08 -- 07/14
 
-### 07/10 Tue
+### 07/12 Fri
+
+- Work from home, thanks to CrowdStrike :-)
+- Fixed a bug in JEPA only training (not world model training)
+- Added some tests for larger images
+
+### 07/11 Thu
+
+- Presented the update at the group meeting
+- Finally regained access to the node in the afternoon, started to run lifelong learning
+- Fixed some file paths issue with lifelong learning
+
+### 07/10 Wed
+
+- Toured ALCF
+- Node is still offline, so discussed some future collaboration possibility with Dario
+
+### 07/09 Tue
 
 - The DBSCAN result for the embeddings shows that the model learns some clear pattern of the image
   but after looking into the images, I didn't find a clear meaning of the clusters. Will try to look into the images more.
@@ -13,7 +153,7 @@ These codes are merged into the [main waggle repository](https://github.com/wagg
   causing the model to learn the wrong information.
 - The nodes are down, so I cannot check the life-long learning workflow on the Dell blade.
 
-### 07/09 Mon
+### 07/08 Mon
 
 - Trying to understand the meanings of the clusters from the world model
 - Trying to run the whole workflow for life-long learning on the Dell blade
