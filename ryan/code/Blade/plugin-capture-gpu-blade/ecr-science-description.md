@@ -13,10 +13,13 @@ When the plugin captures an image, the image is run through the "generateDescrip
 - "CAPTION_TO_PHRASE_GROUNDING" reads the components from the detailed caption and attempts to identify where those components are within the image. So, for example, if the detailed caption was: "There is smoke on the tree", the phrase grounding would identify "smoke" and "tree" within the image.
 - "DENSE_REGION_CAPTION" takes the regions of the image and tries to identify the components. This is useful when the detailed caption misses small information. If the image is primarily of a car but in the background there is a person, the dense region caption prompt is more likely to identify the person than the detailed caption prompt is. 
 
+Each time Florence-2 is run, the function "run_example" runs. This function takes in the prompt and image. It includes adjustable variables such as the number of maximum tokens the model is allowed to generate and how many possible outputs the model should consider. It also does post processing to clean up the text.
+
 The prompts "CAPTION_TO_PHRASE_GROUNDING" and "DENSE_REGION_CAPTION" both produce box coordinates along with the identified components. Since boxing is not currently utilized, the program removes the list of coordinates before sending the results back to the user. In addition, any duplicates within both prompt results are removed. 
 
-All of these prompts are combined in order to give the most comprehensive information to the user. In the end, once the information is published, the description will produce: "DESCRIPTION: 'MORE_DETAILED_CAPTION' LABELS: 'DENSE_REGION_CAPTION', 'CAPTION_TO_PHRASE_GROUNDING'" 
+All of these prompts are combined in order to give the most comprehensive information to the user. In the end, once the information is published, the description will produce: 
 
+ "DESCRIPTION: &nbsp;'MORE_DETAILED_CAPTION' &nbsp; LABELS:&nbsp; 'DENSE_REGION_CAPTION', 'CAPTION_TO_PHRASE_GROUNDING'" 
 
 # Arguments
 ```
