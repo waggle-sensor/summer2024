@@ -5,7 +5,7 @@ The distributed sensor network of Sage nodes has gathered thousands of images an
 The purpose of this project is to use the node camera sensor along with a CPU or NVIDIA GPU in order to make descriptions of each captured image. 
 
 # AI@Edge
-This plugin deploys Microsoft's Florence-2-base computer vision model onto the specified node. Depending on the argument given by the user, the model can perform inferencing on an image from the internet or an image from a camera stream. 
+This plugin deploys Microsoft's Florence-2-base computer vision model onto the specified node. The model can perform inferencing from a camera stream. 
 
 When the plugin captures an image, the image is run through the "generateDescription" function. Within this function, Florence-2 is run three times. Each time it is run, there is a different prompt. These prompts are set by the Microsoft engineers in order to provide distinct and specific annotations.The prompts that are utilized on this plugin are: "MORE_DETAILED_CAPTION", "CAPTION_TO_PHRASE_GROUNDING", and "DENSE_REGION_CAPTION". 
 
@@ -15,14 +15,14 @@ When the plugin captures an image, the image is run through the "generateDescrip
 
 The prompts "CAPTION_TO_PHRASE_GROUNDING" and "DENSE_REGION_CAPTION" both produce box coordinates along with the identified components. Since boxing is not currently utilized, the program removes the list of coordinates before sending the results back to the user. In addition, any duplicates within both prompt results are removed. 
 
-All of these prompts are combined in order to give the most comprehensive information to the user. 
+All of these prompts are combined in order to give the most comprehensive information to the user. In the end, once the information is published, the description will produce: "DESCRIPTION: 'MORE_DETAILED_CAPTION' LABELS: 'DENSE_REGION_CAPTION', 'CAPTION_TO_PHRASE_GROUNDING'" 
+
 
 # Arguments
 ```
 '-stream': ID or name of a stream, e.g. top-camera
 '-out-dir': Path to save images locally in %Y-%m-%dT%H:%M:%S%z.jpg format
 '-cronjob': Time interval expressed in cronjob style
-'-url': link to an image url
 ```
 
 
