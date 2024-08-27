@@ -27,7 +27,7 @@ You have to configure everything first
     - I like to put my localport as 11430
 
 2. Inside of the node that has the ollama image run: 
-    - sudo docker run -p 11434:11434 DOCKERIMAGEHEX ollama start
+    - sudo docker run -d --gpus=all -p 11434:11434 DOCKERIMAGEHEX
 
 3. *THEN* on your main machine run:
     - OLLAMA_HOST="127.0.0.1:11430
