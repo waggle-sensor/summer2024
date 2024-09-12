@@ -1,0 +1,37 @@
+>>> The code I provided is to make an edge app. I still haven't explained how to set up the environment for the edge app 
+... to be built and deployed, nor to acess the data from other nodes. But for now, explain to me what an edge app is
+I'm excited to learn more about edge computing!
+
+An **edge app** (short for "edge application") refers to a software application that runs on an edge device or 
+node, which is located at the boundary of a network or the edge of the Internet. Edge apps are designed to process 
+data in real-time, close to where it's generated, rather than sending it all the way to the cloud or a centralized 
+server.
+
+Edge apps typically:
+
+1. **Process and analyze data**: They handle data processing, filtering, and transformation tasks, such as image 
+recognition, sensor data analysis, or natural language processing.
+2. **Make decisions and take actions**: Edge apps can make decisions based on the processed data and take actions 
+in real-time, like controlling a robot arm, sending alerts, or triggering a response.
+3. **Interact with sensors and devices**: They communicate directly with sensors, cameras, microphones, or other 
+IoT devices to collect, process, and transmit data.
+
+The key benefits of edge apps include:
+
+1. **Reduced latency**: By processing data closer to the source, edge apps reduce the time it takes for data to 
+travel to a central location and back, resulting in faster response times.
+2. **Improved real-time performance**: Edge apps can handle high-throughput, low-latency applications that require 
+immediate processing and reaction.
+3. **Increased security**: By handling sensitive data at the edge, edge apps can reduce the risk of data breaches 
+or unauthorized access.
+
+Edge computing is particularly useful for applications like:
+
+1. Industrial automation
+2. Smart cities
+3. Autonomous vehicles
+4. Healthcare monitoring
+5. Retail analytics
+
+Now that you've given me a glimpse into your code, I'm excited to learn more about setting up the environment and 
+accessing data from other nodes!

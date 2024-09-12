@@ -1,0 +1,129 @@
+
+import sage_data_client
+df_fields = sage_data_client.query(start='-1h', tail=1)
+df_fields
+
+
+,timestamp,name,value,meta.description,meta.host,meta.job,meta.missing,meta.node,meta.plugin,meta.sensor,meta.task,meta.units,meta.vsn,meta.zone,meta.applicationId,meta.applicationName,meta.devAddr,meta.devEui,meta.deviceName,meta.deviceProfileId,meta.deviceProfileName,meta.serial_number_tag,meta.tenantId,meta.tenantName,meta.channel,meta.image_frac,meta.input,meta.nsegments_asked,meta.nsegments_found,meta.quality,meta.seg_id,meta.seg_rank,meta.seg_size,meta.name,meta.camera,meta.gatewayId,meta.type,meta.cpu,meta.mode,meta.device,meta.fstype,meta.mountpoint,meta.chip,meta.server,meta.severity,meta.filename,meta.loop_num,meta.position
+27460,2024-08-07 16:05:29.151836541+00:00,sys.mem.slab,2528948224,,000048b02d05a1c6.ws-nxcore,,,000048b02d05a1c6,,,,,W027,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+23221,2024-08-07 16:06:07.766163151+00:00,sys.load15,0.32,,0000dca632a307b6.ws-rpi,,,000048b02d0766d2,,,,,W014,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+34229,2024-08-07 16:05:23.768860271+00:00,sys.net.tx_packets,0,,000048b02d3afdcd.ws-nxagent,,,000048b02dd3c76e,,,,,W0A4,,,,,,,,,,,,,,,,,,,,,,,,,,,dummy0,,,,,,,,
+35188,2024-08-07 16:04:57.424790881+00:00,sys.net.tx_packets,32823164,,000048b02dd3c296.ws-nxcore,,,000048b02dd3c296,,,,,W09F,,,,,,,,,,,,,,,,,,,,,,,,,,,wifi0,,,,,,,,
+28494,2024-08-07 16:05:50.300800553+00:00,sys.mem.total,33343115264,,00002cea7fa0972c.sb-core,,,00002cea7fa0972c,,,,,V049,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+3588,2024-08-07 16:06:14.509822530+00:00,iio.in_humidityrelative_input,63.205,,0000e45f012e378d.ws-rpi,Pluginctl,,000048b02dd3c51f,waggle/plugin-iio:0.7.0,bme680,wes-iio-bme680,,W099,shield,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+39213,2024-08-07 15:27:43.584216064+00:00,sys.sanity_status.rpi_mic,0,,000048b02d3ae27a.ws-nxcore,,,000048b02d3ae27a,,,,,W020,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,fatal,,,
+30945,2024-08-07 16:04:48.667627764+00:00,sys.net.rx_bytes,4378557710,,000048b02dd3c5dc.ws-nxagent,,,000048b02dd3c814,,,,,W0B3,,,,,,,,,,,,,,,,,,,,,,,,,,,wan0,,,,,,,,
+42439,2024-08-07 15:59:01.679692577+00:00,upload,https://storage.sagecontinuum.org/api/v1/data/mobotix-area-scan-w020-1810/sage-mobotix-area-scan-w020-0.23.11.02/000048b02d3ae27a/1723046341679692577-6144x2048_position17.jpg,,0000e45f0198f3d7.ws-rpi,mobotix-area-scan-w020-1810,,000048b02d3ae27a,registry.sagecontinuum.org/bhupendraraut/mobotix-scan:0.23.11.02,,mobotix-area-scan-w020,,W020,shield,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,6144x2048_position17.jpg,1,17
+
+
+# W07B
+df = sage_data_client.query(
+    start="-8h",
+    filter={
+        "name": "env.pressure",
+        "vsn": "W07B",
+        "sensor": "bme680"
+    }
+)
+
+df.set_index("timestamp").value.plot()
+df.value.hist(bins=100)
+
+Provided the code above, give me the code for the graph and bar graph of the temperature and humidity of the last hour for node W0B0
+
+
+
+
+
+
+
+
+
+>>> The following is the general structure of the dataframe resulted from these lines of code: 
+... import sage_data_client
+... df_fields = sage_data_client.query(start='-1h', tail=1)
+... df_fields.sample(frac=0.1)
+... ,timestamp,name,value,meta.description,meta.host,meta.job,meta.missing,meta.node,meta.plugin,meta.sensor,meta.task,meta.units,meta.vsn,meta.zone,meta.applicationId,meta.applicationName,meta.devAddr,meta.devEui,meta.deviceName,meta.deviceProfileId,meta.deviceProfileName,meta.serial_number_tag,meta.tenantId,meta.tenantName,meta.channel,meta.image_frac,meta.input,meta.nsegments_asked,meta.nsegments_found,meta.quality,meta.seg_id,meta.seg_rank,meta.seg_size,meta.name,meta.camera,meta.gatewayId,meta.type,meta.cpu,meta.mode,meta.device,meta.fstype,meta.mountpoint,meta.chip,meta.server,meta.severity,meta.filename,meta.loop_num,meta.position
+... 27460,2024-08-07 16:05:29.151836541+00:00,sys.mem.slab,2528948224,,000048b02d05a1c6.ws-nxcore,,,000048b02d05a1c6,,,,,W027,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+... 23221,2024-08-07 16:06:07.766163151+00:00,sys.load15,0.32,,0000dca632a307b6.ws-rpi,,,000048b02d0766d2,,,,,W014,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+... 34229,2024-08-07 16:05:23.768860271+00:00,sys.net.tx_packets,0,,000048b02d3afdcd.ws-nxagent,,,000048b02dd3c76e,,,,,W0A4,,,,,,,,,,,,,,,,,,,,,,,,,,,dummy0,,,,,,,,
+... 35188,2024-08-07 16:04:57.424790881+00:00,sys.net.tx_packets,32823164,,000048b02dd3c296.ws-nxcore,,,000048b02dd3c296,,,,,W09F,,,,,,,,,,,,,,,,,,,,,,,,,,,wifi0,,,,,,,,
+... 28494,2024-08-07 16:05:50.300800553+00:00,sys.mem.total,33343115264,,00002cea7fa0972c.sb-core,,,00002cea7fa0972c,,,,,V049,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+... 3588,2024-08-07 16:06:14.509822530+00:00,iio.in_humidityrelative_input,63.205,,0000e45f012e378d.ws-rpi,Pluginctl,,000048b02dd
+... 3c51f,waggle/plugin-iio:0.7.0,bme680,wes-iio-bme680,,W099,shield,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+... 39213,2024-08-07 15:27:43.584216064+00:00,sys.sanity_status.rpi_mic,0,,000048b02d3ae27a.ws-nxcore,,,000048b02d3ae27a,,,,,W020,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,fatal,,,
+... 30945,2024-08-07 16:04:48.667627764+00:00,sys.net.rx_bytes,4378557710,,000048b02dd3c5dc.ws-nxagent,,,000048b02dd3c814,,,,,W0B3,,,,,,,,,,,,,,,,,,,,,,,,,,,wan0,,,,,,,,
+... 42439,2024-08-07 15:59:01.679692577+00:00,upload,https://storage.sagecontinuum.org/api/v1/data/mobotix-area-scan-w020-1810/sage-mobotix-area-scan-w020-0.23.11.02/000048b02d3ae27a/1723046341679692577-6144x2048_position17.jpg,,0000e45f0198f3d7.ws-rpi,mobotix-area-scan-w020-1810,,000048b02d3ae27a,registry.sagecontinuum.org/bhupendraraut/mobotix-scan:0.23.11.02,,mobotix-area-scan-w020,,W020,shield,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,6144x2048_position17.jpg,1,17
+... 
+This is a Pandas DataFrame with 44 columns and 10 rows (based on the provided data). Here's a brief summary of the 
+structure:
+
+* The first column, `timestamp`, contains timestamp values in the format `YYYY-MM-DD HH:MM:SS.ssssss+HH:MM` (e.g., 
+`2024-08-07 16:05:29.151836541+00:00`).
+* The second column, `name`, seems to be a string identifier for each data point (e.g., `sys.mem.slab`, `sys.load15`, 
+etc.).
+* The third column, `value`, contains numerical values associated with each name (e.g., `2528948224`, `0.32`, etc.).
+* The remaining columns (`meta.description`, `meta.host`, ..., `meta.zone`) contain metadata for each data point.
+
+Here are some observations and suggestions:
+
+1. **Column names**: Some column names seem to be repeated (e.g., multiple occurrences of `meta.name` or `W0XX`). It might 
+be beneficial to remove duplicates or merge them into a single column.
+2. **Data types**: The `timestamp` column could be converted to a more convenient datetime format using the 
+`pd.to_datetime()` function.
+3. **Missing values**: There are some missing values in certain columns (e.g., empty strings). You might want to fill these 
+gaps with meaningful placeholders or use Pandas' built-in imputation techniques.
+4. **Data types and consistency**: Some numerical values seem to be inconsistent (e.g., `sys.net.tx_packets` has a value of 
+`0` for one row, but a much larger number for another). You might want to investigate the source of this inconsistency.
+
+Overall, the DataFrame appears to contain a mix of timestamped data with associated metadata. Further investigation and 
+possibly data cleaning would be necessary to make the most out of it.
+
+>>> # W07B
+... df = sage_data_client.query(
+...     start="-8h",
+...     filter={
+...         "name": "env.pressure",
+...         "vsn": "W07B",
+...         "sensor": "bme680"
+...     }
+... )
+... 
+... df.set_index("timestamp").value.plot()
+... df.value.hist(bins=100)
+... 
+... Provided the following code, give me the code for the graph and bar graph of the temperature and humidity of the last hour for node W0B0
+... 
+Based on the provided code, I'll assume you want to create a line plot and histogram for the temperature and humidity readings from node `W0B0` for the last hour.
+
+Here's how you can modify the code to achieve this:
+
+```python
+# Filter data for W0B0
+df = sage_data_client.query(
+    start="-1h",
+    filter={
+        "name": ["sys.mem.slab", "iio.in_humidityrelative_input"],
+        "vsn": "W0B0"
+    }
+)
+
+# Plot temperature and humidity over time
+df.set_index("timestamp").value.plot(kind="line", figsize=(12, 6))
+plt.title('Temperature and Humidity (W0B0)')
+plt.xlabel('Timestamp')
+plt.ylabel('Value')
+plt.legend(title='Sensor Type', bbox_to_anchor=(1.05, 1), loc='upper left')
+
+# Histogram of temperature and humidity
+df.value.hist(bins=100, figsize=(12, 6))
+plt.title('Histogram of Temperature and Humidity (W0B0)')
+plt.xlabel('Value')
+plt.ylabel('Frequency')
+```
+
+This code will create a line plot showing the temperature (`sys.mem.slab`) and humidity (`iio.in_humidityrelative_input`) readings for node `W0B0` over the last 
+hour. It also generates a histogram of these values.
+
+Note: Make sure you have imported the necessary libraries (e.g., `import sage_data_client`, `import matplotlib.pyplot as plt`) and that your environment is set up to 
+run Python code with Jupyter Notebook or similar environment.
