@@ -62,10 +62,6 @@ mentioned as one of the core institutions involved in Sage's research and develo
 ... 
 ... Sage test nodes will be deployed in environmental locations in California, Colorado, and Kansas and in urban settings in Illinois and Texas. The project will build on the open source tech
 ... nology platform used in the Array of Things project, which has deployed more than 100 sensors with edge computing capabilities within Chicago."
-
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-OUTSIDE NOTE: It took around a minute and a half to process this request
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 I apologize for my earlier mistake!
 
 
@@ -98,10 +94,6 @@ Overall, Sage's architecture is designed to enable real-time analysis and proces
 framework for supporting various research applications.
 
 >>> I'm a scientist trying to get familiar with the terminology Sage uses. Can you give me the actual name of the central server? 
-
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-OUTSIDE NOTE: It took around two minutes to process this request
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 According to the documentation at https://sagecontinuum.org/docs/about/architecture, the central server is referred to as the "Sage Core".
 
 >>> Where did you get that from? 
