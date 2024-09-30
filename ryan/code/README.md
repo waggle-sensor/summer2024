@@ -2,7 +2,7 @@
 
 Update: I am currently in the process of making code easier to find. (may be like that for a while sorry)
 
-## How things ar structured
+## How things are structured
 
 ```
 |──Blade
