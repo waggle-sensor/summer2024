@@ -1,0 +1,103 @@
+>>> Awesome! Can you provide me all the necessary code for two plugins? The first plugin captures an image from the 
+... camera, processes it with the function “count_pedestrians” and publishes the number with the name “number.pedest
+... rians”. The second plugin subscribes to that data stream, captures a picture, runs the same “count_pedestrians” 
+... function, and prints out which image had the most pedestrians with the associated timestamp. Write it as two sep
+... arate files. 
+Here are the two plugins:
+
+**plugin1.py**
+```python
+from waggle.plugin import Plugin
+from waggle.data.vision import Camera
+import time
+
+# use case 1: take a snapshot and process
+def count_pedestrians(sample_data):
+    # TO DO: implement your pedestrian counting logic here
+    # For simplicity, let's just return the number of pixels in the image
+    return len(sample_data)
+
+with Plugin() as plugin:
+    sample = Camera().snapshot()
+    result = count_pedestrians(sample.data)
+    plugin.publish("number.pedestrians", result, timestamp=sample.timestamp)
+```
+
+**plugin2.py**
+```python
+from waggle.plugin import Plugin
+from waggle.data.vision import Camera
+import time
+
+# use case 2: subscribe to the "number.pedestrians" stream and process images
+def count_pedestrians(sample_data):
+    # TO DO: implement your pedestrian counting logic here
+    # For simplicity, let's just return the number of pixels in the image
+    return len(sample_data)
+
+with Plugin() as plugin:
+    while True:
+        msg = plugin.get()
+        if msg.topic == "number.pedestrians":
+            num_pedestrians = int(msg.value)
+            print(f"Received {num_pedestrians} pedestrians at timestamp {msg.timestamp}")
+
+            # Take a snapshot and process the image
+            sample = Camera().snapshot()
+            result = count_pedestrians(sample.data)
+
+            # Check which image had the most pedestrians
+            if result > num_pedestrians:
+                print("New maximum number of pedestrians detected!")
+```
+
+In `plugin1.py`, we create a plugin that takes a snapshot from the camera, processes it using the 
+`count_pedestrians` function (which simply returns the number of pixels in the image), and publishes the 
+result with the name "number.pedestrians".
+
+In `plugin2.py`, we create another plugin that subscribes to the "number.pedestrians" stream. When new data is 
+received, it prints out the number of pedestrians and then takes a snapshot from the camera, processes the 
+image using the same `count_pedestrians` function, and checks if the new image has more pedestrians than the 
+previously received value. If so, it prints a message indicating that a new maximum was detected.
+
+Note that you'll need to implement your own pedestrian counting logic in the `count_pedestrians` function for 
+both plugins.
+
+>>> Which lines of code did you subscribe to the "number.pedestrians" stream? 
+I apologize for missing that part earlier!
+
+To subscribe to the "number.pedestrians" stream, we need to add a line to the `plugin2.py` file:
+```python
+msg = plugin.subscribe("number.pedestrians")
+```
+This line subscribes to the "number.pedestrians" stream and assigns the subscription to a variable named 
+`msg`.
+
+Here's the updated code for `plugin2.py`:
+```python
+from waggle.plugin import Plugin
+from waggle.data.vision import Camera
+import time
+
+# use case 2: subscribe to the "number.pedestrians" stream and process images
+def count_pedestrians(sample_data):
+    # TO DO: implement your pedestrian counting logic here
+    # For simplicity, let's just return the number of pixels in the image
+    return len(sample_data)
+
+with Plugin() as plugin:
+    while True:
+        msg = plugin.subscribe("number.pedestrians")
+        if msg.topic == "number.pedestrians":
+            num_pedestrians = int(msg.value)
+            print(f"Received {num_pedestrians} pedestrians at timestamp {msg.timestamp}")
+
+            # Take a snapshot and process the image
+            sample = Camera().snapshot()
+            result = count_pedestrians(sample.data)
+
+            # Check which image had the most pedestrians
+            if result > num_pedestrians:
+                print("New maximum number of pedestrians detected!")
+```
+This code subscribes to the "number.pedestrians" stream and then checks for new messages in the loop.

@@ -1,0 +1,26 @@
+>>> Can you explain to me what Sage is and what role Waggle plays?
+Sage is a fascinating project!
+
+Sage (System for Automated Geometric Explorations) is an open-source mathematics software system that uses 
+computational algebraic geometry, combinatorics, group theory, and number theory to study various mathematical 
+structures. Sage provides a flexible environment for working with these structures, allowing users to perform 
+computations, visualize results, and explore mathematical concepts.
+
+Waggle, on the other hand, is an open-source platform built on top of Sage that enables collaboration, 
+sharing, and reuse of mathematical knowledge. Waggle serves as a social network for mathematicians, 
+researchers, and students to share their work, learn from others, and build upon existing research. It's like 
+a digital math journal or a hub for collaborative problem-solving.
+
+Waggle plays a crucial role in the Sage ecosystem by providing:
+
+1. **Collaborative tools**: Waggle allows users to create and share notebooks (similar to Jupyter Notebooks) 
+containing mathematical computations, explanations, and visualizations. This enables researchers to work 
+together on projects, share their findings, and build upon each other's ideas.
+2. **Repository for shared knowledge**: Waggle serves as a central repository for Sage-based research, making 
+it easier to find and access relevant mathematical content.
+3. **Community engagement**: Waggle fosters a community around Sage by providing a platform for users to 
+discuss their work, ask questions, and receive feedback from peers.
+
+In summary, Sage is the mathematics software system that enables computations and explorations, while Waggle 
+is the collaborative platform built on top of Sage that facilitates sharing, learning, and reuse of 
+mathematical knowledge.

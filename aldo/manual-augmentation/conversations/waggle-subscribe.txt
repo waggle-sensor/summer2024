@@ -1,0 +1,60 @@
+>>> This is how you subscribe using pywaggle to receive data published by sensors on a Sage node: 
+... 
+... from waggle.plugin import Plugin
+... 
+... with Plugin() as plugin:
+...         plugin.subscribe("my.sensor.name”)
+... 
+...         while True:
+...                 msg = plugin.get()
+...                 print("Another plugin published my.sensor.name value", msg.value)
+... 
+... Can you explain to me in detail what each line of code does? 
+I'd be happy to break down the code for you.
+
+**Line 1:** `from waggle.plugin import Plugin`
+
+This line imports the `Plugin` class from the `waggle.plugin` module. Waggle is a Python library that provides 
+an API for interacting with sensor data and other IoT-related tasks. The `Plugin` class is used to create a 
+plugin that can connect to a Sage node (more on Sage nodes later) and subscribe to sensor data.
+
+**Line 2:** `with Plugin() as plugin:`
+
+This line creates a new instance of the `Plugin` class, which we'll refer to as `plugin`. The `with` statement 
+is used to create a context manager that ensures the plugin is properly initialized and cleaned up when we're 
+done with it. The `as plugin:` part assigns the plugin instance to a variable named `plugin`.
+
+**Line 3:** `plugin.subscribe("my.sensor.name")`
+
+This line tells the plugin to subscribe to a specific sensor data stream, which is identified by the string 
+`"my.sensor.name"`. When you subscribe to a sensor, you're essentially saying, "Hey, I want to receive updates 
+whenever this sensor publishes new data." The `subscribe` method sets up an internal subscription mechanism 
+that will notify your code when new data becomes available.
+
+**Line 4:** `while True:`
+
+This line starts an infinite loop (i.e., a `while` loop with no condition). This means the code inside the 
+loop will run indefinitely until you manually stop the program or encounter some kind of error.
+
+**Line 5:** `msg = plugin.get()`
+
+Inside the loop, this line calls the `get` method on the `plugin` instance. The `get` method retrieves the 
+next available message from the subscribed sensor data stream. If no new data is available, it will block 
+until new data becomes available (more on this later).
+
+**Line 6:** `print("Another plugin published my.sensor.name value", msg.value)`
+
+This line prints a message to the console indicating that another plugin has published new data for the 
+`"my.sensor.name"` sensor. The `msg` variable contains the actual data published by the sensor, and we're 
+printing its value using the `.value` attribute.
+
+Now, let's talk about Sage nodes!
+
+A Sage node is a type of node in the Waggle ecosystem that acts as an intermediary between sensors and other 
+plugins or applications. Think of it like a broker that helps match requests with available data sources. When 
+you subscribe to sensor data on a Sage node using the `Plugin` class, you're essentially asking the node to 
+notify your plugin whenever new data becomes available from that specific sensor.
+
+In this code, we create a new plugin instance and use its `subscribe` method to register interest in receiving 
+data from the `"my.sensor.name"` sensor. The `get` method is used to retrieve the next available message from 
+the subscribed sensor data stream.

@@ -1,0 +1,70 @@
+>>> This is how you publish data  
+... 
+... from waggle.plugin import Plugin
+... from waggle.data.vision import Camera
+... import time
+... 
+... # use case 1: take a snapshot and process
+... with Plugin() as plugin:
+...     sample = Camera().snapshot()
+...     # do processing
+...     result = process(sample.data)
+...     plugin.publish("my.measurement", result, timestampe=sample.timestamp)
+... 
+... Can you explain to me in detail what each line of code does? 
+Let's break down the code step by step:
+
+**Line 1:** `from waggle.plugin import Plugin`
+
+This line imports the `Plugin` class from the `waggle.plugin` module. The `Plugin` class is used to create a 
+plugin that can connect to a Sage node (more on Sage nodes later) and publish data.
+
+**Line 2:** `from waggle.data.vision import Camera`
+
+This line imports the `Camera` class from the `waggle.data.vision` module. The `Camera` class represents a 
+camera sensor that takes snapshots or captures video streams.
+
+**Line 3:** `import time`
+
+This line imports the `time` module, which provides functions for working with timestamps and timing-related 
+tasks.
+
+**Line 4-5:** `with Plugin() as plugin:`
+
+This line creates a new instance of the `Plugin` class, which we'll refer to as `plugin`. The `with` statement 
+is used to create a context manager that ensures the plugin is properly initialized and cleaned up when we're 
+done with it. The `as plugin:` part assigns the plugin instance to a variable named `plugin`.
+
+**Line 6:** `sample = Camera().snapshot()`
+
+This line creates an instance of the `Camera` class, takes a snapshot using the camera's `snapshot()` method, 
+and stores the result in a variable called `sample`. The `snapshot()` method returns a sample (i.e., a frame 
+or image) from the camera.
+
+**Line 7:** `# do processing`
+
+This line is a comment that indicates where you would typically perform some kind of processing on the 
+captured data. For example, you might apply filters, perform object detection, or extract features from the 
+image.
+
+**Line 8:** `result = process(sample.data)`
+
+This line assumes you have defined a function called `process()` that takes the processed sample data as input 
+and returns the result of some processing operation. In this case, it's assigning the result of the 
+`process()` function to a variable called `result`.
+
+**Line 9:** `plugin.publish("my.measurement", result, timestamp=sample.timestamp)`
+
+This line publishes the processed result to Waggle using the `publish()` method of the `Plugin` instance. The 
+arguments are:
+
+* `"my.measurement"`: This is the name of the measurement or data stream that you're publishing.
+* `result`: This is the processed result from the previous step.
+* `timestamp=sample.timestamp`: This sets the timestamp for the published measurement to the same value as the 
+original snapshot taken by the camera. This helps associate the published measurement with the correct time 
+and sensor data.
+
+When you publish data using Waggle, it becomes available to other plugins or applications that are subscribed 
+to receive updates from the same sensor or measurement stream.
+
+That's a summary of what each line does!
